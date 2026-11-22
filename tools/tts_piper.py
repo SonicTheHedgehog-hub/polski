@@ -40,6 +40,9 @@ for l in D["lessons"]:
         add(V["speakers"].get(q["who"], default), q["q"]); add(me, q["a"])
 for g in D.get("sounds", []):
     for w in g["words"]: add(default, w[0])
+if os.path.exists("vocab.json"):
+    for pk in json.load(open("vocab.json", encoding="utf-8"))["packs"]:
+        for w in pk["words"]: add(default, w[0]); add(default, w[3])
 
 os.makedirs("audio", exist_ok=True)
 idx_path = "audio/index.json"

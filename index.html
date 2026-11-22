@@ -166,6 +166,27 @@ textarea{width:100%;min-height:90px;border-radius:12px;border:2px solid var(--li
 .chipsel button[aria-pressed=true]{background:var(--red);color:#FFFFFF;box-shadow:none}
 .wordrow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--line)}
 .wordrow:last-child{border-bottom:0}
+.gtag{display:inline-block;padding:3px 9px;border-radius:999px;color:#FFFFFF;font-size:12px;font-weight:800;letter-spacing:.04em;vertical-align:middle}
+.vex{display:flex;gap:12px;align-items:flex-start;background:var(--panel);border-radius:16px;padding:12px 14px;box-shadow:inset 0 0 0 2px var(--line);margin-bottom:10px}
+.vnote{font-size:14px;color:var(--muted);margin:4px 0 10px}
+.mn{font-size:14px;background:rgba(242,183,5,.16);border-left:4px solid #F2B705;border-radius:10px;padding:8px 12px;margin:4px 0 12px}
+.packrow{display:flex;align-items:center;gap:12px;width:100%;padding:12px 0;border:0;border-bottom:1px solid var(--line);background:none;color:inherit;font:inherit}
+.packrow:last-child{border-bottom:0}
+.pnum{width:34px;height:34px;flex:none;border-radius:17px;background:var(--red);color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px}
+.opts{display:grid;gap:10px;margin-bottom:14px}
+.opts button{min-height:56px;padding:10px 16px;border-radius:16px;border:0;background:var(--panel);box-shadow:inset 0 0 0 2px var(--line);font-weight:700;font-size:17px;text-align:left;color:var(--ink)}
+.opts button.ok{background:var(--okbg);box-shadow:inset 0 0 0 2px var(--ok);color:var(--ok)}
+.opts button.bad{background:var(--badbg);box-shadow:inset 0 0 0 2px var(--bad);color:var(--bad)}
+.opts button:disabled{opacity:1}
+.bigspk{width:96px;height:96px;border-radius:48px;border:0;background:rgba(255,255,255,.2);color:#FFFFFF;display:flex;align-items:center;justify-content:center}
+.vin{width:100%;min-height:58px;border-radius:16px;border:0;box-shadow:inset 0 0 0 2px var(--line);background:var(--panel);color:var(--ink);padding:0 16px;font-family:'DM Serif Display',Georgia,serif;font-size:24px}
+.vin:focus{outline:none;box-shadow:inset 0 0 0 3px var(--red)}
+.kbd{display:grid;grid-template-columns:repeat(9,1fr);gap:6px;margin-top:10px}
+.kbd button{min-height:44px;border-radius:10px;border:0;background:var(--panel);box-shadow:inset 0 0 0 2px var(--line);font-size:19px;font-weight:700;color:var(--ink)}
+.wbtn{border:0;background:none;padding:0;color:inherit;text-align:left;font:inherit}
+.wbtn.serif{font-family:'DM Serif Display',Georgia,serif;font-size:22px}
+.wbtn.ex{display:block;margin-top:6px;font-family:'DM Serif Display',Georgia,serif;font-size:17px;color:var(--accent)}
+.vrow.cur{background:rgba(242,183,5,.14);border-radius:12px}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
@@ -184,7 +205,7 @@ const DAY = 864e5;
 
 /* ---------- State ---------- */
 const DEF = () => ({v: 1, updated: 0, pts: 0, done: {}, cards: {}, days: {}, badges: {}, reviews: 0,
-  set: {theme: "auto", decode: "immer", rate: 0.85, sound: true, goalApp: 30, goalListen: 20, goalSpeak: 10, voice: "", multi: true, natural: true}});
+  set: {theme: "auto", decode: "immer", rate: 0.85, sound: true, goalApp: 30, goalListen: 20, goalSpeak: 10, voice: "", multi: true, natural: true, newPerDay: 15}});
 let S = DEF();
 try { const r = JSON.parse(localStorage.getItem("polski-v1") || "null"); if (r && r.v) S = Object.assign(DEF(), r, {set: Object.assign(DEF().set, r.set || {})}); } catch (e) {}
 let D = null;                      // lesson data
@@ -443,41 +464,233 @@ function viewPath() {
   return h + "</div>";
 }
 
-function viewReview() {
-  const R = ui.review;
-  let h = '<div class="top"><h1 class="page" style="margin:0">Wörter</h1>' + candleChip() + "</div>";
-  if (!R || !R.queue.length) {
-    const total = Object.keys(S.cards).length;
-    const tomorrow = Object.values(S.cards).filter(c => c.due <= startOfDay(Date.now() + DAY)).length;
-    h += '<div class="card center"><img src="img/sleeping.webp" alt="" height="170" class="mascot">';
-    h += total ? '<p class="serif" style="font-size:22px;margin:10px 0 4px">Alles wiederholt!</p><p class="sub">Morgen warten ' + tomorrow + " Sätze auf dich. Der Drache ruht sich solange aus.</p>" : '<p class="serif" style="font-size:22px;margin:10px 0 4px">Noch nichts zu wiederholen</p><p class="sub">Nach jeder Lektion landen ihre Sätze hier. Die App fragt sie genau dann ab, wenn du sie fast vergessen hättest.</p>';
-    return h + "</div>";
-  }
-  const [id, c] = R.queue[0], ref = cardRef(id);
-  if (!ref) { R.queue.shift(); return viewReview(); }
-  const front = ref.dir === "h" ? ref.sv : ref.de, back = ref.dir === "h" ? ref.de : ref.sv;
-  h += '<p class="sub" style="margin:0 0 10px">' + R.done + " erledigt · noch " + R.queue.length + "</p>";
-  h += '<div class="rcard' + (R.flipped ? " back" : "") + '"><div class="q">' + (ref.dir === "h" ? "Was bedeutet das?" : "Wie sagt man das auf Polnisch?") + '</div><div class="f">' + esc(front) + "</div>";
-  if (R.flipped) h += '<div class="b">' + esc(back) + "</div>";
-  h += "</div>";
-  const showSpk = ref.dir === "h" || R.flipped;
-  if (showSpk) h += '<div class="center" style="margin-top:12px"><button class="btn ghost" data-act="sayCard">' + ic("spk") + " Anhören</button></div>";
-  if (!R.flipped) h += '<button class="btn primary block" style="margin-top:14px;min-height:60px" data-act="flip">Aufdecken</button>';
+/* ---------- Vokabeltrainer ---------- */
+let V = null, VW = {};
+const GEN = {m: ["m", "ten", "#1F5FAD"], f: ["f", "ta", "#C8102E"], n: ["n", "to", "#1E8C93"], pl: ["pl", "te", "#D6336C"]};
+const gtag = g => GEN[g] ? '<span class="gtag" style="background:' + GEN[g][2] + '" title="Geschlecht">' + GEN[g][0] + " · " + GEN[g][1] + "</span>" : "";
+function loadVocab(d) {
+  V = d; VW = {};
+  d.packs.forEach(p => p.words.forEach(w => { VW[w[0]] = {pl: w[0], de: w[1], g: w[2], ex: w[3], exDe: w[4], note: w[5], mn: w[6], pack: p.id, level: p.level}; }));
+  vClean();
+}
+// Lektionswörter, die es auch im Trainer gibt, nicht doppelt abfragen
+function vClean() {
+  if (!V || !D) return;
+  let ch = false;
+  Object.keys(S.cards).forEach(id => {
+    const m = id.match(/^(\w+):w(\d+):[hs]$/); if (!m) return;
+    const l = D.lessons.find(x => x.id === m[1]), w = l && (l.words || [])[+m[2]];
+    if (w && VW[w[0]]) { delete S.cards[id]; ch = true; }
+  });
+  if (ch) saveLocal();
+}
+const newToday = () => S.vnew && S.vnew.d === today() ? S.vnew.n : 0;
+function nextNew(n) {
+  const out = []; if (!V || n <= 0) return out;
+  for (const p of V.packs) for (const w of p.words) { if (out.length >= n) return out; if (!S.cards["v:" + w[0]]) out.push(w[0]); }
+  return out;
+}
+const vCards = () => Object.keys(S.cards).filter(k => k.startsWith("v:") && VW[k.slice(2)]);
+const hardWords = () => vCards().filter(k => (S.cards[k].lapses || 0) >= 2).map(k => k.slice(2));
+const cardOK = id => id.startsWith("v:") ? !!VW[id.slice(2)] : !!cardRef(id);
+const dueAll = () => dueCards().filter(([id]) => cardOK(id));
+function hsh(s) { let h = 0; for (const c of s) h = (h * 31 + c.charCodeAt(0)) >>> 0; return h; }
+const shuf = a => a.map(x => [Math.random(), x]).sort((p, q) => p[0] - q[0]).map(x => x[1]);
+// Übungsart passend zum Stand: erst erkennen, dann selbst abrufen
+function pickEx(c, pl) {
+  const r = c.reps || 0;
+  if (r === 0 || c.ivl === 0 || (c.lapses && Date.now() - (c.last || 0) < DAY)) return "choice";
+  if (r < 3) return (hsh(pl) + r) % 2 ? "listen" : "flash";
+  return (hsh(pl) + r) % 2 ? "type" : "speak";
+}
+function choices(pl) {
+  const w = VW[pl], pool = Object.values(VW).filter(x => x.pl !== pl && x.de !== w.de);
+  const picks = shuf(pool.filter(x => x.pack === w.pack)).slice(0, 2).concat(shuf(pool.filter(x => x.pack !== w.pack)).slice(0, 3))
+    .filter((x, i, a) => a.findIndex(y => y.de === x.de) === i).slice(0, 3);
+  return shuf([w].concat(picks)).map(x => x.de);
+}
+function startVocab(o = {}) {
+  const q = [];
+  if (o.drill) o.drill.forEach(pl => q.push({k: "card", id: "v:" + pl, drill: true}));
   else {
-    const now = Date.now(), p1 = schedule(c, 1, now), p3 = schedule(c, 3, now), p4 = schedule(c, 4, now);
-    h += '<div class="rate"><button data-act="rate" data-g="1">Nochmal<small>' + ivlLabel(p1) + '</small></button><button class="g" data-act="rate" data-g="3">Gewusst<small>' + ivlLabel(p3) + '</small></button><button data-act="rate" data-g="4">Leicht<small>' + ivlLabel(p4) + "</small></button></div>";
+    if (!o.extra) dueAll().slice(0, 80).forEach(([id]) => q.push({k: "card", id}));
+    const fresh = nextNew(o.extra || Math.max(0, S.set.newPerDay - newToday()));
+    for (let i = 0; i < fresh.length; i += 5) {
+      const grp = fresh.slice(i, i + 5);
+      grp.forEach(pl => q.push({k: "intro", w: pl}));
+      shuf(grp).forEach(pl => q.push({k: "card", id: "v:" + pl}));
+    }
+  }
+  ui.vt = {q, done: 0, ok: 0, drill: !!o.drill};
+  render(); vAuto();
+}
+function prepItem(it) {
+  if (it.ex || it.k !== "card") return;
+  if (!it.id.startsWith("v:")) { it.ex = "sent"; return; }
+  const pl = it.id.slice(2);
+  it.ex = it.drill ? "choice" : pickEx(S.cards[it.id] || {}, pl);
+  if (it.ex === "listen" && !speechOK && !audioFile(pl)) it.ex = "flash";
+  if (it.ex === "choice" || it.ex === "listen") it.opts = choices(pl);
+}
+// Ton zum aktuellen Schritt automatisch abspielen (nicht, wenn das Wort die Lösung wäre)
+function vAuto() {
+  const T = ui.vt; if (!T || !T.q.length) return;
+  const it = T.q[0]; prepItem(it);
+  if (it.k === "intro") { const w = VW[it.w]; stopSpeech(); const my = playTok; speak(w.pl).then(() => my === playTok ? wait(700).then(() => true) : false).then(ok => { if (ok && my === playTok && w.ex) speak(w.ex); }); return; }
+  if (it.ex === "choice" || it.ex === "listen" || it.ex === "flash") say(it.id.slice(2));
+  else if (it.ex === "sent") { const r = cardRef(it.id); if (r && r.dir === "h") say(r.sv); }
+  else if (it.ex === "type") setTimeout(() => { const i = $("#vin"); if (i) i.focus(); }, 60);
+}
+const spkBtn = (text, label, act) => '<button class="btn ghost" data-act="' + (act || "vSay") + '" data-w="' + esc(text) + '">' + ic("spk") + " " + (label || "Anhören") + "</button>";
+function exampleBox(w) {
+  let h = "";
+  if (w.ex) h += '<div class="vex"><button class="say" data-act="vSay" data-w="' + esc(w.ex) + '" aria-label="Beispielsatz anhören">' + ic("spk", 16) + '</button><div><div class="serif" style="font-size:19px">' + esc(w.ex) + '</div><div class="sub">' + esc(w.exDe) + "</div></div></div>";
+  if (w.note) h += '<p class="vnote"><b>Grammatik:</b> ' + esc(w.note) + "</p>";
+  if (w.mn) h += '<p class="mn"><b>Merkhilfe:</b> ' + esc(w.mn) + "</p>";
+  return h;
+}
+function rateRow(id) {
+  const c = S.cards[id] || {reps: 0}, now = Date.now(), p = g => ivlLabel(schedule(c, g, now));
+  return '<div class="rate"><button data-act="vRate" data-g="1">Nochmal<small>' + p(1) + '</small></button><button class="g" data-act="vRate" data-g="3">Gewusst<small>' + p(3) + '</small></button><button data-act="vRate" data-g="4">Leicht<small>' + p(4) + "</small></button></div>";
+}
+function viewReview() {
+  let h = '<div class="top"><h1 class="page" style="margin:0">Wörter</h1>' + candleChip() + "</div>";
+  if (!V) return h + '<div class="card center"><p class="sub">Die Wörter werden geladen …</p></div>';
+  if (ui.vpack) return viewPack();
+  const T = ui.vt;
+  if (T && T.q.length) return viewVItem();
+  if (T) {
+    h += '<div class="card center"><img src="img/celebrating.webp" alt="" height="170" class="mascot"><p class="serif" style="font-size:24px;margin:10px 0 4px">Świetnie!</p><p class="sub">' + T.done + " Schritte geschafft, " + T.ok + " davon auf Anhieb richtig.</p>";
+    h += '<button class="btn red" data-act="vHome">Zur Übersicht</button></div>';
+    return h;
+  }
+  return h + vHome();
+}
+function vHome() {
+  const nt = newToday(), goal = S.set.newPerDay, due = dueAll().length, fresh = nextNew(goal - nt).length;
+  const cards = vCards(), total = Object.keys(VW).length, sure = cards.filter(k => S.cards[k].s >= 21).length, hard = hardWords();
+  let h = '<div class="card"><div style="display:flex;gap:14px;align-items:center"><img src="img/reading.webp" alt="" height="100"><div style="flex:1"><b>Heute ' + Math.min(nt, goal) + " von " + goal + ' neuen Wörtern</b><div class="bar dark" style="margin:8px 0"><i style="width:' + Math.min(100, 100 * nt / goal) + '%"></i></div><span class="sub">' + (due ? due + (due === 1 ? " Karte wartet" : " Karten warten") + " auf Wiederholung." : "Keine Wiederholung fällig.") + "</span></div></div>";
+  if (due || fresh) h += '<button class="btn red block" style="margin-top:14px;min-height:58px" data-act="vStart">' + ic("play") + " Los geht’s" + '</button><p class="note center" style="margin-bottom:0">' + [due ? due + " wiederholen" : "", fresh ? fresh + " neue Wörter" : ""].filter(Boolean).join(" · ") + "</p>";
+  else h += '<p class="serif center" style="font-size:20px;margin:14px 0 6px">Für heute geschafft!</p>' + (nextNew(5).length ? '<button class="btn ghost block" data-act="vExtra">5 Wörter extra</button>' : "");
+  h += "</div>";
+  h += '<div class="trio"><div><b>' + cards.length + '</b><span>von ' + total + ' gelernt</span></div><div><b>' + sure + '</b><span>sicher</span></div><div><b>' + hard.length + '</b><span>schwierig</span></div></div>';
+  if (hard.length) h += '<div class="card" style="display:flex;gap:12px;align-items:center"><img src="img/thinking.webp" alt="" height="70"><div style="flex:1"><b>Schwierige Wörter</b><div class="sub">Die hast du mehrmals vergessen. Extra üben zählt nicht für die Planung.</div></div><button class="btn ghost" data-act="vDrill">Üben</button></div>';
+  h += '<h2 class="serif" style="font-size:22px;margin:18px 0 10px;font-weight:400">Wortpakete</h2><div class="card">';
+  let lvl = "";
+  V.packs.forEach((p, i) => {
+    if (p.level !== lvl) { lvl = p.level; h += '<div class="kick" style="color:var(--muted);padding:' + (i ? "14px" : "0") + ' 0 4px">Niveau ' + lvl + "</div>"; }
+    const n = p.words.filter(w => S.cards["v:" + w[0]]).length;
+    h += '<button class="packrow" data-act="vPack" data-id="' + p.id + '"><span class="pnum">' + (i + 1) + '</span><span style="flex:1;text-align:left"><b>' + esc(p.title) + '</b><span class="bar dark" style="display:block;margin-top:6px;height:6px"><i style="width:' + (100 * n / p.words.length) + '%"></i></span></span><span class="sub">' + n + "/" + p.words.length + "</span></button>";
+  });
+  h += '</div><p class="note center">Weitere Pakete für A2 bis B2 kommen nach und nach dazu.</p>';
+  return h;
+}
+function viewPack() {
+  const p = V.packs.find(x => x.id === ui.vpack);
+  let h = '<div class="top"><button class="iconbtn" data-act="vPackClose" aria-label="Zurück">' + ic("back") + '</button><h1 class="page" style="margin:0;flex:1;font-size:26px;padding-left:12px">' + esc(p.title) + "</h1></div>";
+  h += ui.vplay ? '<button class="btn red block" data-act="vPackStop">' + ic("stop") + " Stopp</button>" : '<button class="btn red block" data-act="vPackPlay">' + ic("play") + " Alle anhören, mit Beispielsatz</button>";
+  h += '<p class="note center">Tippe auf ein Wort oder einen Satz, um ihn zu hören.</p><div class="card">';
+  p.words.forEach((x, i) => {
+    const w = VW[x[0]], known = !!S.cards["v:" + w.pl];
+    h += '<div class="wordrow vrow' + (ui.vplayI === i && ui.vplay ? " cur" : "") + '" style="align-items:flex-start"><button class="say" data-act="vSay" data-w="' + esc(w.pl) + '" aria-label="' + esc(w.pl) + ' anhören">' + ic("spk", 16) + '</button><div style="flex:1;min-width:0">';
+    h += '<div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap"><button class="wbtn serif" data-act="vSay" data-w="' + esc(w.pl) + '">' + esc(w.pl) + "</button>" + gtag(w.g) + (known ? '<span style="color:var(--ok)">' + ic("check", 18, 2.5) + "</span>" : "") + "</div>";
+    h += "<div><b>" + esc(w.de) + "</b></div>";
+    if (w.ex) h += '<button class="wbtn ex" data-act="vSay" data-w="' + esc(w.ex) + '">' + esc(w.ex) + '</button><div class="sub">' + esc(w.exDe) + "</div>";
+    if (w.note) h += '<div class="vnote">' + esc(w.note) + "</div>";
+    if (w.mn) h += '<div class="mn"><b>Merkhilfe:</b> ' + esc(w.mn) + "</div>";
+    h += "</div></div>";
+  });
+  return h + "</div>";
+}
+function viewVItem() {
+  const T = ui.vt, it = T.q[0]; prepItem(it);
+  let h = '<div style="display:flex;align-items:center;gap:12px;margin:6px 0 16px"><button class="iconbtn" data-act="vQuit" aria-label="Beenden">' + ic("close") + '</button><div class="bar dark" style="flex:1;height:10px"><i style="width:' + (100 * T.done / (T.done + T.q.length)) + '%"></i></div><span class="sub">' + T.q.length + "</span></div>";
+  if (it.k === "intro") {
+    const w = VW[it.w];
+    h += '<div class="rcard back" style="min-height:200px"><div class="q">Neues Wort</div><div class="f">' + esc(w.pl) + '</div><div>' + gtag(w.g) + '</div><div class="b">' + esc(w.de) + "</div></div>";
+    h += '<div class="center" style="margin:12px 0">' + spkBtn(w.pl) + "</div>" + exampleBox(w);
+    return h + '<button class="btn primary block" style="min-height:58px;margin-top:6px" data-act="vNext">Weiter ' + ic("arrow", 20) + "</button>";
+  }
+  if (it.ex === "sent") {
+    const r = cardRef(it.id), front = r.dir === "h" ? r.sv : r.de, back = r.dir === "h" ? r.de : r.sv;
+    h += '<div class="rcard' + (it.flipped ? " back" : "") + '"><div class="q">Satz · ' + (r.dir === "h" ? "Was bedeutet das?" : "Wie sagt man das auf Polnisch?") + '</div><div class="f">' + esc(front) + "</div>" + (it.flipped ? '<div class="b">' + esc(back) + "</div>" : "") + "</div>";
+    h += '<div class="center" style="margin-top:12px">' + spkBtn(r.sv, r.dir === "h" || it.flipped ? "Anhören" : "Tipp: anhören", "vSayHint") + "</div>";
+    return h + (it.flipped ? rateRow(it.id) : '<button class="btn primary block" style="margin-top:14px;min-height:60px" data-act="vFlip">Aufdecken</button>');
+  }
+  const pl = it.id.slice(2), w = VW[pl];
+  if (it.ex === "choice" || it.ex === "listen") {
+    if (it.ex === "choice") h += '<div class="rcard" style="min-height:170px"><div class="q">Was bedeutet das?</div><div class="f">' + esc(w.pl) + "</div><div>" + gtag(w.g) + "</div></div>";
+    else h += '<div class="rcard" style="min-height:170px"><div class="q">Hör zu. Was bedeutet das?</div>' + (it.res ? '<div class="f">' + esc(w.pl) + "</div>" : '<button class="bigspk" data-act="vSay" data-w="' + esc(w.pl) + '" aria-label="Nochmal anhören">' + ic("spk", 44) + "</button>") + "</div>";
+    if (it.ex === "choice" || it.res) h += '<div class="center" style="margin:12px 0">' + spkBtn(w.pl) + "</div>";
+    else h += '<div class="center" style="margin:12px 0">' + spkBtn(w.pl, "Langsam", "vSlow") + "</div>";
+    h += '<div class="opts">' + it.opts.map((o, i) => '<button data-act="vPick" data-i="' + i + '" class="' + (it.res ? (o === w.de ? "ok" : i === it.ans ? "bad" : "") : "") + '"' + (it.res ? " disabled" : "") + ">" + esc(o) + "</button>").join("") + "</div>";
+    if (it.res) h += exampleBox(w) + '<button class="btn primary block" style="min-height:58px;margin-top:6px" data-act="vNext">Weiter ' + ic("arrow", 20) + "</button>";
+    return h;
+  }
+  if (it.ex === "flash") {
+    h += '<div class="rcard' + (it.flipped ? " back" : "") + '"><div class="q">Was bedeutet das?</div><div class="f">' + esc(w.pl) + "</div><div>" + gtag(w.g) + "</div>" + (it.flipped ? '<div class="b">' + esc(w.de) + "</div>" : "") + "</div>";
+    h += '<div class="center" style="margin:12px 0">' + spkBtn(w.pl) + "</div>";
+    return h + (it.flipped ? exampleBox(w) + rateRow(it.id) : '<button class="btn primary block" style="min-height:60px" data-act="vFlip">Aufdecken</button>');
+  }
+  if (it.ex === "speak") {
+    h += '<div class="qcard" style="text-align:center"><div class="kick">Sag es laut auf Polnisch</div><div class="big">' + esc(w.de) + "</div>" + (it.flipped ? '<div class="big" style="color:#F2B705">' + esc(w.pl) + "</div>" : "") + "</div>";
+    h += '<div class="center" style="margin:0 0 12px">' + spkBtn(w.pl, it.flipped ? "Anhören" : "Tipp: anhören", "vSayHint") + "</div>";
+    return h + (it.flipped ? exampleBox(w) + rateRow(it.id) : '<button class="btn primary block" style="min-height:60px" data-act="vFlip">Gesagt, Lösung zeigen</button>');
+  }
+  // type
+  h += '<div class="qcard" style="text-align:center"><div class="kick">Schreib es auf Polnisch</div><div class="big">' + esc(w.de) + "</div><div>" + gtag(w.g) + "</div></div>";
+  if (!it.res) {
+    h += '<input id="vin" class="vin" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="done" placeholder="Polnisch …" value="' + esc(it.typed || "") + '">';
+    h += '<div class="kbd">' + "ąćęłńóśźż".split("").map(c => '<button data-act="vKey" data-c="' + c + '">' + c + "</button>").join("") + "</div>";
+    h += '<div style="display:flex;gap:10px;margin-top:12px"><button class="btn ghost" style="flex:1" data-act="vSayHint" data-w="' + esc(w.pl) + '">' + ic("spk") + ' Tipp</button><button class="btn ghost" style="flex:1" data-act="vGiveUp">Weiß nicht</button></div>';
+    h += '<button class="btn primary block" style="min-height:58px;margin-top:12px" data-act="vCheck">Prüfen</button>';
+  } else {
+    const msg = {ok: "Richtig!", almost: "Fast! Achte auf die Sonderzeichen.", bad: "Noch nicht."}[it.res];
+    h += '<div class="fb ' + (it.res === "bad" ? "bad" : "ok") + '" style="border-radius:16px;padding:14px 16px;margin-bottom:12px"><b>' + msg + "</b>" + (it.typed && it.res !== "ok" ? '<div>Du: <s>' + esc(it.typed) + "</s></div>" : "") + '<div class="serif" style="font-size:24px;margin-top:4px">' + esc(w.pl) + "</div></div>";
+    h += '<div class="center" style="margin-bottom:12px">' + spkBtn(w.pl) + "</div>" + exampleBox(w);
+    h += '<button class="btn primary block" style="min-height:58px" data-act="vNext">Weiter ' + ic("arrow", 20) + "</button>";
   }
   return h;
+}
+function vGrade(it, g) {
+  const T = ui.vt;
+  if (!it.drill) { const c = S.cards[it.id] || {due: 0, reps: 0}; S.cards[it.id] = schedule(c, g, Date.now()); S.reviews++; }
+  if (g === 1) { T.q.push({k: "card", id: it.id, drill: it.drill}); sfx.bad(); }
+  else { T.ok++; sfx.ok(); }
+  addPts(g === 1 ? 0 : 2);
+}
+function vAdvance() {
+  const T = ui.vt, it = T.q.shift(); T.done++;
+  if (it && it.k === "intro" && !S.cards["v:" + it.w]) {
+    S.cards["v:" + it.w] = {due: Date.now(), reps: 0};
+    S.vnew = {d: today(), n: newToday() + 1}; addPts(1);
+  }
+  if (!T.q.length) { stopSpeech(); sfx.done(); checkBadges(); }
+  render(); window.scrollTo(0, 0); if (T.q.length) vAuto();
+}
+const vNorm = s => s.toLowerCase().replace(/[!?.,…„“”"]/g, "").replace(/\s+/g, " ").trim();
+const vStrip = s => s.replace(/[ąćęłńóśźż]/g, c => "acelnoszz"["ąćęłńóśźż".indexOf(c)]);
+async function vPackPlay() {
+  const p = V.packs.find(x => x.id === ui.vpack); if (!p) return;
+  stopSpeech(); const my = playTok; ui.vplay = true; render();
+  for (let i = 0; i < p.words.length; i++) {
+    if (my !== playTok) return;
+    const w = VW[p.words[i][0]]; ui.vplayI = i;
+    document.querySelectorAll(".vrow").forEach((e, j) => e.classList.toggle("cur", j === i));
+    const e = document.querySelectorAll(".vrow")[i]; if (e) e.scrollIntoView({block: "center", behavior: "smooth"});
+    speakingKind = "listen"; await speak(w.pl); if (my !== playTok) return;
+    await wait(900); if (my !== playTok) return;
+    if (w.ex) { speakingKind = "listen"; await speak(w.ex); if (my !== playTok) return; }
+    await wait(1400);
+  }
+  if (my !== playTok) return;
+  ui.vplay = false; speakingKind = null; markActive(); render();
 }
 function cardRef(id) {
   const [lid, idx, dir] = id.split(":"); const l = D.lessons.find(x => x.id === lid); if (!l) return null;
   const ch = idx[0] === "w" ? (l.words || [])[+idx.slice(1)] : l.chunks[+idx]; if (!ch) return null;
   return {sv: ch[0], de: ch[1], dir};
 }
-function startReview() {
-  ui.review = {queue: dueCards().slice(0, 60), done: 0, flipped: false};
-}
-
 function viewListen() {
   const r = dayRec(today()), pl = Math.min(100, 100 * r.listen / 60 / S.set.goalListen);
   const done = D.lessons.filter(l => S.done[l.id]);
@@ -624,6 +837,7 @@ function finishLesson() {
       if (!S.cards[l.id + ":" + i + ":s"]) S.cards[l.id + ":" + i + ":s"] = {due: startOfDay(now + 2 * DAY), reps: 0};
     });
     (l.words || []).forEach((w, i) => {
+      if (VW[w[0]]) return;
       if (!S.cards[l.id + ":w" + i + ":h"]) S.cards[l.id + ":w" + i + ":h"] = {due: startOfDay(now + DAY), reps: 0};
       if (!S.cards[l.id + ":w" + i + ":s"]) S.cards[l.id + ":w" + i + ":s"] = {due: startOfDay(now + 2 * DAY), reps: 0};
     });
@@ -724,6 +938,7 @@ function sheet() {
   else if (speechOK && svVoices.length === 1) h += '<p class="note">Für verschiedene Stimmen auf dem iPhone weitere polnische Stimmen laden und die App neu starten.</p>';
   if (speechOK && !svVoice) h += '<p class="note">iPhone: Einstellungen › Bedienungshilfen › Gesprochene Inhalte › Stimmen › Polnisch, dort eine Stimme laden.</p>';
   h += "<label>Töne</label>" + seg("sound", [[true, "An"], [false, "Aus"]]);
+  h += "<label>Neue Wörter pro Tag</label>" + seg("newPerDay", [[10, "10"], [15, "15"], [20, "20"], [25, "25"]]) + '<p class="note">15 sind ein guter Wert. Mehr bedeutet in den Wochen danach auch deutlich mehr Wiederholungen.</p>';
   h += "<label>Tagesziel Lernen</label>" + seg("goalApp", [[20, "20 Min"], [30, "30 Min"], [45, "45 Min"]]);
   h += "<label>Tagesziel Hören</label>" + seg("goalListen", [[15, "15 Min"], [20, "20 Min"], [30, "30 Min"]]);
   h += "<label>Tagesziel Sprechen</label>" + seg("goalSpeak", [[5, "5 Min"], [10, "10 Min"], [15, "15 Min"]]);
@@ -743,7 +958,7 @@ function applyTheme() {
 function render() {
   applyTheme();
   if (!D) return;
-  const key = ui.lesson ? "lesson-" + ui.lesson.step + "-" + ui.lesson.phase + "-" + ui.lesson.sh + "-" + ui.lesson.exI : ui.tab;
+  const key = ui.lesson ? "lesson-" + ui.lesson.step + "-" + ui.lesson.phase + "-" + ui.lesson.sh + "-" + ui.lesson.exI : ui.tab + (ui.tab === "review" ? "-" + (ui.vpack || "") + "-" + (ui.vt ? ui.vt.done : "h") : "");
   const y = key === lastKey ? window.scrollY : 0;
   let h;
   if (ui.lesson) h = viewLesson();
@@ -774,7 +989,7 @@ const A = {
     for (const w of g.words) { if (my !== playTok) return; await speak(w[0]); if (my !== playTok) return; await wait(1800); }
   },
   sayWord(d) { const w = ui.lesson.l.words[+d.i]; if (w) say(w[0]); },
-  tab(d) { stopSpeech(); ui.listen.playing = false; ui.tab = d.v; if (d.v === "review") startReview(); render(); },
+  tab(d) { stopSpeech(); ui.listen.playing = false; ui.tab = d.v; if (d.v === "review") { ui.vt = null; ui.vpack = null; } render(); },
   chap(d) { ui.chapter = d.v; render(); },
   settings() { ui.sheet = true; ui.resetArmed = false; ui.importOpen = false; ui.backupText = ""; render(); },
   closeSheet() { ui.sheet = false; render(); },
@@ -825,14 +1040,43 @@ const A = {
   },
   exNext() { const L = ui.lesson; stopSpeech(); L.exI++; if (L.exI >= L.ex.length) L.phase = "grammar"; render(); window.scrollTo(0, 0); },
   finish() { finishLesson(); },
-  flip() { ui.review.flipped = true; render(); const ref = cardRef(ui.review.queue[0][0]); if (ref) say(ref.sv); },
-  sayCard() { const ref = cardRef(ui.review.queue[0][0]); if (ref) say(ref.sv); },
-  rate(d) {
-    const R = ui.review, [id, c] = R.queue.shift(), g = +d.g, n = schedule(c, g, Date.now());
-    S.cards[id] = n; S.reviews++;
-    if (g === 1) { R.queue.push([id, n]); sfx.bad(); } else { R.done++; sfx.ok(); }
-    R.flipped = false; addPts(g === 1 ? 0 : 2); render();
+  vStart() { unlockAudio(); startVocab(); },
+  vExtra() { startVocab({extra: 5}); },
+  vDrill() { startVocab({drill: shuf(hardWords()).slice(0, 20)}); },
+  vHome() { ui.vt = null; render(); },
+  vQuit() { stopSpeech(); ui.vt = null; render(); },
+  vPack(d) { ui.vpack = d.id; ui.vplay = false; render(); },
+  vPackClose() { stopSpeech(); ui.vplay = false; ui.vpack = null; render(); },
+  vPackPlay() { vPackPlay(); },
+  vPackStop() { stopSpeech(); ui.vplay = false; render(); },
+  vSay(d) { say(d.w); },
+  vSlow(d) { say(d.w, {rate: 0.6}); },
+  vSayHint(d) { const it = ui.vt && ui.vt.q[0]; if (it && !it.flipped && !it.res) it.hint = true; say(d.w); },
+  vNext() { vAdvance(); },
+  vFlip() {
+    const it = ui.vt.q[0]; it.flipped = true; render();
+    if (it.ex === "sent") { const r = cardRef(it.id); if (r) say(r.sv); } else say(it.id.slice(2));
   },
+  vRate(d) { const it = ui.vt.q[0]; let g = +d.g; if (it.hint && g > 2) g = 2; vGrade(it, g); vAdvance(); },
+  vPick(d) {
+    const it = ui.vt.q[0]; if (it.res) return;
+    it.ans = +d.i; const w = VW[it.id.slice(2)], ok = it.opts[it.ans] === w.de;
+    it.res = ok ? "ok" : "bad"; vGrade(it, ok ? 3 : 1); render(); say(w.pl);
+  },
+  vKey(d) {
+    const i = $("#vin"); if (!i) return;
+    const a = i.selectionStart ?? i.value.length, b = i.selectionEnd ?? a;
+    i.value = i.value.slice(0, a) + d.c + i.value.slice(b); i.focus(); i.setSelectionRange(a + 1, a + 1);
+  },
+  vCheck() {
+    const it = ui.vt.q[0], i = $("#vin"), w = VW[it.id.slice(2)];
+    const t = vNorm(i ? i.value : ""), target = vNorm(w.pl); if (!t) { if (i) i.focus(); return; }
+    it.typed = i.value.trim();
+    it.res = t === target ? "ok" : vStrip(t) === vStrip(target) ? "almost" : "bad";
+    vGrade(it, it.res === "ok" ? (it.hint ? 2 : 3) : it.res === "almost" ? 2 : 1);
+    render(); say(w.pl);
+  },
+  vGiveUp() { const it = ui.vt.q[0], i = $("#vin"); it.typed = i ? i.value.trim() : ""; it.res = "bad"; vGrade(it, 1); render(); say(it.id.slice(2)); },
   lplay(d) { playList(d.id); },
   lstop() { stopSpeech(); ui.listen.playing = false; render(); },
   copyBackup() {
@@ -866,12 +1110,15 @@ document.addEventListener("click", e => {
 addEventListener("pageshow", () => render());
 
 /* ---------- Boot ---------- */
-if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
+if ("serviceWorker" in navigator) { navigator.serviceWorker.register("sw.js").catch(() => {}); navigator.serviceWorker.ready.then(r => { if (r.active) r.active.postMessage("cacheAudio"); }).catch(() => {}); }
+document.addEventListener("keydown", e => { if (e.target && e.target.id === "vin" && e.key === "Enter") { e.preventDefault(); A.vCheck(); } });
+document.addEventListener("pointerdown", e => { if (e.target.closest && e.target.closest(".kbd button")) e.preventDefault(); });
 document.addEventListener("change", e => {
   if (e.target && e.target.id === "impf" && e.target.files[0]) { e.target.files[0].text().then(t => { $("#imp").value = t; }); }
 });
 fetch("audio/index.json").then(r => r.ok ? r.json() : {}).catch(() => ({})).then(a => { AUDIO = a || {}; if (ui.sheet) render(); });
-fetch("lessons.json").then(r => r.json()).then(d => { D = d; checkBadges(); render(); initStorage(); })
+fetch("vocab.json").then(r => r.json()).then(d => { loadVocab(d); render(); }).catch(() => {});
+fetch("lessons.json").then(r => r.json()).then(d => { D = d; vClean(); checkBadges(); render(); initStorage(); })
   .catch(() => { $("#app").innerHTML = '<p style="padding:40px;text-align:center">Die Lektionen konnten nicht geladen werden. Bitte lade die Seite neu.</p>'; });
 </script>
 </body>

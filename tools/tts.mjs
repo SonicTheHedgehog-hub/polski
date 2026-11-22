@@ -24,6 +24,7 @@ for (const l of D.lessons) {
   for (const q of l.qa || []) { add(V.speakers[q.who] || def, q.q); add(V.speakers.Semyon || def, q.a); }
 }
 for (const g of D.sounds || []) for (const w of g.words) add(def, w[0]);
+if (fs.existsSync("vocab.json")) for (const pk of JSON.parse(fs.readFileSync("vocab.json", "utf8")).packs) for (const w of pk.words) { add(def, w[0]); add(def, w[3]); }
 
 const idxPath = "audio/index.json";
 fs.mkdirSync("audio", {recursive: true});
