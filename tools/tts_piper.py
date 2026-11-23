@@ -42,7 +42,17 @@ for g in D.get("sounds", []):
     for w in g["words"]: add(default, w[0])
 if os.path.exists("vocab.json"):
     for pk in json.load(open("vocab.json", encoding="utf-8"))["packs"]:
-        for w in pk["words"]: add(default, w[0]); add(default, w[3])
+        for w in pk["words"]:
+            add(default, w[0]); add(default, w[3])
+            m = re.search(r"pf\.: ([^;]+)", w[5])
+            if m: add(default, m.group(1).strip())
+if os.path.exists("drills.json"):
+    DRL = json.load(open("drills.json", encoding="utf-8"))
+    for it in DRL["cases"]["items"]: add(default, it["full"])
+    for it in DRL["aspect"]["items"]: add(default, it["full"]); add(default, it["ipf"]); add(default, it["pf"])
+    for g in DRL["sounds"]:
+        for pr in g["pairs"]:
+            for w in pr[:2]: add(default, w); add(me, w)
 
 os.makedirs("audio", exist_ok=True)
 idx_path = "audio/index.json"

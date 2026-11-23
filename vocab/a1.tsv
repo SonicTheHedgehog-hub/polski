@@ -174,7 +174,7 @@ lodówka	Kühlschrank	f	Lodówka jest pusta.	Der Kühlschrank ist leer.		lód = 
 kuchenka	Herd	f	Kuchenka jest gorąca.	Der Herd ist heiß.		kuchnia = Küche
 garnek	Topf	m	Garnek z zupą.	Ein Topf mit Suppe.
 gotować	kochen		Lubię gotować.	Ich koche gern.	pf.: ugotować	gotowy = fertig
-piec	backen		Mama piecze chleb.	Mama backt Brot.	ja piekę, ty pieczesz	piec heißt auch „Ofen“
+piec	backen		Mama piecze chleb.	Mama backt Brot.	ja piekę, ty pieczesz; pf.: upiec	piec heißt auch „Ofen“
 głodny	hungrig		Jestem głodny.	Ich bin hungrig.	głodna (f)
 spragniony	durstig		Jestem spragniony.	Ich bin durstig.	spragniona (f)
 smaczny	lecker		Ten obiad jest bardzo smaczny.	Dieses Mittagessen ist sehr lecker.		smacznego = guten Appetit
@@ -248,9 +248,9 @@ urlop	Urlaub	m	Jestem na urlopie.	Ich bin im Urlaub.		aus dem Deutschen
 walizka	Koffer	f	Walizka jest ciężka.	Der Koffer ist schwer.
 paszport	Reisepass	m	Nie zapomnij paszportu!	Vergiss den Pass nicht!
 mapa	Landkarte	f	Masz mapę?	Hast du eine Karte?
-jechać	fahren		Jutro jadę do Polski.	Morgen fahre ich nach Polen.	jadę, jedziesz
-iść	gehen		Idę do domu.	Ich gehe nach Hause.	idę, idziesz
-lecieć	fliegen		Lecę do Warszawy.	Ich fliege nach Warschau.	lecę, lecisz	lot = Flug
+jechać	fahren		Jutro jadę do Polski.	Morgen fahre ich nach Polen.	jadę, jedziesz; pf.: pojechać	
+iść	gehen		Idę do domu.	Ich gehe nach Hause.	idę, idziesz; pf.: pójść	
+lecieć	fliegen		Lecę do Warszawy.	Ich fliege nach Warschau.	lecę, lecisz; pf.: polecieć	lot = Flug
 wsiadać	einsteigen		Wsiadamy do pociągu.	Wir steigen in den Zug ein.	pf.: wsiąść
 wysiadać	aussteigen		Gdzie wysiadamy?	Wo steigen wir aus?	pf.: wysiąść
 prosto	geradeaus		Proszę iść prosto.	Gehen Sie bitte geradeaus.
@@ -314,35 +314,35 @@ ubierać się	sich anziehen		Ubieram się szybko.	Ich ziehe mich schnell an.	pf.
 być	sein		Gdzie jesteś?	Wo bist du?	jestem, jesteś, jest
 mieć	haben		Mam czas.	Ich habe Zeit.	mam, masz, ma
 robić	machen; tun		Robię zakupy.	Ich kaufe ein.	pf.: zrobić
-mówić	sprechen; sagen		Mówię trochę po polsku.	Ich spreche ein bisschen Polnisch.	pf.: powiedzieć
+mówić	sprechen; sagen		Mówię trochę po polsku.	Ich spreche ein bisschen Polnisch.	pf.: powiedzieć	
 wiedzieć	wissen		Nie wiem.	Ich weiß nicht.	wiem, wiesz, wie
 znać	kennen		Znasz Olę?	Kennst du Ola?	znam, znasz
-rozumieć	verstehen		Nie rozumiem.	Ich verstehe nicht.	rozumiem, rozumiesz	rozum = Verstand
+rozumieć	verstehen		Nie rozumiem.	Ich verstehe nicht.	rozumiem, rozumiesz; pf.: zrozumieć	rozum = Verstand
 chcieć	wollen		Chcę kawę.	Ich will einen Kaffee.	chcę, chcesz
 móc	können		Możesz mi pomóc?	Kannst du mir helfen?	mogę, możesz
 musieć	müssen		Muszę już iść.	Ich muss schon gehen.	muszę, musisz	klingt wie „müssen“
-lubić	mögen		Lubię Polskę.	Ich mag Polen.	lubię, lubisz	wie „lieb“
-kochać	lieben		Kocham cię.	Ich liebe dich.	kocham, kochasz
-jeść	essen		Co jesz na obiad?	Was isst du zum Mittagessen?	jem, jesz, je
-pić	trinken		Piję wodę.	Ich trinke Wasser.	piję, pijesz
-widzieć	sehen		Widzę zamek.	Ich sehe das Schloss.	widzę, widzisz
-słyszeć	hören		Słyszysz mnie?	Hörst du mich?	słyszę, słyszysz
-słuchać	zuhören; hören		Słucham muzyki.	Ich höre Musik.	mit Genitiv: słuchać muzyki
-czytać	lesen		Czytam książkę.	Ich lese ein Buch.	czytam, czytasz
-pisać	schreiben		Piszę list.	Ich schreibe einen Brief.	piszę, piszesz
-pracować	arbeiten		Pracuję w biurze.	Ich arbeite im Büro.	pracuję, pracujesz	praca = Arbeit
-uczyć się	lernen		Uczę się polskiego.	Ich lerne Polnisch.	uczę się, uczysz się
+lubić	mögen		Lubię Polskę.	Ich mag Polen.	lubię, lubisz; pf.: polubić	wie „lieb“
+kochać	lieben		Kocham cię.	Ich liebe dich.	kocham, kochasz; pf.: pokochać	
+jeść	essen		Co jesz na obiad?	Was isst du zum Mittagessen?	jem, jesz, je; pf.: zjeść	
+pić	trinken		Piję wodę.	Ich trinke Wasser.	piję, pijesz; pf.: wypić	
+widzieć	sehen		Widzę zamek.	Ich sehe das Schloss.	widzę, widzisz; pf.: zobaczyć	
+słyszeć	hören		Słyszysz mnie?	Hörst du mich?	słyszę, słyszysz; pf.: usłyszeć	
+słuchać	zuhören; hören		Słucham muzyki.	Ich höre Musik.	mit Genitiv: słuchać muzyki; pf.: posłuchać	
+czytać	lesen		Czytam książkę.	Ich lese ein Buch.	czytam, czytasz; pf.: przeczytać	
+pisać	schreiben		Piszę list.	Ich schreibe einen Brief.	piszę, piszesz; pf.: napisać	
+pracować	arbeiten		Pracuję w biurze.	Ich arbeite im Büro.	pracuję, pracujesz; pf.: popracować	praca = Arbeit
+uczyć się	lernen		Uczę się polskiego.	Ich lerne Polnisch.	uczę się, uczysz się; pf.: nauczyć się	
 dawać	geben		Daj mi chwilę.	Gib mir einen Moment.	daję, dajesz; pf.: dać
 brać	nehmen		Biorę parasol.	Ich nehme einen Regenschirm.	biorę, bierzesz; pf.: wziąć
 kupować	kaufen		Kupuję chleb.	Ich kaufe Brot.	pf.: kupić
 płacić	bezahlen		Płacę kartą.	Ich zahle mit Karte.	pf.: zapłacić
 #pack	a1-14	A1	Wichtige Verben 2
-czekać	warten		Czekam na autobus.	Ich warte auf den Bus.	czekam, czekasz
-szukać	suchen		Szukam klucza.	Ich suche den Schlüssel.	mit Genitiv
+czekać	warten		Czekam na autobus.	Ich warte auf den Bus.	czekam, czekasz; pf.: poczekać	
+szukać	suchen		Szukam klucza.	Ich suche den Schlüssel.	mit Genitiv; pf.: poszukać	
 pytać	fragen		Pytam o drogę.	Ich frage nach dem Weg.	pf.: zapytać	pytanie = Frage
 odpowiadać	antworten		Odpowiadam na pytanie.	Ich beantworte die Frage.	pf.: odpowiedzieć
 dzwonić	anrufen; klingeln		Dzwonię do mamy.	Ich rufe Mama an.	pf.: zadzwonić	dzwon = Glocke
-spotykać się	sich treffen		Spotykamy się o piątej.	Wir treffen uns um fünf.	pf.: spotkać się
+spotykać się	sich treffen		Spotykamy się o piątej.	Wir treffen uns um fünf.	pf.: spotkać się	
 otwierać	öffnen		Otwieram okno.	Ich öffne das Fenster.	pf.: otworzyć
 zamykać	schließen		Zamykam drzwi.	Ich schließe die Tür.	pf.: zamknąć	zamek = Schloss
 zaczynać	anfangen		Film zaczyna się o ósmej.	Der Film beginnt um acht.	pf.: zacząć
@@ -353,13 +353,13 @@ siedzieć	sitzen		Siedzę w kawiarni.	Ich sitze im Café.	siedzę, siedzisz
 stać	stehen		Stoję na przystanku.	Ich stehe an der Haltestelle.	stoję, stoisz
 leżeć	liegen		Książka leży na stole.	Das Buch liegt auf dem Tisch.	leżę, leżysz
 wstawać	aufstehen		Wstaję o siódmej.	Ich stehe um sieben auf.	wstaję, wstajesz; pf.: wstać
-myśleć	denken		Myślę, że tak.	Ich denke schon.	myślę, myślisz
+myśleć	denken		Myślę, że tak.	Ich denke schon.	myślę, myślisz; pf.: pomyśleć	
 pamiętać	sich erinnern		Pamiętasz mnie?	Erinnerst du dich an mich?	pamiętam, pamiętasz
 zapominać	vergessen		Zawsze zapominam parasola.	Ich vergesse immer den Regenschirm.	pf.: zapomnieć
 pomagać	helfen		Pomagam mamie.	Ich helfe Mama.	mit Dativ; pf.: pomóc	pomoc = Hilfe
-grać	spielen		Gram na gitarze.	Ich spiele Gitarre.	grać w piłkę = Fußball spielen
-tańczyć	tanzen		Tańczysz ze mną?	Tanzt du mit mir?	tańczę, tańczysz	taniec = Tanz
-śpiewać	singen		Babcia śpiewa w kuchni.	Oma singt in der Küche.	śpiewam, śpiewasz
+grać	spielen		Gram na gitarze.	Ich spiele Gitarre.	grać w piłkę = Fußball spielen; pf.: zagrać	
+tańczyć	tanzen		Tańczysz ze mną?	Tanzt du mit mir?	tańczę, tańczysz; pf.: zatańczyć	taniec = Tanz
+śpiewać	singen		Babcia śpiewa w kuchni.	Oma singt in der Küche.	śpiewam, śpiewasz; pf.: zaśpiewać	
 podobać się	gefallen		Podoba mi się Kraków.	Krakau gefällt mir.	wie im Deutschen: mir gefällt
 mieć ochotę na	Lust haben auf		Mam ochotę na lody.	Ich habe Lust auf Eis.
 #pack	a1-15	A1	Eigenschaften

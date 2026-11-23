@@ -6,7 +6,7 @@ name: Stimmen erzeugen
 on:
   push:
     branches: [main]
-    paths: ["lessons.json", "vocab.json", "tools/tts.mjs", "tools/tts_piper.py", ".github/workflows/audio.yml"]
+    paths: ["lessons.json", "vocab.json", "drills.json", "tools/tts.mjs", "tools/tts_piper.py", ".github/workflows/audio.yml"]
   workflow_dispatch:
 
 permissions:

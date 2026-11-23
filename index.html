@@ -187,6 +187,24 @@ textarea{width:100%;min-height:90px;border-radius:12px;border:2px solid var(--li
 .wbtn.serif{font-family:'DM Serif Display',Georgia,serif;font-size:22px}
 .wbtn.ex{display:block;margin-top:6px;font-family:'DM Serif Display',Georgia,serif;font-size:17px;color:var(--accent)}
 .vrow.cur{background:rgba(242,183,5,.14);border-radius:12px}
+.dehid{margin-top:4px}.dehid .linkbtn{padding-left:0}
+.qcard .dehid .linkbtn{color:#FFFFFF;opacity:.85}.qde{opacity:.9}
+.aspbox{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;background:var(--panel);border-radius:14px;box-shadow:inset 0 0 0 2px var(--line);padding:10px 14px;margin-bottom:10px}
+.aspbox .kick{width:100%}
+.pairbtn{border:0;border-radius:10px;padding:6px 10px;background:rgba(31,95,173,.12);color:var(--ink);font-family:'DM Serif Display',Georgia,serif;font-size:18px}
+.pairbtn.pf{background:rgba(200,16,46,.12)}
+.pairs{display:grid;grid-template-columns:1fr auto 1fr;gap:6px 8px;align-items:center;margin-top:8px}
+.gap{display:inline-block;min-width:3em;border-bottom:3px solid #F2B705}
+.opts button.serif2{font-family:'DM Serif Display',Georgia,serif;font-size:21px;font-weight:400}
+.opts.two{grid-template-columns:1fr 1fr}
+.opts.two button{text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.opts button small{font-family:Nunito,system-ui,sans-serif;font-size:12px;font-weight:700;color:var(--muted)}
+details.rule summary{cursor:pointer;list-style:none}details.rule summary::-webkit-details-marker{display:none}
+details.rule summary::after{content:" ▾";color:var(--muted)}
+.micpulse{width:84px;height:84px;margin:4px auto 0;border-radius:42px;background:var(--red);color:#FFFFFF;display:flex;align-items:center;justify-content:center;animation:pulse 1.2s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+.whit{color:var(--ok);border-bottom:2px solid var(--ok)}.wmiss{color:var(--bad);border-bottom:2px dashed var(--bad)}
+.seg button{font-size:13px}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
@@ -205,7 +223,7 @@ const DAY = 864e5;
 
 /* ---------- State ---------- */
 const DEF = () => ({v: 1, updated: 0, pts: 0, done: {}, cards: {}, days: {}, badges: {}, reviews: 0,
-  set: {theme: "auto", decode: "immer", rate: 0.85, sound: true, goalApp: 30, goalListen: 20, goalSpeak: 10, voice: "", multi: true, natural: true, newPerDay: 15}});
+  set: {theme: "auto", decode: "immer", rate: 0.85, sound: true, goalApp: 30, goalListen: 20, goalSpeak: 10, voice: "", multi: true, natural: true, newPerDay: 15, showDe: false}});
 let S = DEF();
 try { const r = JSON.parse(localStorage.getItem("polski-v1") || "null"); if (r && r.v) S = Object.assign(DEF(), r, {set: Object.assign(DEF().set, r.set || {})}); } catch (e) {}
 let D = null;                      // lesson data
@@ -544,8 +562,10 @@ function vAuto() {
 const spkBtn = (text, label, act) => '<button class="btn ghost" data-act="' + (act || "vSay") + '" data-w="' + esc(text) + '">' + ic("spk") + " " + (label || "Anhören") + "</button>";
 function exampleBox(w) {
   let h = "";
-  if (w.ex) h += '<div class="vex"><button class="say" data-act="vSay" data-w="' + esc(w.ex) + '" aria-label="Beispielsatz anhören">' + ic("spk", 16) + '</button><div><div class="serif" style="font-size:19px">' + esc(w.ex) + '</div><div class="sub">' + esc(w.exDe) + "</div></div></div>";
-  if (w.note) h += '<p class="vnote"><b>Grammatik:</b> ' + esc(w.note) + "</p>";
+  if (w.ex) h += '<div class="vex"><button class="say" data-act="vSay" data-w="' + esc(w.ex) + '" aria-label="Beispielsatz anhören">' + ic("spk", 16) + '</button><div><div class="serif" style="font-size:19px">' + esc(w.ex) + "</div>" + deHid(w.exDe) + "</div></div>";
+  const pf = pfOf(w), nt = noteNoPf(w);
+  if (pf) h += '<div class="aspbox"><span class="kick" style="color:var(--muted)">Aspektpaar</span><div><button class="pairbtn" data-act="vSay" data-w="' + esc(w.pl) + '">' + esc(w.pl) + '</button> <span class="sub">unvollendet</span></div><div><button class="pairbtn pf" data-act="vSay" data-w="' + esc(pf) + '">' + esc(pf) + '</button> <span class="sub">vollendet</span></div></div>';
+  if (nt) h += '<p class="vnote"><b>Grammatik:</b> ' + esc(nt) + "</p>";
   if (w.mn) h += '<p class="mn"><b>Merkhilfe:</b> ' + esc(w.mn) + "</p>";
   return h;
 }
@@ -559,13 +579,16 @@ function viewReview() {
   if (ui.vpack) return viewPack();
   const T = ui.vt;
   if (T && T.q.length) return viewVItem();
+  if (DR && ui.wmode === "cases") { if (ui.cx) return ui.cx.q.length ? viewCaseItem() : h + sessDone(ui.cx, "caseQuit"); return h + wSeg() + viewCasesHome(); }
+  if (DR && ui.wmode === "aspect") { if (ui.ax) return ui.ax.q.length ? viewAspectItem() : h + sessDone(ui.ax, "aspQuit"); return h + wSeg() + viewAspectHome(); }
   if (T) {
     h += '<div class="card center"><img src="img/celebrating.webp" alt="" height="170" class="mascot"><p class="serif" style="font-size:24px;margin:10px 0 4px">Świetnie!</p><p class="sub">' + T.done + " Schritte geschafft, " + T.ok + " davon auf Anhieb richtig.</p>";
     h += '<button class="btn red" data-act="vHome">Zur Übersicht</button></div>';
     return h;
   }
-  return h + vHome();
+  return h + (DR ? wSeg() : "") + vHome();
 }
+const wSeg = () => segRow("wmode", ui.wmode || "vocab", [["vocab", "Vokabeln"], ["cases", "Fälle"], ["aspect", "Aspekt"]], "wMode");
 function vHome() {
   const nt = newToday(), goal = S.set.newPerDay, due = dueAll().length, fresh = nextNew(goal - nt).length;
   const cards = vCards(), total = Object.keys(VW).length, sure = cards.filter(k => S.cards[k].s >= 21).length, hard = hardWords();
@@ -596,7 +619,8 @@ function viewPack() {
     h += '<div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap"><button class="wbtn serif" data-act="vSay" data-w="' + esc(w.pl) + '">' + esc(w.pl) + "</button>" + gtag(w.g) + (known ? '<span style="color:var(--ok)">' + ic("check", 18, 2.5) + "</span>" : "") + "</div>";
     h += "<div><b>" + esc(w.de) + "</b></div>";
     if (w.ex) h += '<button class="wbtn ex" data-act="vSay" data-w="' + esc(w.ex) + '">' + esc(w.ex) + '</button><div class="sub">' + esc(w.exDe) + "</div>";
-    if (w.note) h += '<div class="vnote">' + esc(w.note) + "</div>";
+    if (pfOf(w)) h += '<div class="vnote">Aspektpaar: ' + esc(w.pl) + ' → <button class="wbtn" style="font-weight:800" data-act="vSay" data-w="' + esc(pfOf(w)) + '">' + esc(pfOf(w)) + "</button></div>";
+    if (noteNoPf(w)) h += '<div class="vnote">' + esc(noteNoPf(w)) + "</div>";
     if (w.mn) h += '<div class="mn"><b>Merkhilfe:</b> ' + esc(w.mn) + "</div>";
     h += "</div></div>";
   });
@@ -696,6 +720,8 @@ function viewListen() {
   const done = D.lessons.filter(l => S.done[l.id]);
   const L = ui.listen;
   let h = '<div class="top"><h1 class="page" style="margin:0">Hören</h1>' + candleChip() + "</div>";
+  if (DR) h += segRow("lmode", ui.lmode || "lessons", [["lessons", "Lektionen"], ["train", "Hörtraining"]], "lMode");
+  if (DR && ui.lmode === "train") return h + viewSoundTrain();
   h += '<div class="card" style="display:flex;gap:14px;align-items:center"><img src="img/listening.webp" alt="" height="110"><div style="flex:1"><b>Heute ' + minutes(r.listen) + " von " + S.set.goalListen + ' Minuten</b><div class="bar dark" style="margin:8px 0"><i style="width:' + pl + '%"></i></div><span class="sub">Nebenbei hören, beim Kochen oder unterwegs. Das Verstehen kommt mit der Zeit.</span></div></div>';
   if (!done.length) return h + '<div class="card center"><p><b>Noch nichts zum Hören</b></p><p class="sub">Schließe deine erste Lektion ab, dann kannst du sie hier immer wieder hören.</p><button class="btn red" data-act="tab" data-v="path">Zum Lernweg</button></div>';
   h += '<div class="now"><div class="kick">' + (L.playing ? "Läuft gerade" : "Bereit") + '</div><div class="big">' + (L.playing ? esc(L.text) : "Alle geschafften Lektionen") + '</div><div style="opacity:.9">' + esc(L.playing ? L.sense : done.length + (done.length === 1 ? " Lektion" : " Lektionen") + ", mit kleinen Pausen") + "</div></div>";
@@ -785,7 +811,7 @@ function viewLesson() {
   } else if (L.step === 3) {
     const i = L.sh, ln = l.lines[i];
     h += '<p class="sub" style="margin-top:0">Hör den Satz an und sprich ihn laut nach. Am besten gleich mit, wie ein Schatten.</p>';
-    h += '<p class="kick" style="color:var(--muted)">Satz ' + (i + 1) + " von " + l.lines.length + "</p>" + lineHTML(ln, i, mode === "aus" ? "tippen" : mode);
+    h += '<p class="kick" style="color:var(--muted)">Satz ' + (i + 1) + " von " + l.lines.length + "</p>" + lineHTML(ln, i, S.set.showDe ? (mode === "aus" ? "tippen" : mode) : "aus");
     h += '<div style="display:flex;gap:10px;justify-content:center;margin:10px 0"><button class="btn red" data-act="shPlay" data-r="1">' + ic("spk") + ' Anhören</button><button class="btn ghost" data-act="shPlay" data-r=".6">Langsam</button></div>';
     h += '<img src="img/mascot.webp" alt="" class="mascot" style="max-height:150px;margin-top:10px">';
     foot = i < l.lines.length - 1 ? '<button class="btn primary block" data-act="shNext">Nachgesprochen ' + ic("check", 20, 2.5) + "</button>" : '<button class="btn primary block" data-act="next">Alle nachgesprochen, weiter</button>';
@@ -894,21 +920,22 @@ function viewSpeak() {
   const r = dayRec(today()), ps = Math.min(100, 100 * r.speak / 60 / S.set.goalSpeak), P = ui.speak;
   let h = '<div class="top"><h1 class="page" style="margin:0">Mów! · Sprechen</h1>' + candleChip() + "</div>";
   h += '<div class="card"><div style="display:flex;justify-content:space-between;font-weight:700"><span>Heute gesprochen</span><span>' + minutes(r.speak) + " / " + S.set.goalSpeak + ' Min</span></div><div class="bar dark" style="margin-top:8px"><i style="width:' + ps + '%"></i></div><p class="note" style="margin-bottom:0">Sprich immer laut, auch wenn es sich am Anfang komisch anfühlt. Nur so gewöhnt sich dein Mund an die polnischen Laute.</p></div>';
-  h += '<div class="seg" role="group" aria-label="Übungsart">' + [["shadow", "Nachsprechen"], ["answer", "Antworten"], ["sounds", "Laute"]].map(([v, t]) => '<button data-act="spMode" data-v="' + v + '" aria-pressed="' + (P.mode === v) + '">' + t + "</button>").join("") + "</div>";
-  if (P.mode === "answer") {
+  h += '<div class="seg" role="group" aria-label="Übungsart">' + [["shadow", "Nachsprechen"], ["answer", "Antworten"], ["tr", "Übersetzen"], ["sounds", "Laute"]].map(([v, t]) => '<button data-act="spMode" data-v="' + v + '" aria-pressed="' + (P.mode === v) + '">' + t + "</button>").join("") + "</div>";
+  if (P.mode === "tr") h += viewTranslate();
+  else if (P.mode === "answer") {
     const q = curQ(); if (!q) return h;
     const total = speakPool().flatMap(l => l.qa || []).length;
-    h += '<div class="qcard">' + ORN.replace('class="orn"', 'class="orn" style="position:absolute;right:-36px;bottom:-36px;opacity:.22"') + '<div class="kick">' + esc(q.who) + ' fragt dich</div><div class="big">' + esc(q.q) + '</div><div style="opacity:.9">' + esc(q.qde) + '</div><button class="btn light" style="margin-top:14px" data-act="spQ">' + ic("spk", 18) + " Frage anhören</button></div>";
+    h += '<div class="qcard">' + ORN.replace('class="orn"', 'class="orn" style="position:absolute;right:-36px;bottom:-36px;opacity:.22"') + '<div class="kick">' + esc(q.who) + ' fragt dich</div><div class="big">' + esc(q.q) + '</div>' + deHid(q.qde, "qde") + '<button class="btn light" style="margin-top:14px" data-act="spQ">' + ic("spk", 18) + " Frage anhören</button></div>";
     h += '<div class="card" style="display:flex;gap:12px;align-items:center"><img src="img/speaking.webp" alt="" height="90"><div style="flex:1"><b>Antworte laut auf Polnisch.</b><div class="sub">Danach hörst du eine Musterantwort.</div></div></div>';
     if (!P.shown) h += '<button class="btn primary block" style="min-height:56px" data-act="spShow">Musterantwort zeigen</button>';
     else {
-      h += '<div class="model"><div class="kick" style="color:#6B4E00">Musterantwort</div><div class="serif" style="font-size:24px;margin-top:4px">' + esc(q.a) + '</div><div class="sub">' + esc(q.ade) + '</div><button class="linkbtn" data-act="spA" style="padding-left:0">' + ic("spk", 16) + " Nochmal anhören</button></div>";
+      h += '<div class="model"><div class="kick" style="color:#6B4E00">Musterantwort</div><div class="serif" style="font-size:24px;margin-top:4px">' + esc(q.a) + '</div>' + deHid(q.ade) + '<button class="linkbtn" data-act="spA" style="padding-left:0">' + ic("spk", 16) + " Nochmal anhören</button></div>";
       h += '<div class="rate" style="grid-template-columns:1fr 1fr"><button data-act="spNext" data-ok="0">Nochmal üben</button><button class="g" data-act="spNext" data-ok="1">Hat geklappt</button></div>';
     }
     h += '<p class="note center">Frage ' + (P.i % total + 1) + " von " + total + " · aus deinen geschafften Lektionen</p>";
   } else if (P.mode === "shadow") {
     const ln = curShadow(), total = speakPool().flatMap(l => l.lines).length;
-    h += '<div class="card"><div class="kick" style="color:var(--muted)">Satz ' + (P.sh % total + 1) + " von " + total + " · " + esc(ln.who) + '</div><div class="big">' + esc(lineText(ln)) + '</div><div class="sub">' + esc(ln.sense) + "</div>" + (ln.tip ? '<span class="tip" style="margin-left:0">' + esc(ln.tip) + "</span>" : "") + "</div>";
+    h += '<div class="card"><div class="kick" style="color:var(--muted)">Satz ' + (P.sh % total + 1) + " von " + total + " · " + esc(ln.who) + '</div><div class="big">' + esc(lineText(ln)) + "</div>" + deHid(ln.sense) + (ln.tip ? '<span class="tip" style="margin-left:0">' + esc(ln.tip) + "</span>" : "") + "</div>";
     h += '<div style="display:flex;gap:10px;justify-content:center;margin-bottom:12px"><button class="btn red" data-act="spSh" data-r="1">' + ic("spk") + ' Anhören</button><button class="btn ghost" data-act="spSh" data-r=".6">Langsam</button></div>';
     h += '<p class="sub center">Hör zu und sprich gleichzeitig mit, wie ein Schatten. Wiederhole jeden Satz zwei- bis dreimal.</p>';
     h += '<button class="btn primary block" style="min-height:56px" data-act="spShNext">Nachgesprochen ' + ic("check", 20, 2.5) + "</button>";
@@ -919,6 +946,182 @@ function viewSpeak() {
     h += '<button class="btn red block" data-act="spSndAll">' + ic("play") + " Alle nacheinander, mit Pause zum Nachsprechen</button>";
   }
   return h;
+}
+
+/* ---------- Deutsch verdecken ---------- */
+function deHid(t, cls) {
+  if (!t) return "";
+  if (S.set.showDe) return '<div class="' + (cls || "sub") + '">' + esc(t) + "</div>";
+  return '<div class="dehid"><button class="linkbtn" data-act="unhide">Deutsch zeigen</button><div class="' + (cls || "sub") + '" hidden>' + esc(t) + "</div></div>";
+}
+const pfOf = w => { const m = (w.note || "").match(/pf\.: ([^;]+)/); return m ? m[1].trim() : ""; };
+const noteNoPf = w => (w.note || "").replace(/;?\s*pf\.: [^;]+/, "").replace(/^;\s*/, "").trim();
+
+/* ---------- Übungen: Fälle, Aspekt, Hörtraining ---------- */
+let DR = null;
+const CASE_DE = c => DR.cases.info[c].de;
+function segRow(key, cur, opts, act) {
+  return '<div class="seg" role="group">' + opts.map(([v, t]) => '<button data-act="' + act + '" data-v="' + v + '" aria-pressed="' + (cur === v) + '">' + t + "</button>").join("") + "</div>";
+}
+function statLine(st) { return st && st.n ? Math.round(100 * st.ok / st.n) + " % richtig · " + st.n + " geübt" : "noch nicht geübt"; }
+
+function viewCasesHome() {
+  const C = DR.cases, sel = ui.caseSel || "mix";
+  let h = '<div class="chipsel" role="group" aria-label="Fall wählen"><button data-act="caseSel" data-v="mix" aria-pressed="' + (sel === "mix") + '">Gemischt</button>' + C.order.map(c => '<button data-act="caseSel" data-v="' + c + '" aria-pressed="' + (sel === c) + '">' + C.info[c].de + "</button>").join("") + "</div>";
+  if (sel === "mix") {
+    h += '<div class="card"><b>Alle Fälle gemischt</b><p class="sub">Polnisch hat sieben Fälle. Den Nominativ kennst du aus den Wörterlisten, hier übst du die anderen sechs.</p>';
+    h += C.order.map(c => '<div class="wordrow"><div style="flex:1"><b>' + C.info[c].de + "</b> · " + C.info[c].pl + ' <span class="sub">' + C.info[c].q + '</span><div class="sub">' + statLine((S.cs || {})[c]) + "</div></div></div>").join("") + "</div>";
+  } else h += caseRule(sel, true);
+  h += '<button class="btn red block" style="min-height:58px" data-act="caseStart">' + ic("play") + " 10 Sätze üben</button>";
+  return h;
+}
+function caseRule(c, open) {
+  const I = DR.cases.info[c];
+  return '<details class="card rule"' + (open ? " open" : "") + '><summary><b>' + I.de + " · " + I.pl + '</b> <span class="sub">' + I.q + '</span></summary><div class="kick" style="color:var(--muted);margin-top:10px">Wann?</div><ul class="tips">' + I.use.map(u => "<li>" + esc(u) + "</li>").join("") + '</ul><div class="kick" style="color:var(--muted)">Endungen</div><ul class="tips">' + I.end.map(u => "<li>" + esc(u) + "</li>").join("") + "</ul></details>";
+}
+function startCases() {
+  const sel = ui.caseSel || "mix", pool = DR.cases.items.filter(x => sel === "mix" || x.c === sel);
+  ui.cx = {q: shuf(pool).slice(0, 10).map(it => ({it})), done: 0, ok: 0}; ui.cx.total = ui.cx.q.length;
+  render();
+}
+function caseOpts(it) {
+  const forms = Object.values(DR.cases.nouns[it.n].f).filter((f, i, a) => a.indexOf(f) === i && f !== it.a);
+  return shuf([it.a].concat(shuf(forms).slice(0, 3)));
+}
+function viewCaseItem() {
+  const X = ui.cx, cur = X.q[0], it = cur.it, N = DR.cases.nouns[it.n];
+  if (!cur.opts) cur.opts = caseOpts(it);
+  let h = sessHead("caseQuit", X.done, X.q.length);
+  h += '<div class="qcard"><div class="kick">' + (cur.res ? CASE_DE(it.c) + " · " + DR.cases.info[it.c].q : "Welche Form passt?") + '</div><div class="big">' + esc(cur.res ? it.full : it.s).replace("___", '<span class="gap">　　　</span>') + '</div><div style="opacity:.9">Grundform: <b>' + esc(it.n) + "</b> " + gtag(N.g) + "</div></div>";
+  h += deHid(it.de);
+  h += '<div class="opts" style="margin-top:12px">' + cur.opts.map((o, i) => '<button data-act="casePick" data-i="' + i + '" class="serif2 ' + (cur.res ? (o === it.a ? "ok" : i === cur.ans ? "bad" : "") : "") + '"' + (cur.res ? " disabled" : "") + ">" + esc(o) + "</button>").join("") + "</div>";
+  if (cur.res) {
+    h += '<div class="center" style="margin-bottom:12px">' + spkBtn(it.full, "Satz anhören") + "</div>" + caseRule(it.c, cur.res === "bad");
+    h += '<button class="btn primary block" style="min-height:58px" data-act="caseNext">Weiter ' + ic("arrow", 20) + "</button>";
+  }
+  return h;
+}
+function sessHead(quit, done, left) {
+  return '<div style="display:flex;align-items:center;gap:12px;margin:6px 0 16px"><button class="iconbtn" data-act="' + quit + '" aria-label="Beenden">' + ic("close") + '</button><div class="bar dark" style="flex:1;height:10px"><i style="width:' + (100 * done / Math.max(1, done + left)) + '%"></i></div><span class="sub">' + left + "</span></div>";
+}
+function sessDone(X, back) {
+  return '<div class="card center"><img src="img/celebrating.webp" alt="" height="160" class="mascot"><p class="serif" style="font-size:24px;margin:10px 0 4px">Świetnie!</p><p class="sub">' + X.ok + " von " + X.total + ' Sätzen auf Anhieb richtig.</p><button class="btn red" data-act="' + back + '">Zur Übersicht</button></div>';
+}
+
+function viewAspectHome() {
+  const A2 = DR.aspect;
+  let h = '<div class="card"><b>Verbaspekt</b><ul class="tips">' + A2.info.map(t => "<li>" + esc(t) + "</li>").join("") + '</ul><p class="sub" style="margin-bottom:0">' + statLine(S.as) + "</p></div>";
+  const pairs = [...new Map(A2.items.map(x => [x.ipf, x.pf])).entries()];
+  h += '<div class="card"><b>Paare in dieser Übung</b><div class="pairs">' + pairs.map(([a, b]) => '<button class="pairbtn" data-act="vSay" data-w="' + esc(a) + '">' + esc(a) + '</button><span class="sub">→</span><button class="pairbtn pf" data-act="vSay" data-w="' + esc(b) + '">' + esc(b) + "</button>").join("") + '</div><p class="note" style="margin-bottom:0">Im Vokabeltrainer steht bei jedem Verb sein Partner.</p></div>';
+  h += '<button class="btn red block" style="min-height:58px" data-act="aspStart">' + ic("play") + " 10 Sätze üben</button>";
+  return h;
+}
+function startAspect() { ui.ax = {q: shuf(DR.aspect.items).slice(0, 10).map(it => ({it, opts: shuf([it.a, it.b])})), done: 0, ok: 0}; ui.ax.total = ui.ax.q.length; render(); }
+function viewAspectItem() {
+  const X = ui.ax, cur = X.q[0], it = cur.it;
+  let h = sessHead("aspQuit", X.done, X.q.length);
+  h += '<div class="qcard"><div class="kick">' + esc(it.ipf) + " · " + esc(it.pf) + '</div><div class="big">' + esc(cur.res ? it.full : it.s).replace("___", '<span class="gap">　　　</span>') + "</div></div>";
+  h += deHid(it.de);
+  h += '<div class="opts two" style="margin-top:12px">' + cur.opts.map((o, i) => '<button data-act="aspPick" data-i="' + i + '" class="serif2 ' + (cur.res ? (o === it.a ? "ok" : i === cur.ans ? "bad" : "") : "") + '"' + (cur.res ? " disabled" : "") + ">" + esc(o) + '<small>' + (o === (it.a) ? (/[hd]/.test(it.why) ? "unvollendet" : "vollendet") : (/[hd]/.test(it.why) ? "vollendet" : "unvollendet")) + "</small></button>").join("") + "</div>";
+  if (cur.res) {
+    h += '<div class="mn"><b>Warum?</b> ' + esc(DR.aspect.why[it.why]) + "</div>";
+    h += '<div class="center" style="margin-bottom:12px">' + spkBtn(it.full, "Satz anhören") + "</div>";
+    h += '<button class="btn primary block" style="min-height:58px" data-act="aspNext">Weiter ' + ic("arrow", 20) + "</button>";
+  }
+  return h;
+}
+
+/* Hörtraining: zwei ähnliche Wörter, zwei Stimmen */
+function newSoundTrial() {
+  const g = DR.sounds.find(x => x.id === ui.hsel) || DR.sounds[0];
+  const p = g.pairs[Math.floor(Math.random() * g.pairs.length)], k = Math.random() < .5 ? 0 : 1;
+  ui.ht = {g: g.id, p, k, who: Math.random() < .5 ? "" : NAME, res: null};
+}
+function viewSoundTrain() {
+  if (!ui.hsel) ui.hsel = DR.sounds[0].id;
+  if (!ui.ht || ui.ht.g !== ui.hsel) newSoundTrial();
+  const g = DR.sounds.find(x => x.id === ui.hsel), T = ui.ht, st = (S.hs || {})[g.id];
+  let h = '<div class="chipsel" role="group" aria-label="Lautpaar">' + DR.sounds.map(x => '<button data-act="hSel" data-v="' + x.id + '" aria-pressed="' + (x.id === g.id) + '">' + esc(x.title) + "</button>").join("") + "</div>";
+  h += '<p class="sub" style="margin-top:0">' + esc(g.de) + " Du hörst zwei verschiedene Stimmen.</p>";
+  h += '<div class="rcard" style="min-height:190px"><div class="q">Welches Wort hörst du?</div><button class="bigspk" data-act="hPlay" aria-label="Anhören">' + ic("spk", 44) + '</button></div>';
+  h += '<div class="opts two" style="margin-top:12px">' + [0, 1].map(i => '<button data-act="hPick" data-i="' + i + '" class="serif2 ' + (T.res ? (i === T.k ? "ok" : i === T.ans ? "bad" : "") : "") + '"' + (T.res ? " disabled" : "") + ">" + esc(T.p[i]) + "<small>" + esc(T.p[i + 2]) + "</small></button>").join("") + "</div>";
+  if (T.res) h += '<div style="display:flex;gap:10px"><button class="btn ghost" style="flex:1" data-act="hBoth">' + ic("spk") + ' Beide hören</button><button class="btn primary" style="flex:1" data-act="hNext">Weiter ' + ic("arrow", 20) + "</button></div>";
+  h += '<p class="note center">' + (st && st.n ? Math.round(100 * st.ok / st.n) + " % richtig bei " + st.n + (st.n === 1 ? " Versuch" : " Versuchen") : "Hör so oft du willst, dann tippe.") + "</p>";
+  return h;
+}
+
+/* Übersetzen: Deutsch sehen, Polnisch sprechen */
+const SRec = window.SpeechRecognition || window.webkitSpeechRecognition;
+function trPool() {
+  const out = [];
+  D.lessons.filter(l => S.done[l.id]).forEach(l => l.chunks.forEach(c => out.push({pl: c[0], de: c[1]})));
+  if (V) vCards().forEach(k => { const w = VW[k.slice(2)]; if (w && w.ex) out.push({pl: w.ex, de: w.exDe}); });
+  if (!out.length) D.lessons[0].chunks.forEach(c => out.push({pl: c[0], de: c[1]}));
+  return out;
+}
+function curTr() {
+  const P = ui.speak;
+  if (!P.trList || !P.trList.length) { P.trList = shuf(trPool()); P.tr = 0; }
+  return P.trList[P.tr % P.trList.length];
+}
+const trWords = s => vNorm(s).split(" ").filter(Boolean);
+function trScore(target, said) {
+  const t = trWords(target), heard = trWords(said).map(vStrip);
+  const hit = t.map(w => heard.includes(vStrip(w)));
+  return {hit, score: t.length ? hit.filter(Boolean).length / t.length : 0, t};
+}
+function viewTranslate() {
+  const P = ui.speak, c = curTr(), R = P.trRes;
+  let h = '<div class="qcard" style="text-align:center"><div class="kick">Sag das auf Polnisch</div><div class="big">' + esc(c.de) + "</div></div>";
+  if (P.trListening) h += '<div class="card center"><div class="micpulse">' + ic("mic", 40) + '</div><p class="serif" style="font-size:20px;margin:8px 0 0">' + esc(P.trInterim || "Ich höre zu …") + '</p></div><button class="btn ghost block" data-act="trStop">Fertig</button>';
+  else if (!R) {
+    if (SRec && !P.trNoRec) h += '<button class="btn red block" style="min-height:64px" data-act="trMic">' + ic("mic") + " Sprechen</button>";
+    h += '<div style="display:flex;gap:10px;margin-top:10px"><button class="btn ghost" style="flex:1" data-act="trHint">' + ic("spk") + ' Tipp</button><button class="btn ghost" style="flex:1" data-act="trShow">' + "Lösung zeigen" + "</button></div>";
+    if (!SRec || P.trNoRec) h += '<p class="note">' + (P.trNoRec ? esc(P.trNoRec) : "Spracherkennung gibt es in diesem Browser nicht.") + " Sag den Satz laut und vergleiche dann selbst.</p>";
+    else h += '<p class="note">Die Erkennung läuft über die Diktierfunktion des iPhones. Deine Stimme wird nicht abgespielt.</p>';
+  } else {
+    const sc = R.said != null ? trScore(c.pl, R.said) : null;
+    if (sc) {
+      const good = sc.score >= .85, mid = sc.score >= .6;
+      h += '<div class="fb ' + (mid ? "ok" : "bad") + '" style="border-radius:16px;padding:14px 16px;margin-bottom:12px"><b>' + (good ? "Sehr gut!" : mid ? "Fast!" : "Noch nicht ganz.") + '</b><div class="sub" style="color:inherit">Erkannt: „' + esc(R.said || "…") + '“</div><div class="serif" style="font-size:22px;margin-top:6px">' + sc.t.map((w, i) => '<span class="' + (sc.hit[i] ? "whit" : "wmiss") + '">' + esc(w) + "</span>").join(" ") + "</div></div>";
+      h += '<p class="note" style="margin-top:0">Grün: erkannt. Rot: fehlte oder klang anders. Die Wortstellung ist im Polnischen freier, sie zählt hier nicht.</p>';
+    } else h += '<div class="model"><div class="kick" style="color:#6B4E00">Lösung</div><div class="serif" style="font-size:24px;margin-top:4px">' + esc(c.pl) + "</div></div>";
+    h += '<div class="center" style="margin-bottom:12px">' + spkBtn(c.pl, "Lösung anhören") + "</div>";
+    h += '<div class="rate" style="grid-template-columns:1fr 1fr"><button data-act="trAgain">Nochmal</button><button class="g" data-act="trNext">Weiter</button></div>';
+  }
+  return h;
+}
+let recog = null;
+function trListen() {
+  stopSpeech();
+  const P = ui.speak;
+  try { recog = new SRec(); } catch (e) { P.trNoRec = "Spracherkennung ließ sich nicht starten."; render(); return; }
+  recog.lang = "pl-PL"; recog.interimResults = true; recog.maxAlternatives = 3; recog.continuous = false;
+  let finalAlts = [];
+  recog.onresult = e => {
+    let txt = ""; for (let i = 0; i < e.results.length; i++) txt += e.results[i][0].transcript;
+    P.trInterim = txt; const el = document.querySelector(".micpulse + p"); if (el) el.textContent = txt;
+    const last = e.results[e.results.length - 1];
+    if (last.isFinal) finalAlts = Array.from(last).map(a => a.transcript);
+  };
+  recog.onerror = e => {
+    P.trListening = false;
+    if (e.error === "not-allowed" || e.error === "service-not-allowed") P.trNoRec = "Kein Zugriff auf Mikrofon oder Diktierfunktion. Auf dem iPhone: Einstellungen › Allgemein › Tastatur › Diktierfunktion aktivieren und den Zugriff erlauben.";
+    else if (e.error === "no-speech") toast("Ich habe nichts gehört. Versuch es noch einmal.");
+    render();
+  };
+  recog.onend = () => {
+    if (!P.trListening) return;
+    P.trListening = false;
+    const c = curTr(), alts = finalAlts.length ? finalAlts : (P.trInterim ? [P.trInterim] : []);
+    if (!alts.length) { render(); return; }
+    const best = alts.map(a => [a, trScore(c.pl, a).score]).sort((a, b) => b[1] - a[1])[0];
+    P.trRes = {said: best[0]};
+    const ok = best[1] >= .85; if (ok) { sfx.ok(); addPts(3); } else sfx.bad();
+    render(); say(c.pl);
+  };
+  P.trListening = true; P.trInterim = ""; render();
+  try { recog.start(); } catch (e) { P.trListening = false; P.trNoRec = "Spracherkennung ließ sich nicht starten."; render(); }
 }
 
 /* ---------- Settings ---------- */
@@ -938,6 +1141,7 @@ function sheet() {
   else if (speechOK && svVoices.length === 1) h += '<p class="note">Für verschiedene Stimmen auf dem iPhone weitere polnische Stimmen laden und die App neu starten.</p>';
   if (speechOK && !svVoice) h += '<p class="note">iPhone: Einstellungen › Bedienungshilfen › Gesprochene Inhalte › Stimmen › Polnisch, dort eine Stimme laden.</p>';
   h += "<label>Töne</label>" + seg("sound", [[true, "An"], [false, "Aus"]]);
+  h += "<label>Deutsche Übersetzung beim Üben</label>" + seg("showDe", [[false, "Verdeckt"], [true, "Sichtbar"]]) + '<p class="note">Verdeckt: erst nach „Deutsch zeigen“ sichtbar, auch beim Nachsprechen.</p>';
   h += "<label>Neue Wörter pro Tag</label>" + seg("newPerDay", [[10, "10"], [15, "15"], [20, "20"], [25, "25"]]) + '<p class="note">15 sind ein guter Wert. Mehr bedeutet in den Wochen danach auch deutlich mehr Wiederholungen.</p>';
   h += "<label>Tagesziel Lernen</label>" + seg("goalApp", [[20, "20 Min"], [30, "30 Min"], [45, "45 Min"]]);
   h += "<label>Tagesziel Hören</label>" + seg("goalListen", [[15, "15 Min"], [20, "20 Min"], [30, "30 Min"]]);
@@ -958,7 +1162,7 @@ function applyTheme() {
 function render() {
   applyTheme();
   if (!D) return;
-  const key = ui.lesson ? "lesson-" + ui.lesson.step + "-" + ui.lesson.phase + "-" + ui.lesson.sh + "-" + ui.lesson.exI : ui.tab + (ui.tab === "review" ? "-" + (ui.vpack || "") + "-" + (ui.vt ? ui.vt.done : "h") : "");
+  const key = ui.lesson ? "lesson-" + ui.lesson.step + "-" + ui.lesson.phase + "-" + ui.lesson.sh + "-" + ui.lesson.exI : ui.tab + (ui.tab === "review" ? "-" + (ui.wmode || "") + (ui.vpack || "") + "-" + (ui.vt ? ui.vt.done : "h") + "-" + (ui.cx ? ui.cx.done : "") + "-" + (ui.ax ? ui.ax.done : "") : "");
   const y = key === lastKey ? window.scrollY : 0;
   let h;
   if (ui.lesson) h = viewLesson();
@@ -1017,7 +1221,7 @@ const A = {
   },
   tok(d, el) {
     const ln = ui.lesson.l.lines[+d.l], p = ln.t[+d.t];
-    if (S.set.decode === "tippen" || (ui.lesson.step === 3 && S.set.decode === "aus")) el.classList.toggle("show");
+    if (S.set.decode === "tippen" || el.closest(".line.aus")) el.classList.toggle("show");
     say(normWord(p[0]));
     if (needRender) { needRender = false; render(); }
   },
@@ -1040,6 +1244,46 @@ const A = {
   },
   exNext() { const L = ui.lesson; stopSpeech(); L.exI++; if (L.exI >= L.ex.length) L.phase = "grammar"; render(); window.scrollTo(0, 0); },
   finish() { finishLesson(); },
+  unhide(d, el) { const n = el.nextElementSibling; if (n) n.hidden = false; el.remove(); },
+  wMode(d) { stopSpeech(); ui.wmode = d.v; ui.cx = null; ui.ax = null; render(); },
+  lMode(d) { stopSpeech(); ui.listen.playing = false; ui.lmode = d.v; render(); },
+  caseSel(d) { ui.caseSel = d.v; render(); },
+  caseStart() { startCases(); },
+  caseQuit() { stopSpeech(); ui.cx = null; render(); },
+  casePick(d) {
+    const X = ui.cx, cur = X.q[0]; if (cur.res) return;
+    cur.ans = +d.i; const ok = cur.opts[cur.ans] === cur.it.a; cur.res = ok ? "ok" : "bad";
+    S.cs = S.cs || {}; const st = S.cs[cur.it.c] || (S.cs[cur.it.c] = {n: 0, ok: 0}); st.n++;
+    if (ok) { st.ok++; if (!cur.retry) X.ok++; sfx.ok(); addPts(2); } else { sfx.bad(); X.q.push({it: cur.it, retry: true}); save(); }
+    render(); say(cur.it.full);
+  },
+  caseNext() { const X = ui.cx; X.q.shift(); X.done++; if (!X.q.length) sfx.done(); render(); window.scrollTo(0, 0); },
+  aspStart() { startAspect(); },
+  aspQuit() { stopSpeech(); ui.ax = null; render(); },
+  aspPick(d) {
+    const X = ui.ax, cur = X.q[0]; if (cur.res) return;
+    cur.ans = +d.i; const ok = cur.opts[cur.ans] === cur.it.a; cur.res = ok ? "ok" : "bad";
+    S.as = S.as || {n: 0, ok: 0}; S.as.n++;
+    if (ok) { S.as.ok++; if (!cur.retry) X.ok++; sfx.ok(); addPts(2); } else { sfx.bad(); X.q.push({it: cur.it, opts: shuf([cur.it.a, cur.it.b]), retry: true}); save(); }
+    render(); say(cur.it.full);
+  },
+  aspNext() { const X = ui.ax; X.q.shift(); X.done++; if (!X.q.length) sfx.done(); render(); window.scrollTo(0, 0); },
+  hSel(d) { stopSpeech(); ui.hsel = d.v; ui.ht = null; render(); A.hPlay(); },
+  hPlay() { const T = ui.ht; if (T) { speakingKind = "listen"; say(T.p[T.k], {who: T.who}).then(() => { speakingKind = null; }); } },
+  hPick(d) {
+    const T = ui.ht; if (T.res) return; T.ans = +d.i; T.res = T.ans === T.k ? "ok" : "bad";
+    S.hs = S.hs || {}; const st = S.hs[T.g] || (S.hs[T.g] = {n: 0, ok: 0}); st.n++;
+    if (T.res === "ok") { st.ok++; sfx.ok(); addPts(1); } else sfx.bad();
+    save(); render();
+  },
+  async hBoth() { const T = ui.ht; stopSpeech(); const my = playTok; await speak(T.p[0], {who: T.who}); if (my !== playTok) return; await wait(500); if (my === playTok) speak(T.p[1], {who: T.who}); },
+  hNext() { newSoundTrial(); render(); A.hPlay(); },
+  trMic() { unlockAudio(); trListen(); },
+  trStop() { try { recog && recog.stop(); } catch (e) {} },
+  trHint() { const c = curTr(); ui.speak.trHinted = true; say(c.pl); },
+  trShow() { ui.speak.trRes = {said: null}; render(); say(curTr().pl); },
+  trAgain() { ui.speak.trRes = null; render(); },
+  trNext() { const P = ui.speak; P.tr++; P.trRes = null; P.trHinted = false; addPts(1); render(); },
   vStart() { unlockAudio(); startVocab(); },
   vExtra() { startVocab({extra: 5}); },
   vDrill() { startVocab({drill: shuf(hardWords()).slice(0, 20)}); },
@@ -1118,6 +1362,7 @@ document.addEventListener("change", e => {
 });
 fetch("audio/index.json").then(r => r.ok ? r.json() : {}).catch(() => ({})).then(a => { AUDIO = a || {}; if (ui.sheet) render(); });
 fetch("vocab.json").then(r => r.json()).then(d => { loadVocab(d); render(); }).catch(() => {});
+fetch("drills.json").then(r => r.json()).then(d => { DR = d; render(); }).catch(() => {});
 fetch("lessons.json").then(r => r.json()).then(d => { D = d; vClean(); checkBadges(); render(); initStorage(); })
   .catch(() => { $("#app").innerHTML = '<p style="padding:40px;text-align:center">Die Lektionen konnten nicht geladen werden. Bitte lade die Seite neu.</p>'; });
 </script>

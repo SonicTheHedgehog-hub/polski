@@ -24,7 +24,13 @@ for (const l of D.lessons) {
   for (const q of l.qa || []) { add(V.speakers[q.who] || def, q.q); add(V.speakers.Semyon || def, q.a); }
 }
 for (const g of D.sounds || []) for (const w of g.words) add(def, w[0]);
-if (fs.existsSync("vocab.json")) for (const pk of JSON.parse(fs.readFileSync("vocab.json", "utf8")).packs) for (const w of pk.words) { add(def, w[0]); add(def, w[3]); }
+if (fs.existsSync("drills.json")) {
+  const R = JSON.parse(fs.readFileSync("drills.json", "utf8")), me = V.speakers.Semyon || def;
+  for (const it of R.cases.items) add(def, it.full);
+  for (const it of R.aspect.items) { add(def, it.full); add(def, it.ipf); add(def, it.pf); }
+  for (const g of R.sounds) for (const pr of g.pairs) for (const w of pr.slice(0, 2)) { add(def, w); add(me, w); }
+}
+if (fs.existsSync("vocab.json")) for (const pk of JSON.parse(fs.readFileSync("vocab.json", "utf8")).packs) for (const w of pk.words) { add(def, w[0]); add(def, w[3]); const m = /pf\.: ([^;]+)/.exec(w[5] || ""); if (m) add(def, m[1].trim()); }
 
 const idxPath = "audio/index.json";
 fs.mkdirSync("audio", {recursive: true});
