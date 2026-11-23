@@ -205,6 +205,9 @@ details.rule summary::after{content:" ▾";color:var(--muted)}
 @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
 .whit{color:var(--ok);border-bottom:2px solid var(--ok)}.wmiss{color:var(--bad);border-bottom:2px dashed var(--bad)}
 .seg button{font-size:13px}
+.stline{padding:10px 8px;border-radius:12px;border-bottom:1px solid var(--line);cursor:pointer}
+.stline:last-child{border-bottom:0}.stline.cur{background:rgba(242,183,5,.18)}
+.now .bigspk{background:rgba(255,255,255,.22)}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
@@ -318,6 +321,7 @@ function playFile(src, text, o) {
 }
 const isSpeaking = () => (!player.paused && !player.ended) || (speechOK && window.speechSynthesis.speaking);
 async function speak(text, o = {}) {
+  if (!storyPlayer.paused) storyPlayer.pause();
   const f = audioFile(text, o.who);
   if (f) { const my = playTok, r = await playFile(f, text, o); if (r === true || r === "stopped" || my !== playTok) return r === true; }
   return ttsSpeak(text, o);
@@ -421,6 +425,7 @@ const ICON = {
   lock: '<rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/>',
   arrow: '<path d="M5 12h14M13 6l6 6-6 6"/>',
   cards: '<rect x="4" y="5" width="16" height="14" rx="2"/><path d="M8 10h8M8 14h5"/>',
+  pause: '<rect x="6" y="5" width="4" height="14" rx="1" fill="currentColor"/><rect x="14" y="5" width="4" height="14" rx="1" fill="currentColor"/>',
   mic: '<rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/>'
 };
 const ic = (n, s = 22, w = 2) => '<svg width="' + s + '" height="' + s + '" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="' + w + '" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + ICON[n] + "</svg>";
@@ -720,8 +725,9 @@ function viewListen() {
   const done = D.lessons.filter(l => S.done[l.id]);
   const L = ui.listen;
   let h = '<div class="top"><h1 class="page" style="margin:0">Hören</h1>' + candleChip() + "</div>";
-  if (DR) h += segRow("lmode", ui.lmode || "lessons", [["lessons", "Lektionen"], ["train", "Hörtraining"]], "lMode");
+  if (DR) h += segRow("lmode", ui.lmode || "lessons", [["lessons", "Lektionen"], ["stories", "Geschichten"], ["train", "Hörtraining"]], "lMode");
   if (DR && ui.lmode === "train") return h + viewSoundTrain();
+  if (ui.lmode === "stories") return h + viewStories();
   h += '<div class="card" style="display:flex;gap:14px;align-items:center"><img src="img/listening.webp" alt="" height="110"><div style="flex:1"><b>Heute ' + minutes(r.listen) + " von " + S.set.goalListen + ' Minuten</b><div class="bar dark" style="margin:8px 0"><i style="width:' + pl + '%"></i></div><span class="sub">Nebenbei hören, beim Kochen oder unterwegs. Das Verstehen kommt mit der Zeit.</span></div></div>';
   if (!done.length) return h + '<div class="card center"><p><b>Noch nichts zum Hören</b></p><p class="sub">Schließe deine erste Lektion ab, dann kannst du sie hier immer wieder hören.</p><button class="btn red" data-act="tab" data-v="path">Zum Lernweg</button></div>';
   h += '<div class="now"><div class="kick">' + (L.playing ? "Läuft gerade" : "Bereit") + '</div><div class="big">' + (L.playing ? esc(L.text) : "Alle geschafften Lektionen") + '</div><div style="opacity:.9">' + esc(L.playing ? L.sense : done.length + (done.length === 1 ? " Lektion" : " Lektionen") + ", mit kleinen Pausen") + "</div></div>";
@@ -1124,6 +1130,68 @@ function trListen() {
   try { recog.start(); } catch (e) { P.trListening = false; P.trNoRec = "Spracherkennung ließ sich nicht starten."; render(); }
 }
 
+
+/* ---------- Geschichten: eine durchgehende Datei, läuft auch bei gesperrtem Bildschirm ---------- */
+let ST = null, STA = {};
+const storyPlayer = new Audio(); storyPlayer.preload = "auto";
+let storyLastT = 0;
+const storyMode = () => (S.set.storyMode === "pl" ? "pl" : "both");
+function storyFile(id) { const a = STA[id] || {}; return a[storyMode()] || a.pl || null; }
+const fmtT = s => Math.floor(s / 60) + ":" + pad2(Math.floor(s % 60));
+function viewStories() {
+  if (!ST) return '<div class="card center"><p class="sub">Geschichten werden geladen …</p></div>';
+  if (ui.story) return viewStory();
+  let h = '<div class="card" style="display:flex;gap:14px;align-items:center"><img src="img/reading.webp" alt="" height="96"><div style="flex:1"><b>Zum Nebenbei-Hören</b><div class="sub">Jeder Satz kommt auf Polnisch, dann auf Deutsch und noch einmal auf Polnisch. Läuft auch bei gesperrtem Bildschirm weiter.</div></div></div>';
+  h += '<div class="card">' + ST.stories.map(st => { const f = storyFile(st.id); return '<button class="packrow" data-act="stOpen" data-id="' + st.id + '"><span class="pnum">' + st.level + '</span><span style="flex:1;text-align:left"><b class="serif" style="font-weight:400;font-size:19px">' + esc(st.title) + '</b><span class="sub" style="display:block">' + esc(st.de) + '</span></span><span class="sub">' + (f ? fmtT(f.d) : "bald") + "</span></button>"; }).join("") + "</div>";
+  return h + '<p class="note center">Neue Geschichten kommen mit jedem Wortpaket dazu.</p>';
+}
+function viewStory() {
+  const st = ST.stories.find(x => x.id === ui.story), f = storyFile(st.id), playing = !storyPlayer.paused && ui.storyOn === st.id;
+  let h = '<div class="top"><button class="iconbtn" data-act="stBack" aria-label="Zurück">' + ic("back") + '</button><div style="flex:1;padding-left:12px"><div class="serif" style="font-size:22px">' + esc(st.title) + '</div><div class="sub">' + esc(st.de) + "</div></div></div>";
+  h += segRow("storyMode", storyMode(), [["both", "Polnisch · Deutsch · Polnisch"], ["pl", "Nur Polnisch"]], "stMode");
+  if (!f) return h + '<div class="card center"><p class="sub">Die Aufnahme wird gerade erzeugt. Schau in ein paar Minuten wieder vorbei.</p></div>';
+  h += '<div class="now"><div style="display:flex;align-items:center;gap:14px"><button class="bigspk" style="width:72px;height:72px;flex:none" data-act="stPlay" aria-label="' + (playing ? "Pause" : "Abspielen") + '">' + ic(playing ? "pause" : "play", 30) + '</button><div style="flex:1"><div class="bar" style="height:8px"><i id="stbar" style="width:' + (ui.storyOn === st.id && storyPlayer.duration ? 100 * storyPlayer.currentTime / storyPlayer.duration : 0) + '%"></i></div><div class="sub" id="sttime" style="color:#FBF6EC;margin-top:6px">' + (ui.storyOn === st.id ? fmtT(storyPlayer.currentTime) : "0:00") + " / " + fmtT(f.d) + "</div></div></div></div>";
+  h += speedRow();
+  const showDeSt = S.set.showDe || ui.storyDe;
+  h += '<div style="display:flex;justify-content:flex-end"><button class="linkbtn" data-act="stDe">' + (showDeSt ? "Deutsch ausblenden" : "Deutsch einblenden") + "</button></div>";
+  h += '<div class="card">' + st.lines.map((l, i) => '<div class="stline" id="stl-' + i + '" data-act="stSeek" data-i="' + i + '"><div class="serif" style="font-size:20px">' + esc(l[0]) + "</div>" + (showDeSt ? '<div class="sub">' + esc(l[1]) + "</div>" : "") + "</div>").join("") + "</div>";
+  return h + '<p class="note">Tippe auf einen Satz, um dorthin zu springen. Auf dem Sperrbildschirm kannst du pausieren und weiterspielen.</p>';
+}
+function storyIdx() {
+  const st = ST && ST.stories.find(x => x.id === ui.storyOn), f = st && storyFile(st.id); if (!f) return -1;
+  let i = -1; f.t.forEach((t, k) => { if (storyPlayer.currentTime >= t - 0.05) i = k; }); return i;
+}
+storyPlayer.addEventListener("timeupdate", () => {
+  const d = storyPlayer.currentTime - storyLastT; storyLastT = storyPlayer.currentTime;
+  if (d > 0 && d < 3) { const r = dayRec(today()); r.listen += d; if (!r.act) markActive(); }
+  if (ui.tab !== "listen" || ui.story !== ui.storyOn) return;
+  const b = $("#stbar"), t = $("#sttime"), f = storyFile(ui.storyOn);
+  if (b && storyPlayer.duration) b.style.width = (100 * storyPlayer.currentTime / storyPlayer.duration) + "%";
+  if (t && f) t.textContent = fmtT(storyPlayer.currentTime) + " / " + fmtT(f.d);
+  const i = storyIdx(), cur = document.querySelector(".stline.cur");
+  if (cur && cur.id === "stl-" + i) return;
+  if (cur) cur.classList.remove("cur");
+  const e = $("#stl-" + i); if (e) { e.classList.add("cur"); e.scrollIntoView({block: "center", behavior: "smooth"}); }
+});
+["play", "pause", "ended"].forEach(ev => storyPlayer.addEventListener(ev, () => { if (ev !== "play") saveLocal(); if (ui.tab === "listen" && ui.story) render(); }));
+function storyStart(id, at) {
+  const st = ST.stories.find(x => x.id === id), f = storyFile(id); if (!f) return;
+  stopSpeech();
+  const src = "audio/" + f.f;
+  if (ui.storyOn !== id || !storyPlayer.src.endsWith(src)) { storyPlayer.src = src; ui.storyOn = id; storyLastT = 0; }
+  storyPlayer.playbackRate = Math.min(1.3, Math.max(0.6, S.set.rate / 0.85)); try { storyPlayer.preservesPitch = true; } catch (e) {}
+  if (at != null) { storyPlayer.currentTime = at; storyLastT = at; }
+  storyPlayer.play().catch(() => {});
+  try {
+    navigator.mediaSession.metadata = new MediaMetadata({title: st.title, artist: "Polski · " + st.de, artwork: [{src: "img/icon-512.png", sizes: "512x512", type: "image/png"}]});
+    const jump = k => { const ff = storyFile(ui.storyOn), i = Math.max(0, Math.min(ff.t.length - 1, storyIdx() + k)); storyPlayer.currentTime = ff.t[i]; storyLastT = ff.t[i]; };
+    navigator.mediaSession.setActionHandler("previoustrack", () => jump(-1));
+    navigator.mediaSession.setActionHandler("nexttrack", () => jump(1));
+    navigator.mediaSession.setActionHandler("seekbackward", () => { storyPlayer.currentTime = Math.max(0, storyPlayer.currentTime - 10); });
+    navigator.mediaSession.setActionHandler("seekforward", () => { storyPlayer.currentTime += 10; });
+  } catch (e) {}
+}
+
 /* ---------- Settings ---------- */
 function sheet() {
   const seg = (key, opts) => '<div class="seg" role="group">' + opts.map(([v, t]) => '<button data-act="setv" data-k="' + key + '" data-v="' + v + '" aria-pressed="' + (String(S.set[key]) === String(v)) + '">' + t + "</button>").join("") + "</div>";
@@ -1205,7 +1273,7 @@ const A = {
   },
   pickVoice(d) { const v = svVoices[+d.i]; if (!v) return; S.set.voice = v.voiceURI; svVoice = v; save(); render(); say("Cześć, " + NAME + "! Tak brzmi mój głos."); },
   testVoice() { say("Cześć, " + NAME + "! Witaj w aplikacji Polski. Jak się dzisiaj masz?"); },
-  rateSet(d) { S.set.rate = +d.v; save(); render(); },
+  rateSet(d) { S.set.rate = +d.v; save(); storyPlayer.playbackRate = Math.min(1.3, Math.max(0.6, S.set.rate / 0.85)); render(); },
   decode(d) { S.set.decode = d.v; save(); render(); },
   open(d) { openLesson(d.id); },
   node(d) {
@@ -1244,6 +1312,12 @@ const A = {
   },
   exNext() { const L = ui.lesson; stopSpeech(); L.exI++; if (L.exI >= L.ex.length) L.phase = "grammar"; render(); window.scrollTo(0, 0); },
   finish() { finishLesson(); },
+  stOpen(d) { ui.story = d.id; render(); },
+  stDe() { ui.storyDe = !ui.storyDe; if (S.set.showDe) { S.set.showDe = false; save(); } render(); },
+  stBack() { ui.story = null; render(); },
+  stMode(d) { const was = !storyPlayer.paused && ui.storyOn === ui.story, i = storyIdx(); S.set.storyMode = d.v; save(); storyPlayer.pause(); ui.storyOn = null; render(); if (was) { const f = storyFile(ui.story); storyStart(ui.story, f.t[Math.max(0, i)]); } },
+  stPlay() { if (!storyPlayer.paused && ui.storyOn === ui.story) storyPlayer.pause(); else storyStart(ui.story); },
+  stSeek(d, el, e) { if (e.target.closest(".dehid")) return; const f = storyFile(ui.story); if (f) storyStart(ui.story, f.t[+d.i]); },
   unhide(d, el) { const n = el.nextElementSibling; if (n) n.hidden = false; el.remove(); },
   wMode(d) { stopSpeech(); ui.wmode = d.v; ui.cx = null; ui.ax = null; render(); },
   lMode(d) { stopSpeech(); ui.listen.playing = false; ui.lmode = d.v; render(); },
@@ -1362,6 +1436,8 @@ document.addEventListener("change", e => {
 });
 fetch("audio/index.json").then(r => r.ok ? r.json() : {}).catch(() => ({})).then(a => { AUDIO = a || {}; if (ui.sheet) render(); });
 fetch("vocab.json").then(r => r.json()).then(d => { loadVocab(d); render(); }).catch(() => {});
+fetch("stories.json").then(r => r.json()).then(d => { ST = d; render(); }).catch(() => {});
+fetch("audio/stories.json").then(r => r.ok ? r.json() : {}).then(d => { STA = d || {}; render(); }).catch(() => {});
 fetch("drills.json").then(r => r.json()).then(d => { DR = d; render(); }).catch(() => {});
 fetch("lessons.json").then(r => r.json()).then(d => { D = d; vClean(); checkBadges(); render(); initStorage(); })
   .catch(() => { $("#app").innerHTML = '<p style="padding:40px;text-align:center">Die Lektionen konnten nicht geladen werden. Bitte lade die Seite neu.</p>'; });

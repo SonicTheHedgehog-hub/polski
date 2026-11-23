@@ -1,6 +1,6 @@
 // Offline-Speicher der App. Bei jeder Änderung VERSION erhöhen.
-const VERSION = "polski-v3", AUDIO_CACHE = "polski-audio";
-const CORE = ["./", "./index.html", "./lessons.json", "./vocab.json", "./drills.json", "./manifest.webmanifest", "./img/badge-30.webp", "./img/badge-7.webp", "./img/badge-b2.webp", "./img/badge-start.webp", "./img/celebrating.webp", "./img/ch-pierwsze.webp", "./img/ch-przyjaciele.webp", "./img/ch-rodzina.webp", "./img/ch-spoleczenstwo.webp", "./img/flaga.webp", "./img/flying.webp", "./img/happy.webp", "./img/head.webp", "./img/icon-180.png", "./img/icon-192.png", "./img/icon-512.png", "./img/kawa.webp", "./img/krakow.webp", "./img/kwiat.webp", "./img/listening.webp", "./img/mascot.webp", "./img/obwarzanek.webp", "./img/pierogi.webp", "./img/pisanka.webp", "./img/reading.webp", "./img/sleeping.webp", "./img/speaking.webp", "./img/thinking.webp"];
+const VERSION = "polski-v4", AUDIO_CACHE = "polski-audio";
+const CORE = ["./", "./index.html", "./lessons.json", "./vocab.json", "./drills.json", "./stories.json", "./manifest.webmanifest", "./img/badge-30.webp", "./img/badge-7.webp", "./img/badge-b2.webp", "./img/badge-start.webp", "./img/celebrating.webp", "./img/ch-pierwsze.webp", "./img/ch-przyjaciele.webp", "./img/ch-rodzina.webp", "./img/ch-spoleczenstwo.webp", "./img/flaga.webp", "./img/flying.webp", "./img/happy.webp", "./img/head.webp", "./img/icon-180.png", "./img/icon-192.png", "./img/icon-512.png", "./img/kawa.webp", "./img/krakow.webp", "./img/kwiat.webp", "./img/listening.webp", "./img/mascot.webp", "./img/obwarzanek.webp", "./img/pierogi.webp", "./img/pisanka.webp", "./img/reading.webp", "./img/sleeping.webp", "./img/speaking.webp", "./img/thinking.webp"];
 
 self.addEventListener("install", e => {
   e.waitUntil(caches.open(VERSION).then(c => c.addAll(CORE)).then(() => self.skipWaiting()));
@@ -31,6 +31,8 @@ self.addEventListener("fetch", e => {
     return;
   }
   // Bilder und Schriften: erst Offline-Kopie, sonst Netz und merken
+  // Geschichten direkt vom Netz (Safari braucht dafür Teilabrufe)
+  if (/\/audio\/s[^/]*\.mp3$/.test(url.pathname)) return;
   const store = url.pathname.includes("/audio/") ? AUDIO_CACHE : VERSION;
   e.respondWith(caches.match(req).then(r => r || fetch(req).then(res => {
     if (res.ok || res.type === "opaque") { const c = res.clone(); caches.open(store).then(x => x.put(req, c)); }
