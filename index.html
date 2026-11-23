@@ -991,14 +991,15 @@ function startCases() {
   render();
 }
 function caseOpts(it) {
+  if (it.o) return shuf(it.o.slice());
   const forms = Object.values(DR.cases.nouns[it.n].f).filter((f, i, a) => a.indexOf(f) === i && f !== it.a);
   return shuf([it.a].concat(shuf(forms).slice(0, 3)));
 }
 function viewCaseItem() {
-  const X = ui.cx, cur = X.q[0], it = cur.it, N = DR.cases.nouns[it.n];
+  const X = ui.cx, cur = X.q[0], it = cur.it, N = it.n ? DR.cases.nouns[it.n] : null;
   if (!cur.opts) cur.opts = caseOpts(it);
   let h = sessHead("caseQuit", X.done, X.q.length);
-  h += '<div class="qcard"><div class="kick">' + (cur.res ? CASE_DE(it.c) + " · " + DR.cases.info[it.c].q : "Welche Form passt?") + '</div><div class="big">' + esc(cur.res ? it.full : it.s).replace("___", '<span class="gap">　　　</span>') + '</div><div style="opacity:.9">Grundform: <b>' + esc(it.n) + "</b> " + gtag(N.g) + "</div></div>";
+  h += '<div class="qcard"><div class="kick">' + (cur.res ? CASE_DE(it.c) + " · " + DR.cases.info[it.c].q : "Welche Form passt?") + '</div><div class="big">' + esc(cur.res ? it.full : it.s).replace("___", '<span class="gap">　　　</span>') + '</div><div style="opacity:.9">Grundform: <b>' + esc(it.base || it.n) + "</b> " + (N ? gtag(N.g) : "") + "</div></div>";
   h += deHid(it.de);
   h += '<div class="opts" style="margin-top:12px">' + cur.opts.map((o, i) => '<button data-act="casePick" data-i="' + i + '" class="serif2 ' + (cur.res ? (o === it.a ? "ok" : i === cur.ans ? "bad" : "") : "") + '"' + (cur.res ? " disabled" : "") + ">" + esc(o) + "</button>").join("") + "</div>";
   if (cur.res) {

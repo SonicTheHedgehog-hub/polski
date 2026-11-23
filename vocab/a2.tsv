@@ -1,0 +1,520 @@
+#pack	a2-01	A2	Familie und Beziehungen
+rodzeństwo	Geschwister	n	Masz rodzeństwo?	Hast du Geschwister?	nur Singular
+wnuk	Enkel	m	Babcia kocha swojego wnuka.	Oma liebt ihren Enkel.	weiblich: wnuczka
+dziadkowie	Großeltern	pl	Dziadkowie mieszkają na wsi.	Die Großeltern wohnen auf dem Land.
+kuzyn	Cousin	m	Mój kuzyn mieszka w Poznaniu.	Mein Cousin wohnt in Posen.	weiblich: kuzynka
+teść	Schwiegervater	m	Mój teść jest emerytem.	Mein Schwiegervater ist Rentner.	weiblich: teściowa
+szwagier	Schwager	m	Szwagier pomaga nam w remoncie.	Der Schwager hilft uns bei der Renovierung.	weiblich: szwagierka	aus dem Deutschen
+narzeczony	Verlobter	m	Jej narzeczony jest z Niemiec.	Ihr Verlobter ist aus Deutschland.	weiblich: narzeczona
+małżeństwo	Ehe; Ehepaar	n	To szczęśliwe małżeństwo.	Das ist eine glückliche Ehe.
+ślub	Hochzeit (Trauung)	m	Ślub jest w sierpniu.	Die Hochzeit ist im August.	brać ślub = heiraten
+wesele	Hochzeitsfeier	n	Polskie wesele trwa całą noc.	Eine polnische Hochzeitsfeier dauert die ganze Nacht.
+rozwód	Scheidung	m	Po rozwodzie mieszka sam.	Nach der Scheidung wohnt er allein.	Genitiv: rozwodu
+wdowa	Witwe	f	Babcia jest wdową.	Oma ist Witwe.	männlich: wdowiec
+żonaty	verheiratet (Mann)		Czy jesteś żonaty?	Bist du verheiratet?	Frau: zamężna	żona = Ehefrau
+zamężna	verheiratet (Frau)		Moja siostra jest zamężna.	Meine Schwester ist verheiratet.		mąż = Ehemann
+samotny	einsam; alleinstehend		Czuje się samotny.	Er fühlt sich einsam.		sam = allein
+para	Paar	f	Są parą od roku.	Sie sind seit einem Jahr ein Paar.
+miłość	Liebe	f	Miłość od pierwszego wejrzenia.	Liebe auf den ersten Blick.		miły = nett
+randka	Verabredung; Date	f	Mam dziś randkę.	Ich habe heute ein Date.
+zakochać się	sich verlieben		Zakochał się w Oli.	Er hat sich in Ola verliebt.	pf.; ipf.: zakochiwać się; w + Lokativ
+poznać	kennenlernen		Gdzie się poznaliście?	Wo habt ihr euch kennengelernt?	pf.; ipf.: poznawać
+ożenić się	heiraten (Mann)		Ożenił się w zeszłym roku.	Er hat letztes Jahr geheiratet.	pf.; z + Instrumental	żona = Ehefrau
+wyjść za mąż	heiraten (Frau)		Wyszła za mąż za Niemca.	Sie hat einen Deutschen geheiratet.	pf.; ipf.: wychodzić za mąż	wörtlich: „hinter einen Mann gehen“
+urodzić się	geboren werden		Urodziłem się w Berlinie.	Ich bin in Berlin geboren.	pf.	urodziny = Geburtstag
+gość	Gast	m	Mamy dziś gości.	Wir haben heute Gäste.	Plural: goście
+znajomy	Bekannter	m	To mój znajomy z pracy.	Das ist ein Bekannter von der Arbeit.	weiblich: znajoma	znać = kennen
+#pack	a2-02	A2	Aussehen und Charakter
+wygląd	Aussehen	m	Wygląd nie jest najważniejszy.	Das Aussehen ist nicht das Wichtigste.
+wyglądać	aussehen		Dobrze wyglądasz!	Du siehst gut aus!	wyglądam, wyglądasz
+gruby	dick		Ten kot jest gruby.	Diese Katze ist dick.
+szczupły	schlank		Ona jest wysoka i szczupła.	Sie ist groß und schlank.
+przystojny	gut aussehend (Mann)		Jej brat jest przystojny.	Ihr Bruder sieht gut aus.
+broda	Bart; Kinn	f	Dziadek ma siwą brodę.	Opa hat einen grauen Bart.
+okulary	Brille	pl	Nosisz okulary?	Trägst du eine Brille?	nur Plural
+blondyn	blonder Mann	m	Ten blondyn to mój kolega.	Der Blonde ist mein Kollege.	weiblich: blondynka
+siwy	grauhaarig		Ma siwe włosy.	Er hat graue Haare.
+charakter	Charakter	m	Ma trudny charakter.	Er hat einen schwierigen Charakter.
+sympatyczny	sympathisch		Twoja siostra jest bardzo sympatyczna.	Deine Schwester ist sehr sympathisch.
+uprzejmy	höflich		Kelner był bardzo uprzejmy.	Der Kellner war sehr höflich.
+cierpliwy	geduldig		Nauczyciel jest cierpliwy.	Der Lehrer ist geduldig.		cierpieć = leiden
+leniwy	faul		Mój kot jest leniwy.	Meine Katze ist faul.
+pracowity	fleißig		To pracowity człowiek.	Das ist ein fleißiger Mensch.		praca = Arbeit
+mądry	klug		Mądra decyzja.	Eine kluge Entscheidung.
+głupi	dumm		To był głupi pomysł.	Das war eine dumme Idee.
+odważny	mutig		Bądź odważny!	Sei mutig!
+nieśmiały	schüchtern		Dziecko jest nieśmiałe.	Das Kind ist schüchtern.		nie + śmiały (kühn)
+zabawny	lustig		Opowiada zabawne historie.	Er erzählt lustige Geschichten.		zabawa = Spaß
+poważny	ernst		Dlaczego jesteś taki poważny?	Warum bist du so ernst?
+uczciwy	ehrlich		Uczciwy człowiek nie kłamie.	Ein ehrlicher Mensch lügt nicht.
+szczery	aufrichtig		Bądź ze mną szczery.	Sei ehrlich zu mir.
+kręcone włosy	Locken	pl	Ma kręcone włosy.	Sie hat lockige Haare.		
+uśmiech	Lächeln	m	Masz piękny uśmiech.	Du hast ein schönes Lächeln.		śmiać się = lachen
+#pack	a2-03	A2	Haushalt
+sprzątać	aufräumen; putzen		W sobotę sprzątam mieszkanie.	Am Samstag putze ich die Wohnung.	pf.: posprzątać
+prać	Wäsche waschen		Piorę w poniedziałki.	Ich wasche montags Wäsche.	piorę, pierzesz; pf.: wyprać
+prasować	bügeln		Nie lubię prasować.	Ich bügle nicht gern.	pf.: wyprasować
+zmywać	abwaschen		Kto dziś zmywa naczynia?	Wer wäscht heute ab?	pf.: zmyć
+odkurzać	staubsaugen		Odkurzam dywan.	Ich sauge den Teppich.	pf.: odkurzyć	kurz = Staub
+myć	waschen		Myję ręce przed jedzeniem.	Ich wasche mir vor dem Essen die Hände.	myję, myjesz; pf.: umyć
+naczynia	Geschirr	pl	Naczynia są w zmywarce.	Das Geschirr ist in der Spülmaschine.
+zmywarka	Spülmaschine	f	Zmywarka jest zepsuta.	Die Spülmaschine ist kaputt.		zmywać = abwaschen
+pralka	Waschmaschine	f	Pralka pierze bardzo głośno.	Die Waschmaschine wäscht sehr laut.		prać = waschen
+śmieci	Müll	pl	Wynieś śmieci, proszę.	Bring bitte den Müll raus.	nur Plural
+kosz	Korb; Mülleimer	m	Kosz na śmieci jest pełny.	Der Mülleimer ist voll.
+dywan	Teppich	m	Na podłodze leży dywan.	Auf dem Boden liegt ein Teppich.		wie „Diwan“
+zasłona	Vorhang	f	Zamknij zasłony.	Mach die Vorhänge zu.
+półka	Regal	f	Książki stoją na półce.	Die Bücher stehen im Regal.
+szuflada	Schublade	f	Nóż jest w szufladzie.	Das Messer ist in der Schublade.		aus dem Deutschen „Schublade“
+kanapa	Sofa	f	Siedzimy na kanapie.	Wir sitzen auf dem Sofa.
+fotel	Sessel	m	Dziadek śpi w fotelu.	Opa schläft im Sessel.		wie „Fauteuil“
+lustro	Spiegel	n	Lustro wisi w łazience.	Der Spiegel hängt im Bad.
+prysznic	Dusche	m	Biorę prysznic rano.	Ich dusche morgens.
+wanna	Badewanne	f	Dziecko bawi się w wannie.	Das Kind spielt in der Badewanne.		wie „Wanne“
+kran	Wasserhahn	m	Kran cieknie.	Der Wasserhahn tropft.
+światło	Licht	n	Zgaś światło!	Mach das Licht aus!		świat = Welt
+włączyć	einschalten		Włącz telewizor.	Schalte den Fernseher ein.	pf.; ipf.: włączać
+wyłączyć	ausschalten		Wyłącz telefon w kinie.	Schalte im Kino das Telefon aus.	pf.; ipf.: wyłączać
+remont	Renovierung	m	Mamy remont w kuchni.	Wir renovieren gerade die Küche.
+#pack	a2-04	A2	Einkaufen und Geld
+zakupy	Einkäufe	pl	Robię zakupy w sobotę.	Ich kaufe am Samstag ein.	robić zakupy = einkaufen
+cena	Preis	f	Jaka jest cena?	Was ist der Preis?
+kosztować	kosten		Ile kosztuje ten sweter?	Wie viel kostet dieser Pullover?	kosztuje
+drożej	teurer		W centrum jest drożej.	Im Zentrum ist es teurer.		drogi = teuer
+taniej	billiger		Na rynku jest taniej.	Auf dem Markt ist es billiger.		tani = billig
+promocja	Sonderangebot	f	Masło jest w promocji.	Butter ist im Angebot.
+paragon	Kassenbon	m	Poproszę paragon.	Den Kassenbon, bitte.
+kasa	Kasse	f	Płacę przy kasie.	Ich zahle an der Kasse.
+gotówka	Bargeld	f	Płacę gotówką.	Ich zahle bar.		gotowy = fertig, bereit
+karta	Karte	f	Czy mogę zapłacić kartą?	Kann ich mit Karte zahlen?
+reszta	Wechselgeld; Rest	f	Proszę, reszta dla pana.	Bitte, der Rest ist für Sie.
+portfel	Geldbeutel	m	Zgubiłem portfel.	Ich habe meinen Geldbeutel verloren.		wie „Portefeuille“
+złoty	Złoty (Währung)	m	Chleb kosztuje pięć złotych.	Das Brot kostet fünf Złoty.	ab 5: złotych	złoty = golden
+grosz	Groschen	m	Sto groszy to jeden złoty.	Hundert Groschen sind ein Złoty.		wie „Groschen“
+euro	Euro	n	Wymieniam euro na złote.	Ich tausche Euro in Złoty.	unveränderlich
+kilogram	Kilogramm	m	Kilogram jabłek, proszę.	Ein Kilo Äpfel, bitte.	kurz: kilo
+litr	Liter	m	Litr mleka.	Ein Liter Milch.
+kawałek	Stück	m	Kawałek sera, proszę.	Ein Stück Käse, bitte.
+butelka	Flasche	f	Butelka wina.	Eine Flasche Wein.
+opakowanie	Packung	n	Opakowanie herbaty.	Eine Packung Tee.
+rozmiar	Größe (Kleidung)	m	Jaki rozmiar pan nosi?	Welche Größe tragen Sie?
+przymierzyć	anprobieren		Czy mogę przymierzyć te buty?	Kann ich diese Schuhe anprobieren?	pf.; ipf.: przymierzać
+wymienić	umtauschen; tauschen		Chcę wymienić tę koszulę.	Ich möchte dieses Hemd umtauschen.	pf.; ipf.: wymieniać
+sklep spożywczy	Lebensmittelladen	m	Sklep spożywczy jest na rogu.	Der Lebensmittelladen ist an der Ecke.
+centrum handlowe	Einkaufszentrum	n	Idziemy do centrum handlowego.	Wir gehen ins Einkaufszentrum.
+#pack	a2-05	A2	Kochen und Lebensmittel
+przepis	Rezept	m	Masz dobry przepis na pierogi?	Hast du ein gutes Rezept für Piroggen?
+składnik	Zutat	m	Jakie są składniki?	Was sind die Zutaten?
+mąka	Mehl	f	Potrzebuję kilogram mąki.	Ich brauche ein Kilo Mehl.
+olej	Öl	m	Smażę na oleju.	Ich brate in Öl.		wie „Öl“
+pieprz	Pfeffer	m	Sól i pieprz do smaku.	Salz und Pfeffer nach Geschmack.		wie „Pfeffer“
+cebula	Zwiebel	f	Kroję cebulę.	Ich schneide die Zwiebel.		lateinisch cepulla
+czosnek	Knoblauch	m	Zupa z czosnkiem.	Suppe mit Knoblauch.
+marchewka	Karotte	f	Królik je marchewkę.	Das Kaninchen frisst eine Karotte.
+kapusta	Kohl	f	Bigos to kapusta z mięsem.	Bigos ist Kohl mit Fleisch.		wie „Kappes“
+ogórek	Gurke	m	Ogórki kiszone są typowo polskie.	Saure Gurken sind typisch polnisch.		ogórek → Gurke: das Deutsche hat es übernommen
+grzyby	Pilze	pl	Zbieramy grzyby w lesie.	Wir sammeln Pilze im Wald.	Singular: grzyb
+kiełbasa	Wurst	f	Kiełbasa z grilla.	Wurst vom Grill.		wie „Kielbasa“
+szynka	Schinken	f	Kanapka z szynką.	Ein Brot mit Schinken.		wie „Schinken“
+twaróg	Quark	m	Pierogi ruskie mają twaróg.	Pierogi ruskie haben Quark.		wie „Quark“: das Wort kam aus dem Slawischen ins Deutsche
+śmietana	Sahne; Schmand	f	Zupa ze śmietaną.	Suppe mit Schmand.		wie „Schmetten“
+jajecznica	Rührei	f	Na śniadanie jem jajecznicę.	Zum Frühstück esse ich Rührei.		jajko = Ei
+kanapka	belegtes Brot	f	Robię kanapki do pracy.	Ich mache mir Brote für die Arbeit.
+deser	Nachtisch	m	Co jest na deser?	Was gibt es zum Nachtisch?		wie „Dessert“
+czekolada	Schokolade	f	Gorąca czekolada.	Heiße Schokolade.
+kroić	schneiden		Kroję chleb.	Ich schneide Brot.	kroję, kroisz; pf.: pokroić
+smażyć	braten		Smażę jajka.	Ich brate Eier.	pf.: usmażyć
+mieszać	umrühren; mischen		Mieszaj zupę!	Rühr die Suppe um!	pf.: wymieszać
+gotowany	gekocht		Gotowane ziemniaki.	Gekochte Kartoffeln.		gotować = kochen
+słodki	süß		Ciasto jest za słodkie.	Der Kuchen ist zu süß.
+słony	salzig		Zupa jest za słona.	Die Suppe ist zu salzig.		sól = Salz
+#pack	a2-06	A2	Im Restaurant
+menu	Speisekarte	n	Poproszę menu.	Die Speisekarte, bitte.	unveränderlich; auch: karta
+zamówić	bestellen		Chciałbym zamówić zupę.	Ich möchte eine Suppe bestellen.	pf.; ipf.: zamawiać
+rachunek	Rechnung	m	Poproszę rachunek.	Die Rechnung, bitte.
+napiwek	Trinkgeld	m	Zostawiamy napiwek.	Wir lassen Trinkgeld da.		pić = trinken: „Trinkgeld“
+danie	Gericht	n	Danie dnia.	Das Tagesgericht.
+przystawka	Vorspeise	f	Na przystawkę śledź.	Als Vorspeise Hering.
+drugie danie	Hauptgericht	n	Na drugie danie schabowy.	Als Hauptgericht Schnitzel.
+stolik	Tischchen (im Lokal)	m	Czy ten stolik jest wolny?	Ist dieser Tisch frei?		kleiner stół
+rezerwacja	Reservierung	f	Mam rezerwację na nazwisko Nowak.	Ich habe eine Reservierung auf den Namen Nowak.
+polecić	empfehlen		Co pan poleca?	Was empfehlen Sie?	pf.; ipf.: polecać
+wegetariański	vegetarisch		Czy jest coś wegetariańskiego?	Gibt es etwas Vegetarisches?
+ostry	scharf		Ta zupa jest bardzo ostra.	Diese Suppe ist sehr scharf.		auch: scharfes Messer
+pyszny	köstlich		Wszystko było pyszne!	Alles war köstlich!
+na wynos	zum Mitnehmen		Kawa na wynos.	Kaffee zum Mitnehmen.		wynosić = hinaustragen
+na miejscu	hier (zum Essen)		Na miejscu czy na wynos?	Hier essen oder zum Mitnehmen?		miejsce = Ort
+porcja	Portion	f	Duża porcja frytek.	Eine große Portion Pommes.
+frytki	Pommes	pl	Kurczak z frytkami.	Hähnchen mit Pommes.
+kieliszek	Glas (Wein, Schnaps)	m	Kieliszek wina, proszę.	Ein Glas Wein, bitte.		
+bar mleczny	Milchbar (Kantine)	m	Jemy tanio w barze mlecznym.	Wir essen günstig in der Milchbar.		typisch polnische günstige Kantine
+pierogarnia	Pierogi-Lokal	f	Ta pierogarnia jest znana.	Dieses Pierogi-Lokal ist bekannt.
+smakować	schmecken		Jak ci smakuje?	Wie schmeckt es dir?	mit Dativ	smaczny = lecker
+nakryć do stołu	den Tisch decken		Nakryj do stołu, proszę.	Deck bitte den Tisch.	pf.; ipf.: nakrywać
+serwetka	Serviette	f	Poproszę serwetkę.	Eine Serviette, bitte.
+kucharka	Köchin	f	Babcia to świetna kucharka.	Oma ist eine tolle Köchin.	männlich: kucharz
+kelnerka	Kellnerin	f	Kelnerka przynosi menu.	Die Kellnerin bringt die Speisekarte.	männlich: kelner
+#pack	a2-07	A2	Beim Arzt
+przychodnia	Arztpraxis; Ambulanz	f	Idę do przychodni.	Ich gehe in die Praxis.
+wizyta	Termin; Besuch	f	Mam wizytę u lekarza.	Ich habe einen Arzttermin.
+pacjent	Patient	m	Pacjent czeka w poczekalni.	Der Patient wartet im Wartezimmer.	weiblich: pacjentka
+recepta	Rezept (Arzt)	f	Lekarz wypisał receptę.	Der Arzt hat ein Rezept ausgestellt.
+tabletka	Tablette	f	Biorę jedną tabletkę dziennie.	Ich nehme eine Tablette am Tag.
+przeziębienie	Erkältung	n	Mam przeziębienie.	Ich habe eine Erkältung.		ziębić = kühlen
+katar	Schnupfen	m	Mam katar i kaszel.	Ich habe Schnupfen und Husten.		wie „Katarrh“
+kaszel	Husten	m	Kaszel nie przechodzi.	Der Husten geht nicht weg.	Genitiv: kaszlu
+grypa	Grippe	f	Leżę w łóżku z grypą.	Ich liege mit Grippe im Bett.
+alergia	Allergie	f	Mam alergię na orzechy.	Ich bin allergisch gegen Nüsse.
+ból gardła	Halsschmerzen	m	Mam ból gardła.	Ich habe Halsschmerzen.		gardło = Hals
+gardło	Hals (innen)	n	Boli mnie gardło.	Mir tut der Hals weh.
+dentysta	Zahnarzt	m	Boję się dentysty.	Ich habe Angst vor dem Zahnarzt.	endet auf -a, ist männlich
+pogotowie	Rettungsdienst	n	Dzwoń po pogotowie!	Ruf den Rettungsdienst!		Notruf: 112 oder 999
+zwolnienie	Krankschreibung	n	Lekarz dał mi zwolnienie.	Der Arzt hat mich krankgeschrieben.
+badanie	Untersuchung	n	Badanie krwi.	Eine Blutuntersuchung.		badać = untersuchen
+krew	Blut	f	Oddaję krew.	Ich spende Blut.	Genitiv: krwi
+ciśnienie	Blutdruck; Druck	n	Mam wysokie ciśnienie.	Ich habe hohen Blutdruck.
+zdrowieć	gesund werden		Szybko zdrowiej!	Werd schnell gesund!	pf.: wyzdrowieć	zdrowy = gesund
+kaszleć	husten		Dziecko kaszle w nocy.	Das Kind hustet nachts.	kaszlę, kaszlesz
+złamać	brechen		Złamałem rękę.	Ich habe mir den Arm gebrochen.	pf.; ipf.: łamać
+skaleczyć się	sich schneiden		Skaleczyłem się w palec.	Ich habe mich in den Finger geschnitten.	pf.
+apteczka	Verbandskasten	f	Apteczka jest w samochodzie.	Der Verbandskasten ist im Auto.		apteka = Apotheke
+plaster	Pflaster	m	Potrzebuję plastra.	Ich brauche ein Pflaster.		wie „Pflaster“
+ubezpieczenie	Versicherung	n	Mam ubezpieczenie zdrowotne.	Ich habe eine Krankenversicherung.		bezpieczny = sicher
+#pack	a2-08	A2	Körper und Sport
+palec	Finger; Zeh	m	Boli mnie palec.	Mir tut der Finger weh.	Genitiv: palca
+ramię	Schulter; Oberarm	n	Boli mnie ramię.	Mir tut die Schulter weh.	Plural: ramiona
+kolano	Knie	n	Upadłem na kolano.	Ich bin aufs Knie gefallen.
+stopa	Fuß	f	Mam zimne stopy.	Ich habe kalte Füße.
+szyja	Hals (außen)	f	Ma długą szyję.	Sie hat einen langen Hals.
+żołądek	Magen	m	Mam pusty żołądek.	Ich habe einen leeren Magen.
+skóra	Haut; Leder	f	Kurtka ze skóry.	Eine Lederjacke.
+mięsień	Muskel	m	Bolą mnie mięśnie.	Mir tun die Muskeln weh.	Genitiv: mięśnia
+siłownia	Fitnessstudio	f	Chodzę na siłownię.	Ich gehe ins Fitnessstudio.		siła = Kraft
+trening	Training	m	Trening trwa godzinę.	Das Training dauert eine Stunde.
+ćwiczyć	üben; trainieren		Ćwiczę trzy razy w tygodniu.	Ich trainiere dreimal pro Woche.	pf.: poćwiczyć
+mecz	Spiel (Sport)	m	Oglądamy mecz.	Wir schauen das Spiel.		wie englisch „match“
+drużyna	Mannschaft	f	Nasza drużyna wygrała.	Unsere Mannschaft hat gewonnen.
+wygrać	gewinnen		Kto wygrał?	Wer hat gewonnen?	pf.; ipf.: wygrywać	grać = spielen
+przegrać	verlieren (Spiel)		Przegraliśmy dwa do jednego.	Wir haben zwei zu eins verloren.	pf.; ipf.: przegrywać
+bieganie	Laufen; Joggen	n	Bieganie to moje hobby.	Laufen ist mein Hobby.		biegać = laufen
+rower górski	Mountainbike	m	Jeżdżę na rowerze górskim.	Ich fahre Mountainbike.
+narty	Ski	pl	Zimą jeździmy na nartach.	Im Winter fahren wir Ski.
+tenis	Tennis	m	Gram w tenisa.	Ich spiele Tennis.	grać w + Akkusativ
+koszykówka	Basketball	f	Grasz w koszykówkę?	Spielst du Basketball?		kosz = Korb
+siatkówka	Volleyball	f	Polacy kochają siatkówkę.	Die Polen lieben Volleyball.		siatka = Netz
+kibic	Fan (Sport)	m	Jestem kibicem Lecha.	Ich bin Fan von Lech.
+zmęczenie	Müdigkeit	n	Czuję zmęczenie.	Ich spüre Müdigkeit.		zmęczony = müde
+forma	Form	f	Jestem w dobrej formie.	Ich bin in guter Form.
+schudnąć	abnehmen		Chcę schudnąć pięć kilo.	Ich will fünf Kilo abnehmen.	pf.; ipf.: chudnąć	chudy = dünn
+#pack	a2-09	A2	Arbeit und Beruf
+kierownik	Leiter; Chef	m	Kierownik ma spotkanie.	Der Leiter hat eine Besprechung.	weiblich: kierowniczka
+pracownik	Mitarbeiter	m	Firma ma stu pracowników.	Die Firma hat hundert Mitarbeiter.	weiblich: pracownica	praca = Arbeit
+klient	Kunde	m	Klient czeka na odpowiedź.	Der Kunde wartet auf eine Antwort.	weiblich: klientka
+umowa	Vertrag	f	Podpisuję umowę.	Ich unterschreibe den Vertrag.
+etat	Stelle (fest)	m	Pracuję na pełny etat.	Ich arbeite Vollzeit.	pół etatu = Teilzeit
+zarabiać	verdienen		Ile zarabiasz?	Wie viel verdienst du?	pf.: zarobić
+podwyżka	Gehaltserhöhung	f	Dostałem podwyżkę!	Ich habe eine Gehaltserhöhung bekommen!
+biurko	Schreibtisch	n	Na biurku leży laptop.	Auf dem Schreibtisch liegt der Laptop.		biuro = Büro
+rozmowa kwalifikacyjna	Vorstellungsgespräch	f	Jutro mam rozmowę kwalifikacyjną.	Morgen habe ich ein Vorstellungsgespräch.
+życiorys	Lebenslauf	m	Wysyłam życiorys do firmy.	Ich schicke meinen Lebenslauf an die Firma.		życie = Leben
+doświadczenie	Erfahrung	n	Mam pięć lat doświadczenia.	Ich habe fünf Jahre Erfahrung.
+termin	Frist; Termin	m	Termin jest w piątek.	Die Frist ist am Freitag.
+zebranie	Sitzung	n	Zebranie trwa dwie godziny.	Die Sitzung dauert zwei Stunden.
+projekt	Projekt	m	Pracujemy nad nowym projektem.	Wir arbeiten an einem neuen Projekt.
+zadanie	Aufgabe	n	Mam dużo zadań.	Ich habe viele Aufgaben.
+mail	E-Mail	m	Wysłałem ci maila.	Ich habe dir eine E-Mail geschickt.
+drukarka	Drucker	f	Drukarka nie działa.	Der Drucker funktioniert nicht.		drukować = drucken
+inżynier	Ingenieur	m	Mój brat jest inżynierem.	Mein Bruder ist Ingenieur.
+pielęgniarka	Krankenschwester	f	Pielęgniarka mierzy temperaturę.	Die Krankenschwester misst Fieber.
+sprzedawca	Verkäufer	m	Sprzedawca jest miły.	Der Verkäufer ist nett.	weiblich: sprzedawczyni
+kierowca	Fahrer	m	Kierowca autobusu.	Der Busfahrer.	endet auf -a, ist männlich
+policjant	Polizist	m	Policjant pyta o dokumenty.	Der Polizist fragt nach den Papieren.	weiblich: policjantka
+emeryt	Rentner	m	Dziadek jest emerytem.	Opa ist Rentner.	weiblich: emerytka
+bezrobotny	arbeitslos		Brat jest teraz bezrobotny.	Der Bruder ist gerade arbeitslos.		bez + robota (Arbeit)
+zwolnić	entlassen; kündigen		Firma zwolniła dziesięć osób.	Die Firma hat zehn Leute entlassen.	pf.; ipf.: zwalniać
+#pack	a2-10	A2	Schule und Studium
+uniwersytet	Universität	m	Studiuję na uniwersytecie.	Ich studiere an der Uni.
+studia	Studium	pl	Skończyłem studia w zeszłym roku.	Ich habe letztes Jahr mein Studium abgeschlossen.	nur Plural
+studiować	studieren		Co studiujesz?	Was studierst du?	studiuję, studiujesz
+egzamin	Prüfung	m	Zdałem egzamin!	Ich habe die Prüfung bestanden!
+zdać	bestehen (Prüfung)		Czy zdałeś egzamin?	Hast du die Prüfung bestanden?	pf.; ipf.: zdawać (= ablegen)
+ocena	Note	f	Dostałem dobrą ocenę.	Ich habe eine gute Note bekommen.
+klasa	Klasse	f	W klasie jest dwadzieścia osób.	In der Klasse sind zwanzig Leute.
+przedmiot	Fach; Gegenstand	m	Mój ulubiony przedmiot to historia.	Mein Lieblingsfach ist Geschichte.
+historia	Geschichte	f	Lubię historię Polski.	Ich mag die Geschichte Polens.
+matematyka	Mathematik	f	Matematyka jest trudna.	Mathe ist schwer.
+kurs	Kurs	m	Chodzę na kurs polskiego.	Ich besuche einen Polnischkurs.
+zajęcia	Unterricht; Kurse	pl	Zajęcia zaczynają się o ósmej.	Der Unterricht beginnt um acht.	nur Plural
+ćwiczenie	Übung	n	Zrób to ćwiczenie.	Mach diese Übung.		ćwiczyć = üben
+zadanie domowe	Hausaufgabe	n	Mam dużo zadań domowych.	Ich habe viele Hausaufgaben.
+słownik	Wörterbuch	m	Sprawdź w słowniku.	Schau im Wörterbuch nach.		słowo = Wort
+tłumaczyć	übersetzen; erklären		Tłumaczę tekst na niemiecki.	Ich übersetze den Text ins Deutsche.	pf.: przetłumaczyć
+błąd	Fehler	m	Robię dużo błędów.	Ich mache viele Fehler.	Genitiv: błędu
+powtarzać	wiederholen		Powtarzam słówka codziennie.	Ich wiederhole jeden Tag Vokabeln.	pf.: powtórzyć
+nauczyć się	lernen (bis man es kann)		Nauczyłem się nowych słów.	Ich habe neue Wörter gelernt.	pf. zu uczyć się
+wiedza	Wissen	f	Ma dużą wiedzę.	Er hat ein großes Wissen.		wiedzieć = wissen
+tablica	Tafel	f	Nauczyciel pisze na tablicy.	Der Lehrer schreibt an die Tafel.
+przerwa	Pause	f	Mamy dziesięć minut przerwy.	Wir haben zehn Minuten Pause.
+nauka	Lernen; Wissenschaft	f	Nauka języka wymaga czasu.	Sprachenlernen braucht Zeit.		uczyć się = lernen
+wykład	Vorlesung	m	Wykład jest bardzo ciekawy.	Die Vorlesung ist sehr interessant.
+dyplom	Diplom; Abschluss	m	Mam dyplom inżyniera.	Ich habe ein Ingenieurdiplom.
+#pack	a2-11	A2	Stadt und Behörden
+urząd	Amt	m	Muszę iść do urzędu.	Ich muss aufs Amt.	Genitiv: urzędu
+dokument	Dokument	m	Proszę o dokumenty.	Ihre Dokumente, bitte.
+dowód osobisty	Personalausweis	m	Zgubiłem dowód osobisty.	Ich habe meinen Ausweis verloren.
+formularz	Formular	m	Proszę wypełnić formularz.	Bitte füllen Sie das Formular aus.
+wypełnić	ausfüllen		Wypełniam wniosek.	Ich fülle den Antrag aus.	pf.; ipf.: wypełniać	pełny = voll
+podpisać	unterschreiben		Proszę tu podpisać.	Bitte hier unterschreiben.	pf.; ipf.: podpisywać
+kolejka	Schlange (Warteschlange)	f	Stoję w kolejce.	Ich stehe in der Schlange.
+policja	Polizei	f	Dzwonię na policję.	Ich rufe die Polizei.
+straż pożarna	Feuerwehr	f	Straż pożarna przyjechała szybko.	Die Feuerwehr kam schnell.
+skrzyżowanie	Kreuzung	n	Na skrzyżowaniu skręć w lewo.	An der Kreuzung bieg links ab.		krzyż = Kreuz
+światła	Ampel	pl	Poczekaj na zielone światło.	Warte auf Grün.
+chodnik	Bürgersteig	m	Idź po chodniku!	Geh auf dem Bürgersteig!		chodzić = gehen
+przejście dla pieszych	Fußgängerüberweg	n	Przejście dla pieszych jest tutaj.	Der Zebrastreifen ist hier.
+róg	Ecke	m	Sklep jest na rogu.	Der Laden ist an der Ecke.	Genitiv: rogu	auch: Horn
+dzielnica	Stadtteil	f	Mieszkam w spokojnej dzielnicy.	Ich wohne in einem ruhigen Stadtteil.
+budynek	Gebäude	m	Wysoki budynek.	Ein hohes Gebäude.		budować = bauen
+zamek	Schloss; Burg	m	Zamek na Wawelu.	Das Schloss auf dem Wawel.
+pomnik	Denkmal	m	Spotkajmy się pod pomnikiem.	Treffen wir uns am Denkmal.		pamiętać = sich erinnern
+stare miasto	Altstadt	n	Stare miasto w Warszawie.	Die Altstadt in Warschau.
+biblioteka	Bibliothek	f	Pożyczam książki z biblioteki.	Ich leihe Bücher aus der Bibliothek.
+teatr	Theater	m	Idziemy do teatru.	Wir gehen ins Theater.
+parking	Parkplatz	m	Parking jest płatny.	Der Parkplatz ist kostenpflichtig.
+stacja benzynowa	Tankstelle	f	Muszę zatankować na stacji benzynowej.	Ich muss an der Tankstelle tanken.
+mieszkaniec	Einwohner	m	Miasto ma milion mieszkańców.	Die Stadt hat eine Million Einwohner.	Genitiv: mieszkańca	mieszkać = wohnen
+zgubić	verlieren		Zgubiłem klucze.	Ich habe die Schlüssel verloren.	pf.; ipf.: gubić
+#pack	a2-12	A2	Reisen und Hotel
+wakacje	Ferien; Urlaub	pl	Gdzie jedziesz na wakacje?	Wohin fährst du in den Urlaub?	nur Plural
+bilet powrotny	Rückfahrkarte	m	Poproszę bilet powrotny.	Eine Rückfahrkarte, bitte.		wracać = zurückkommen
+zwiedzać	besichtigen		Zwiedzamy Kraków.	Wir besichtigen Krakau.	pf.: zwiedzić
+turysta	Tourist	m	W Krakowie jest dużo turystów.	In Krakau sind viele Touristen.	endet auf -a, ist männlich
+recepcja	Rezeption	f	Klucz jest w recepcji.	Der Schlüssel ist an der Rezeption.
+pokój jednoosobowy	Einzelzimmer	m	Poproszę pokój jednoosobowy.	Ein Einzelzimmer, bitte.
+nocleg	Übernachtung	m	Szukamy noclegu.	Wir suchen eine Übernachtung.		noc = Nacht
+zarezerwować	reservieren		Zarezerwowałem hotel.	Ich habe ein Hotel reserviert.	pf.; ipf.: rezerwować
+zameldować się	einchecken		Chcę się zameldować.	Ich möchte einchecken.	pf.; ipf.: meldować się	wie „melden“
+bagaż	Gepäck	m	Gdzie mogę zostawić bagaż?	Wo kann ich das Gepäck lassen?
+plecak	Rucksack	m	Mam tylko plecak.	Ich habe nur einen Rucksack.		plecy = Rücken
+lot	Flug	m	Lot trwa dwie godziny.	Der Flug dauert zwei Stunden.
+odlot	Abflug	m	Odlot jest o dziesiątej.	Der Abflug ist um zehn.
+przylot	Ankunft (Flug)	m	Przylot do Warszawy o dwunastej.	Ankunft in Warschau um zwölf.
+odjazd	Abfahrt	m	Odjazd pociągu o ósmej.	Abfahrt des Zuges um acht.
+przyjazd	Ankunft	m	Czekam na przyjazd autobusu.	Ich warte auf die Ankunft des Busses.
+peron	Bahnsteig	m	Pociąg odjeżdża z peronu drugiego.	Der Zug fährt von Bahnsteig zwei.		wie „Perron“
+rozkład jazdy	Fahrplan	m	Sprawdź rozkład jazdy.	Schau auf den Fahrplan.
+miejsce	Platz; Ort	n	Czy to miejsce jest wolne?	Ist dieser Platz frei?
+przesiadka	Umsteigen	f	Mam przesiadkę w Poznaniu.	Ich muss in Posen umsteigen.
+widok	Aussicht	m	Pokój z widokiem na morze.	Ein Zimmer mit Meerblick.		widzieć = sehen
+pamiątka	Andenken	f	Kupuję pamiątki dla rodziny.	Ich kaufe Andenken für die Familie.		pamiętać = sich erinnern
+przewodnik	Reiseführer	m	Przewodnik opowiada o zamku.	Der Führer erzählt über das Schloss.
+za granicą	im Ausland		Mieszkam za granicą.	Ich wohne im Ausland.	za granicę = ins Ausland	granica = Grenze
+namiot	Zelt	m	Śpimy w namiocie.	Wir schlafen im Zelt.
+#pack	a2-13	A2	Monate und Zeit
+styczeń	Januar	m	W styczniu jest zimno.	Im Januar ist es kalt.	w styczniu
+luty	Februar	m	Luty jest krótki.	Der Februar ist kurz.	w lutym	luty = grimmig, frostig
+marzec	März	m	W marcu przychodzi wiosna.	Im März kommt der Frühling.	w marcu
+kwiecień	April	m	W kwietniu kwitną drzewa.	Im April blühen die Bäume.	w kwietniu	kwiat = Blume
+maj	Mai	m	Majówka to długi weekend w maju.	Die Majówka ist ein langes Wochenende im Mai.	w maju
+czerwiec	Juni	m	W czerwcu kończy się szkoła.	Im Juni endet die Schule.	w czerwcu	czerw = Larve; aus ihr gewann man roten Farbstoff, daher auch czerwony
+lipiec	Juli	m	Urlop mam w lipcu.	Ich habe im Juli Urlaub.	w lipcu	lipa = Linde
+sierpień	August	m	Sierpień jest gorący.	Der August ist heiß.	w sierpniu	sierp = Sichel (Ernte)
+wrzesień	September	m	We wrześniu idę do pracy.	Im September gehe ich arbeiten.	we wrześniu	wrzos = Heidekraut
+październik	Oktober	m	W październiku pada deszcz.	Im Oktober regnet es.	w październiku
+listopad	November	m	W listopadzie liście spadają.	Im November fallen die Blätter.	w listopadzie	liść + padać = Blätter fallen
+grudzień	Dezember	m	W grudniu są święta.	Im Dezember ist Weihnachten.	w grudniu
+data	Datum	f	Jaka jest dzisiaj data?	Welches Datum ist heute?
+kalendarz	Kalender	m	Zapisz to w kalendarzu.	Schreib das in den Kalender.
+wkrótce	bald		Wkrótce wakacje!	Bald sind Ferien!
+niedawno	vor kurzem		Niedawno się przeprowadziłem.	Ich bin vor kurzem umgezogen.		dawno = vor langer Zeit
+dawno	vor langer Zeit		Dawno cię nie widziałem.	Ich habe dich lange nicht gesehen.
+wcześnie	früh		Wstaję wcześnie.	Ich stehe früh auf.
+późno	spät		Jest już późno.	Es ist schon spät.
+na czas	pünktlich		Pociąg przyjechał na czas.	Der Zug kam pünktlich.
+pół godziny	halbe Stunde	n	Czekam pół godziny.	Ich warte eine halbe Stunde.
+kwadrans	Viertelstunde	m	Za kwadrans dziesiąta.	Viertel vor zehn.
+południe	Mittag; Süden	n	Spotkajmy się w południe.	Treffen wir uns am Mittag.
+północ	Mitternacht; Norden	f	Wracam o północy.	Ich komme um Mitternacht zurück.
+w zeszłym tygodniu	letzte Woche		W zeszłym tygodniu byłem chory.	Letzte Woche war ich krank.
+#pack	a2-14	A2	Natur und Umwelt
+krajobraz	Landschaft	m	Piękny krajobraz.	Eine schöne Landschaft.
+pole	Feld	n	Krowy stoją na polu.	Die Kühe stehen auf dem Feld.		Polen = Land der Felder
+łąka	Wiese	f	Kwiaty na łące.	Blumen auf der Wiese.
+wyspa	Insel	f	Mieszkają na wyspie.	Sie wohnen auf einer Insel.
+piasek	Sand	m	Dzieci bawią się w piasku.	Die Kinder spielen im Sand.	Genitiv: piasku	
+brzeg	Ufer; Rand	m	Spacerujemy brzegiem rzeki.	Wir spazieren am Flussufer.
+dolina	Tal	f	Dom stoi w dolinie.	Das Haus steht im Tal.
+szczyt	Gipfel	m	Weszliśmy na szczyt.	Wir sind auf den Gipfel gestiegen.
+kamień	Stein	m	Ciężki kamień.	Ein schwerer Stein.	Genitiv: kamienia
+liść	Blatt	m	Jesienią liście są żółte.	Im Herbst sind die Blätter gelb.	Plural: liście
+trawa	Gras	f	Dzieci siedzą na trawie.	Die Kinder sitzen im Gras.
+koń	Pferd	m	Jeżdżę konno.	Ich reite.	Genitiv: konia
+krowa	Kuh	f	Krowa daje mleko.	Die Kuh gibt Milch.
+świnia	Schwein	f	Na wsi mają świnie.	Auf dem Land haben sie Schweine.
+kura	Huhn	f	Kury znoszą jajka.	Hühner legen Eier.
+owad	Insekt	m	Latem jest dużo owadów.	Im Sommer gibt es viele Insekten.		
+burza	Gewitter	f	W nocy była burza.	Nachts war ein Gewitter.
+mgła	Nebel	f	Rano jest gęsta mgła.	Morgens ist dichter Nebel.
+mróz	Frost	m	Na zewnątrz jest mróz.	Draußen ist Frost.	Genitiv: mrozu
+stopień	Grad; Stufe	m	Dziś jest dwadzieścia stopni.	Heute sind es zwanzig Grad.	Genitiv: stopnia
+temperatura	Temperatur	f	Temperatura spada.	Die Temperatur sinkt.
+środowisko	Umwelt	n	Chronimy środowisko.	Wir schützen die Umwelt.		środek = Mitte
+segregować	trennen (Müll)		Segregujemy śmieci.	Wir trennen den Müll.
+pogoda się zmienia	das Wetter ändert sich		Pogoda się szybko zmienia.	Das Wetter ändert sich schnell.
+świecić	scheinen; leuchten		Słońce świeci cały dzień.	Die Sonne scheint den ganzen Tag.	świeci	świeca = Kerze
+#pack	a2-15	A2	Verben der Bewegung
+chodzić	gehen (regelmäßig)		Chodzę do pracy pieszo.	Ich gehe zu Fuß zur Arbeit.	chodzę, chodzisz; iść = gerade gehen
+jeździć	fahren (regelmäßig)		Jeżdżę do pracy rowerem.	Ich fahre mit dem Rad zur Arbeit.	jeżdżę, jeździsz; jechać = gerade fahren
+pójść	hingehen		Jutro pójdę do lekarza.	Morgen gehe ich zum Arzt.	pf. zu iść: pójdę, pójdziesz
+pojechać	hinfahren		W lipcu pojedziemy nad morze.	Im Juli fahren wir ans Meer.	pf. zu jechać
+przyjść	kommen (zu Fuß)		Przyjdź do mnie wieczorem!	Komm heute Abend zu mir!	pf.: przyjdę; ipf.: przychodzić
+przyjechać	ankommen (Fahrzeug)		Kiedy przyjedziesz?	Wann kommst du an?	pf.; ipf.: przyjeżdżać
+wyjść	hinausgehen		Wyszedł z domu o siódmej.	Er hat das Haus um sieben verlassen.	pf.; ipf.: wychodzić
+wyjechać	wegfahren		Wyjechał do Niemiec.	Er ist nach Deutschland gezogen.	pf.; ipf.: wyjeżdżać
+wejść	hineingehen		Proszę wejść!	Bitte kommen Sie herein!	pf.; ipf.: wchodzić
+wrócić	zurückkommen		Wrócę o szóstej.	Ich komme um sechs zurück.	pf. zu wracać
+przejść	hinübergehen		Przejdź przez ulicę ostrożnie.	Geh vorsichtig über die Straße.	pf.; ipf.: przechodzić
+dojść	ankommen (zu Fuß)		Jak dojść do dworca?	Wie komme ich zum Bahnhof?	pf.; ipf.: dochodzić
+przeprowadzić się	umziehen		Przeprowadziliśmy się do Gdańska.	Wir sind nach Danzig umgezogen.	pf.; ipf.: przeprowadzać się
+spacerować	spazieren gehen		Spacerujemy po parku.	Wir spazieren durch den Park.
+biec	rennen (gerade)		Biegnę na autobus.	Ich renne zum Bus.	biegnę, biegniesz
+latać	fliegen (regelmäßig)		Często latam do Polski.	Ich fliege oft nach Polen.	lecieć = gerade fliegen
+wjechać	hineinfahren		Pociąg wjechał na stację.	Der Zug ist in den Bahnhof eingefahren.	pf.; ipf.: wjeżdżać	
+nieść	tragen (gerade)		Niosę ciężką torbę.	Ich trage eine schwere Tasche.	niosę, niesiesz
+wozić	fahren (jemanden, regelmäßig)		Wożę dzieci do szkoły.	Ich fahre die Kinder zur Schule.	wożę, wozisz
+zgubić się	sich verlaufen		Zgubiłem się w mieście.	Ich habe mich in der Stadt verlaufen.	pf.
+pieszo	zu Fuß		Idę pieszo.	Ich gehe zu Fuß.
+skręcić	abbiegen		Skręć w prawo.	Bieg rechts ab.	pf.; ipf.: skręcać
+zatrzymać się	anhalten		Autobus się zatrzymał.	Der Bus hat angehalten.	pf.; ipf.: zatrzymywać się
+uciekać	weglaufen; fliehen		Kot ucieka przed psem.	Die Katze läuft vor dem Hund weg.	pf.: uciec
+spieszyć się	sich beeilen		Spieszę się do pracy.	Ich beeile mich zur Arbeit.	pf.: pospieszyć się
+#pack	a2-16	A2	Alltagsverben
+budzić się	aufwachen		Budzę się o szóstej.	Ich wache um sechs auf.	pf.: obudzić się
+zasypiać	einschlafen		Zasypiam przy telewizorze.	Ich schlafe beim Fernsehen ein.	pf.: zasnąć
+kłaść się	sich hinlegen		Kładę się spać o jedenastej.	Ich gehe um elf ins Bett.	kładę się; pf.: położyć się
+ubrać się	sich anziehen		Ubierz się ciepło!	Zieh dich warm an!	pf. zu ubierać się
+czesać się	sich kämmen		Czeszę się przed lustrem.	Ich kämme mich vor dem Spiegel.	czeszę się; pf.: uczesać się
+golić się	sich rasieren		Golę się co rano.	Ich rasiere mich jeden Morgen.	pf.: ogolić się
+kąpać się	baden		Dzieci kąpią się w morzu.	Die Kinder baden im Meer.	kąpię się; pf.: wykąpać się
+używać	benutzen		Używam tego programu.	Ich benutze dieses Programm.	mit Genitiv; pf.: użyć
+potrzebować	brauchen		Potrzebuję pomocy.	Ich brauche Hilfe.	mit Genitiv
+próbować	versuchen; probieren		Spróbuj tej zupy!	Probier diese Suppe!	pf.: spróbować
+pożyczyć	leihen		Możesz mi pożyczyć długopis?	Kannst du mir einen Kuli leihen?	pf.; ipf.: pożyczać
+oddać	zurückgeben		Oddam ci jutro.	Ich gebe es dir morgen zurück.	pf.; ipf.: oddawać
+zostawić	lassen; zurücklassen		Zostawiłem telefon w domu.	Ich habe das Telefon zu Hause gelassen.	pf.; ipf.: zostawiać
+zostać	bleiben; werden		Zostań jeszcze chwilę!	Bleib noch ein bisschen!	pf.; ipf.: zostawać
+znaleźć	finden		Znalazłem klucze!	Ich habe die Schlüssel gefunden!	pf.; ipf.: znajdować
+położyć	hinlegen		Połóż książkę na stole.	Leg das Buch auf den Tisch.	pf.; ipf.: kłaść
+postawić	hinstellen		Postaw kubek tutaj.	Stell den Becher hierhin.	pf.; ipf.: stawiać
+powiesić	aufhängen		Powieś kurtkę w szafie.	Häng die Jacke in den Schrank.	pf.; ipf.: wieszać
+naprawić	reparieren		Tata naprawił rower.	Papa hat das Fahrrad repariert.	pf.; ipf.: naprawiać
+zepsuć się	kaputtgehen		Samochód się zepsuł.	Das Auto ist kaputtgegangen.	pf.; ipf.: psuć się
+spóźnić się	sich verspäten		Spóźniłem się na pociąg.	Ich habe den Zug verpasst.	pf.; ipf.: spóźniać się	
+trwać	dauern		Film trwa dwie godziny.	Der Film dauert zwei Stunden.
+zdarzyć się	passieren		Co się zdarzyło?	Was ist passiert?	pf.; ipf.: zdarzać się
+stać się	geschehen; werden		Co się stało?	Was ist los? (Was ist geschehen?)	pf.; ipf.: stawać się
+dostać	bekommen		Dostałem prezent.	Ich habe ein Geschenk bekommen.	pf.; ipf.: dostawać
+#pack	a2-17	A2	Sprechen und Denken
+rozmawiać	sich unterhalten		Rozmawiamy o pracy.	Wir unterhalten uns über die Arbeit.	pf.: porozmawiać
+opowiadać	erzählen		Opowiedz mi o sobie.	Erzähl mir von dir.	pf.: opowiedzieć
+wyjaśnić	erklären		Możesz mi to wyjaśnić?	Kannst du mir das erklären?	pf.; ipf.: wyjaśniać	jasny = klar, hell
+zapytać	fragen		Zapytaj nauczyciela.	Frag den Lehrer.	pf. zu pytać
+prosić	bitten		Proszę o ciszę.	Ich bitte um Ruhe.	proszę, prosisz; pf.: poprosić
+obiecać	versprechen		Obiecuję, że przyjdę.	Ich verspreche, dass ich komme.	pf.; ipf.: obiecywać
+kłamać	lügen		Nie kłam!	Lüg nicht!	kłamię, kłamiesz; pf.: skłamać
+krzyczeć	schreien		Nie krzycz na mnie!	Schrei mich nicht an!	krzyczę, krzyczysz
+zgadzać się	zustimmen		Zgadzam się z tobą.	Ich stimme dir zu.	pf.: zgodzić się
+uważać	meinen; aufpassen		Uważam, że to dobry pomysł.	Ich finde, das ist eine gute Idee.	uważaj! = pass auf!
+wierzyć	glauben		Wierzę ci.	Ich glaube dir.	mit Dativ; pf.: uwierzyć
+mieć rację	recht haben		Masz rację.	Du hast recht.
+mylić się	sich irren		Chyba się mylisz.	Ich glaube, du irrst dich.	pf.: pomylić się
+decydować	entscheiden		Ty decydujesz.	Du entscheidest.	pf.: zdecydować
+planować	planen		Co planujesz na weekend?	Was planst du fürs Wochenende?	pf.: zaplanować
+marzyć	träumen (wünschen)		Marzę o domu nad morzem.	Ich träume von einem Haus am Meer.	o + Lokativ
+śnić	träumen (im Schlaf)		Śniło mi się, że latam.	Ich habe geträumt, dass ich fliege.		sen = Schlaf, Traum
+zastanawiać się	überlegen		Zastanawiam się, co robić.	Ich überlege, was ich tun soll.	pf.: zastanowić się
+wiadomość	Nachricht	f	Wyślij mi wiadomość.	Schick mir eine Nachricht.		wiedzieć = wissen
+rozmowa	Gespräch	f	Miła rozmowa.	Ein nettes Gespräch.
+zdanie	Satz; Meinung	n	Moim zdaniem to prawda.	Meiner Meinung nach ist das wahr.
+prawda	Wahrheit	f	To nieprawda!	Das stimmt nicht!		prawdziwy = echt
+pytać o drogę	nach dem Weg fragen		Pytam przechodnia o drogę.	Ich frage einen Passanten nach dem Weg.
+pozdrawiać	grüßen		Pozdrów rodziców!	Grüß deine Eltern!	pf.: pozdrowić	zdrowie = Gesundheit
+żartować	scherzen		Żartujesz?	Machst du Witze?	pf.: zażartować
+#pack	a2-18	A2	Gefühle und Meinungen
+uczucie	Gefühl	n	To piękne uczucie.	Das ist ein schönes Gefühl.		czuć = fühlen
+czuć się	sich fühlen		Jak się czujesz?	Wie fühlst du dich?	czuję się, czujesz się
+bać się	Angst haben		Boję się psów.	Ich habe Angst vor Hunden.	boję się; mit Genitiv
+cieszyć się	sich freuen		Cieszę się, że jesteś.	Ich freue mich, dass du da bist.	z + Genitiv: cieszę się z prezentu
+martwić się	sich Sorgen machen		Nie martw się!	Mach dir keine Sorgen!	o + Akkusativ	martwy = tot
+złościć się	sich ärgern		Nie złość się na mnie.	Ärgere dich nicht über mich.	pf.: rozzłościć się	zły = böse
+denerwować się	nervös sein; sich aufregen		Denerwuję się przed egzaminem.	Ich bin vor der Prüfung nervös.	pf.: zdenerwować się
+wstydzić się	sich schämen		Nie wstydź się!	Schäm dich nicht!	pf.: zawstydzić się
+nudzić się	sich langweilen		Nudzę się w domu.	Ich langweile mich zu Hause.	pf.: znudzić się
+radość	Freude	f	Z radością!	Mit Freude!
+strach	Angst	m	Strach ma wielkie oczy.	Die Angst hat große Augen (Sprichwort).
+smutek	Traurigkeit	m	W jego oczach był smutek.	In seinen Augen war Traurigkeit.		smutny = traurig
+złość	Wut	f	Czerwony ze złości.	Rot vor Wut.		zły = böse
+nadzieja	Hoffnung	f	Mam nadzieję, że przyjdziesz.	Ich hoffe, dass du kommst.	mieć nadzieję = hoffen
+szczęście	Glück	n	Na szczęście nic się nie stało.	Zum Glück ist nichts passiert.
+pech	Pech	m	Ale pech!	So ein Pech!		aus dem Deutschen
+zdziwiony	überrascht		Jestem zdziwiony.	Ich bin überrascht.		dziwny = seltsam
+dziwny	seltsam		To dziwny człowiek.	Das ist ein seltsamer Mensch.
+zazdrosny	eifersüchtig		On jest zazdrosny.	Er ist eifersüchtig.
+dumny	stolz		Jestem z ciebie dumny.	Ich bin stolz auf dich.	z + Genitiv
+zakochany	verliebt		Jest zakochany w Oli.	Er ist in Ola verliebt.
+żałować	bereuen; schade finden		Żałuję, że nie przyszedłem.	Schade, dass ich nicht gekommen bin.	pf.: pożałować	
+woleć	lieber mögen		Wolę herbatę niż kawę.	Ich mag Tee lieber als Kaffee.	wolę, wolisz
+nienawidzić	hassen		Nienawidzę poniedziałków.	Ich hasse Montage.	mit Genitiv
+chętnie	gern		Chętnie ci pomogę.	Ich helfe dir gern.
+#pack	a2-19	A2	Eigenschaften 2
+wygodny	bequem		Wygodne buty.	Bequeme Schuhe.
+niewygodny	unbequem		To krzesło jest niewygodne.	Dieser Stuhl ist unbequem.
+nowoczesny	modern		Nowoczesny budynek.	Ein modernes Gebäude.
+zabytkowy	historisch (Gebäude)		Zabytkowy kościół.	Eine historische Kirche.
+bezpieczny	sicher		Tu jest bezpiecznie.	Hier ist es sicher.
+niebezpieczny	gefährlich		Ta droga jest niebezpieczna.	Diese Straße ist gefährlich.
+możliwy	möglich		To niemożliwe!	Das ist unmöglich!		móc = können
+potrzebny	nötig		Czy to jest potrzebne?	Ist das nötig?		potrzebować = brauchen
+rzadki	selten		To rzadki ptak.	Das ist ein seltener Vogel.		
+popularny	beliebt		To popularna restauracja.	Das ist ein beliebtes Restaurant.
+znany	bekannt		Znany aktor.	Ein bekannter Schauspieler.		znać = kennen
+obcy	fremd		Obcy język.	Eine Fremdsprache.
+miejski	städtisch		Transport miejski.	Öffentlicher Nahverkehr.		miasto = Stadt
+wiejski	ländlich		Wiejski dom.	Ein Landhaus.		wieś = Dorf
+świeży	frisch		Świeży chleb.	Frisches Brot.
+twardy	hart		Twarde łóżko.	Ein hartes Bett.
+miękki	weich		Miękka poduszka.	Ein weiches Kissen.
+mokry	nass		Mokre ubrania.	Nasse Kleider.
+suchy	trocken		Suchy chleb.	Trockenes Brot.
+ciemny	dunkel		Ciemny pokój.	Ein dunkles Zimmer.
+jasny	hell		Jasne mieszkanie.	Eine helle Wohnung.		jasne! = klar!
+głęboki	tief		Głębokie jezioro.	Ein tiefer See.
+płytki	flach		Płytka woda.	Flaches Wasser.
+szeroki	breit		Szeroka ulica.	Eine breite Straße.
+wąski	eng; schmal		Wąska uliczka.	Eine schmale Gasse.
+#pack	a2-20	A2	Kleine Wörter 2
+dlatego	deshalb		Pada, dlatego zostaję w domu.	Es regnet, deshalb bleibe ich zu Hause.
+ponieważ	weil		Nie przyszedł, ponieważ był chory.	Er kam nicht, weil er krank war.
+chociaż	obwohl		Chociaż jest zimno, idziemy na spacer.	Obwohl es kalt ist, gehen wir spazieren.
+żeby	damit; um zu		Uczę się, żeby rozmawiać z Polakami.	Ich lerne, um mit Polen sprechen zu können.		
+gdy	als; wenn		Zadzwoń, gdy będziesz w domu.	Ruf an, wenn du zu Hause bist.
+zanim	bevor		Umyj ręce, zanim zjesz.	Wasch dir die Hände, bevor du isst.
+w końcu	schließlich; endlich		W końcu znalazłem pracę.	Schließlich habe ich Arbeit gefunden.		
+najpierw	zuerst		Najpierw praca, potem zabawa.	Erst die Arbeit, dann das Vergnügen.
+wreszcie	endlich		Wreszcie weekend!	Endlich Wochenende!
+nagle	plötzlich		Nagle zaczęło padać.	Plötzlich fing es an zu regnen.
+właśnie	gerade; eben		Właśnie wychodzę.	Ich gehe gerade.
+prawie	fast		Prawie skończyłem.	Ich bin fast fertig.
+naprawdę	wirklich		Naprawdę?	Wirklich?
+chyba	wahrscheinlich; wohl		Chyba będzie padać.	Es wird wohl regnen.
+pewnie	sicher; bestimmt		Pewnie jesteś zmęczony.	Du bist sicher müde.		pewny = sicher
+na pewno	ganz sicher		Na pewno przyjdę.	Ich komme ganz sicher.
+nawet	sogar		Nawet dzieci to wiedzą.	Sogar Kinder wissen das.
+także	auch		Ja także tak myślę.	Ich denke das auch.		wie też
+oprócz	außer		Wszyscy oprócz mnie.	Alle außer mir.	mit Genitiv
+zamiast	statt		Herbata zamiast kawy.	Tee statt Kaffee.	mit Genitiv
+podczas	während		Podczas obiadu nie używamy telefonu.	Während des Essens benutzen wir kein Telefon.	mit Genitiv
+przed	vor		Czekam przed domem.	Ich warte vor dem Haus.	Ort: Instrumental; Zeit: przed obiadem
+po	nach		Po pracy idę na siłownię.	Nach der Arbeit gehe ich ins Fitnessstudio.	mit Lokativ
+między	zwischen		Między nami.	Unter uns.	mit Instrumental
+obok	neben		Siedzę obok ciebie.	Ich sitze neben dir.	mit Genitiv

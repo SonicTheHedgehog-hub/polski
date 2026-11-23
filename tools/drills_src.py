@@ -191,6 +191,59 @@ ASPECT = [
  ("Wczoraj przypadkiem ___ starego kolegę.", "spotkałem", "spotykałem", "Gestern habe ich zufällig einen alten Kollegen getroffen.", "spotykać", "spotkać", "r"),
  ("Często ___ sąsiadów w windzie.", "spotykam", "spotkam", "Ich treffe die Nachbarn oft im Aufzug.", "spotykać", "spotkać", "h"),
 ]
+
+# A2: Mehrzahl und Adjektiv + Nomen, mit festen Auswahlformen (richtig zuerst)
+ITEMS2 = [
+ ("Mam pięć ___.", "koty (Mehrzahl)", "gen", ["kotów", "koty", "kotami", "kotach"], "Ich habe fünf Katzen."),
+ ("W parku jest dużo ___.", "dzieci", "gen", ["dzieci", "dzieciom", "dziećmi", "dzieciach"], "Im Park sind viele Kinder."),
+ ("Nie mam ___.", "pieniądze", "gen", ["pieniędzy", "pieniądze", "pieniędzmi", "pieniądzom"], "Ich habe kein Geld."),
+ ("Kupuję kilo ___.", "jabłka", "gen", ["jabłek", "jabłka", "jabłkami", "jabłkach"], "Ich kaufe ein Kilo Äpfel."),
+ ("Tu jest sześć ___.", "krzesła", "gen", ["krzeseł", "krzesła", "krzesłami", "krzesłach"], "Hier sind sechs Stühle."),
+ ("W mieście jest dużo ___.", "turyści", "gen", ["turystów", "turyści", "turystami", "turystach"], "In der Stadt sind viele Touristen."),
+ ("Ile masz ___?", "książki", "gen", ["książek", "książki", "książkami", "książkach"], "Wie viele Bücher hast du?"),
+ ("Rozmawiam z ___.", "koledzy", "ins", ["kolegami", "kolegów", "kolegom", "kolegach"], "Ich spreche mit den Kollegen."),
+ ("Mieszkam z ___.", "rodzice", "ins", ["rodzicami", "rodziców", "rodzicom", "rodzicach"], "Ich wohne bei meinen Eltern."),
+ ("Myślę o ___.", "dzieci", "loc", ["dzieciach", "dzieci", "dziećmi", "dzieciom"], "Ich denke an die Kinder."),
+ ("Pomagam ___.", "rodzice", "dat", ["rodzicom", "rodzicami", "rodziców", "rodzicach"], "Ich helfe den Eltern."),
+ ("Spacerujemy po ___.", "góry", "loc", ["górach", "góry", "górami", "gór"], "Wir wandern in den Bergen."),
+ ("Jedziemy w ___.", "góry", "acc", ["góry", "gór", "górach", "górami"], "Wir fahren in die Berge."),
+ ("Daję prezenty ___.", "dzieci", "dat", ["dzieciom", "dzieci", "dziećmi", "dzieciach"], "Ich gebe den Kindern Geschenke."),
+ ("Mieszkam w ___.", "duże miasto", "loc", ["dużym mieście", "duże miasto", "dużego miasta", "dużemu miastu"], "Ich wohne in einer großen Stadt."),
+ ("Nie mam ___.", "nowy samochód", "gen", ["nowego samochodu", "nowy samochód", "nowym samochodem", "nowemu samochodowi"], "Ich habe kein neues Auto."),
+ ("Piję ___.", "zimna woda", "acc", ["zimną wodę", "zimna woda", "zimnej wody", "zimną wodą"], "Ich trinke kaltes Wasser."),
+ ("Idę do ___.", "nowa restauracja", "gen", ["nowej restauracji", "nowa restauracja", "nową restauracją", "nową restaurację"], "Ich gehe in ein neues Restaurant."),
+ ("Jadę ___.", "stary tramwaj", "ins", ["starym tramwajem", "stary tramwaj", "starego tramwaju", "starym tramwaju"], "Ich fahre mit der alten Straßenbahn."),
+ ("Mam ___.", "młodszy brat", "acc", ["młodszego brata", "młodszy brat", "młodszym bratem", "młodszemu bratu"], "Ich habe einen jüngeren Bruder."),
+ ("Dzwonię do ___.", "starsza siostra", "gen", ["starszej siostry", "starsza siostra", "starszą siostrę", "starszą siostrą"], "Ich rufe meine ältere Schwester an."),
+ ("Kupuję prezent ___.", "mój tata", "dat", ["mojemu tacie", "mój tata", "mojego taty", "moim tatą"], "Ich kaufe meinem Papa ein Geschenk."),
+ ("Telefon leży na ___.", "mały stół", "loc", ["małym stole", "mały stół", "małego stołu", "małym stołem"], "Das Telefon liegt auf dem kleinen Tisch."),
+ ("Kawa z ___.", "zimne mleko", "ins", ["zimnym mlekiem", "zimne mleko", "zimnego mleka", "zimnym mleku"], "Kaffee mit kalter Milch."),
+ ("Szukam ___.", "tani hotel", "gen", ["taniego hotelu", "tani hotel", "tanim hotelu", "tanim hotelem"], "Ich suche ein günstiges Hotel."),
+ ("Mieszkam na ___.", "spokojna ulica", "loc", ["spokojnej ulicy", "spokojna ulica", "spokojną ulicę", "spokojną ulicą"], "Ich wohne in einer ruhigen Straße."),
+ ("Czekam na ___.", "nasz autobus", "acc", ["nasz autobus", "naszego autobusu", "naszym autobusem", "naszym autobusie"], "Ich warte auf unseren Bus."),
+ ("Lubię ___.", "polska kuchnia", "acc", ["polską kuchnię", "polska kuchnia", "polskiej kuchni", "polską kuchnią"], "Ich mag die polnische Küche."),
+ ("Jestem ___.", "dobry kucharz", "ins", ["dobrym kucharzem", "dobry kucharz", "dobrego kucharza", "dobremu kucharzowi"], "Ich bin ein guter Koch."),
+ ("Interesuję się ___.", "polska historia", "ins", ["polską historią", "polska historia", "polskiej historii", "polską historię"], "Ich interessiere mich für polnische Geschichte."),
+]
+ASPECT += [
+ ("W soboty zawsze ___ mieszkanie.", "sprzątam", "posprzątam", "Samstags putze ich immer die Wohnung.", "sprzątać", "posprzątać", "h"),
+ ("___ już pokój, możemy wyjść.", "Posprzątałem", "Sprzątałem", "Ich habe das Zimmer schon aufgeräumt, wir können gehen.", "sprzątać", "posprzątać", "r"),
+ ("Codziennie ___ obiad.", "gotuję", "ugotuję", "Ich koche jeden Tag Mittagessen.", "gotować", "ugotować", "h"),
+ ("Obiecuję, że ___ dla ciebie pierogi.", "ugotuję", "gotuję", "Ich verspreche, dass ich dir Piroggen koche.", "gotować", "ugotować", "f"),
+ ("Zawsze ___ ręce przed jedzeniem.", "myję", "umyję", "Ich wasche mir immer vor dem Essen die Hände.", "myć", "umyć", "h"),
+ ("Najpierw ___ naczynia, potem odpocznę.", "umyję", "myję", "Erst spüle ich das Geschirr, dann ruhe ich mich aus.", "myć", "umyć", "f"),
+ ("Zawsze ___ mamie w kuchni.", "pomagam", "pomogę", "Ich helfe Mama immer in der Küche.", "pomagać", "pomóc", "h"),
+ ("Czy możesz mi ___?", "pomóc", "pomagać", "Kannst du mir helfen?", "pomagać", "pomóc", "e"),
+ ("Codziennie ___ o szóstej.", "wstaję", "wstanę", "Ich stehe jeden Tag um sechs auf.", "wstawać", "wstać", "h"),
+ ("Kiedy ___, zrobię kawę.", "wstanę", "wstaję", "Wenn ich aufgestanden bin, mache ich Kaffee.", "wstawać", "wstać", "f"),
+ ("Ciągle ___ hasła do komputera.", "zapominam", "zapomnę", "Ich vergesse ständig die Passwörter für den Computer.", "zapominać", "zapomnieć", "h"),
+ ("Przepraszam, ___ o twoich urodzinach.", "zapomniałem", "zapominałem", "Entschuldige, ich habe deinen Geburtstag vergessen.", "zapominać", "zapomnieć", "r"),
+ ("Zawsze ___ klucze.", "gubię", "zgubię", "Ich verliere immer die Schlüssel.", "gubić", "zgubić", "h"),
+ ("Wczoraj ___ portfel w autobusie.", "zgubiłem", "gubiłem", "Gestern habe ich meinen Geldbeutel im Bus verloren.", "gubić", "zgubić", "r"),
+ ("W weekendy ___ w ogrodzie.", "odpoczywam", "odpocznę", "Am Wochenende ruhe ich mich im Garten aus.", "odpoczywać", "odpocząć", "h"),
+ ("Nie zapomnij ___ okna!", "zamknąć", "zamykać", "Vergiss nicht, das Fenster zu schließen!", "zamykać", "zamknąć", "e"),
+]
+
 WHY = {"h": "Gewohnheit oder Wiederholung (codziennie, zawsze, zwykle): unvollendet.",
        "d": "Verlauf oder Dauer, gerade dabei: unvollendet.",
        "r": "Einmal passiert, abgeschlossen, mit Ergebnis: vollendet.",
@@ -220,6 +273,9 @@ for s, n, c, de in ITEMS:
     assert n in NOUNS and s.count("___") == 1, (s, n)
     form = out["cases"]["nouns"][n]["f"][c]
     out["cases"]["items"].append({"s": s, "n": n, "c": c, "a": form, "de": de, "full": s.replace("___", form)})
+for s, base, c, opts, de in ITEMS2:
+    assert s.count("___") == 1 and len(set(opts)) == 4, (s, opts)
+    out["cases"]["items"].append({"s": s, "base": base, "c": c, "a": opts[0], "o": opts, "de": de, "full": s.replace("___", opts[0]), "lv": "A2"})
 for s, a, b, de, ipf, pf, why in ASPECT:
     assert s.count("___") == 1
     full = s.replace("___", a); full = full[0].upper() + full[1:]
