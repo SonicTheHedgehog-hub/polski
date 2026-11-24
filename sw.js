@@ -1,5 +1,5 @@
 // Offline-Speicher der App. Bei jeder Änderung VERSION erhöhen.
-const VERSION = "polski-v5", AUDIO_CACHE = "polski-audio";
+const VERSION = "polski-v6", AUDIO_CACHE = "polski-audio";
 const CORE = ["./", "./index.html", "./lessons.json", "./vocab.json", "./drills.json", "./stories.json", "./manifest.webmanifest", "./img/badge-30.webp", "./img/badge-7.webp", "./img/badge-b2.webp", "./img/badge-start.webp", "./img/celebrating.webp", "./img/ch-pierwsze.webp", "./img/ch-przyjaciele.webp", "./img/ch-rodzina.webp", "./img/ch-spoleczenstwo.webp", "./img/flaga.webp", "./img/flying.webp", "./img/happy.webp", "./img/head.webp", "./img/icon-180.png", "./img/icon-192.png", "./img/icon-512.png", "./img/kawa.webp", "./img/krakow.webp", "./img/kwiat.webp", "./img/listening.webp", "./img/mascot.webp", "./img/obwarzanek.webp", "./img/pierogi.webp", "./img/pisanka.webp", "./img/reading.webp", "./img/sleeping.webp", "./img/speaking.webp", "./img/thinking.webp"];
 
 self.addEventListener("install", e => {

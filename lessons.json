@@ -1,128 +1,5253 @@
 {
-"voices": {"default": "pl-PL-ZofiaNeural", "speakers": {"Semyon": "pl-PL-MarekNeural", "Ola": "pl-PL-ZofiaNeural", "Babcia": "pl-PL-AgnieszkaNeural", "Ekspedientka": "pl-PL-AgnieszkaNeural"}},
-"chapters": [
- {"id": "pierwsze", "title": "Pierwsze kroki", "level": "A1", "de": "Erste Schritte: begrüßen, vorstellen, Familie, Zuhause, Essen", "img": "img/ch-pierwsze.webp"},
- {"id": "rodzina", "title": "Rodzina i codzienność", "level": "A2", "de": "Familie und Alltag: Besuche, Feste, Einkaufen, Arzt", "img": "img/ch-rodzina.webp"},
- {"id": "przyjaciele", "title": "Przyjaciele i praca", "level": "B1", "de": "Freunde und Arbeit: erzählen, Meinungen, Pläne", "img": "img/ch-przyjaciele.webp"},
- {"id": "spoleczenstwo", "title": "Społeczeństwo", "level": "B2", "de": "Gesellschaft: Nachrichten, Diskussionen, Kultur", "img": "img/ch-spoleczenstwo.webp"}
-],
-"upcoming": {"pierwsze": ["W mieście", "Na dworcu", "Dni i godziny", "Pogoda", "Moje hobby", "W kawiarni", "U lekarza", "Ubrania", "Mój dzień", "Święta", "Urodziny", "Przez telefon", "Weekend", "Podróż"]},
-"sounds": [
- {"id": "sz", "title": "sz · cz", "de": "sz ist ein hartes „sch“, die Zunge liegt weit hinten. cz ist ein hartes „tsch“.", "words": [["szafa", "Schrank"], ["szkoła", "Schule"], ["czas", "Zeit"], ["czarny", "schwarz"]]},
- {"id": "rz", "title": "rz · ż", "de": "rz und ż klingen gleich: wie das „j“ in „Journal“. Darum klingen „może“ (vielleicht) und „morze“ (Meer) identisch.", "words": [["rzeka", "Fluss"], ["żaba", "Frosch"], ["może", "vielleicht"], ["morze", "Meer"]]},
- {"id": "si", "title": "ś · ć · ź", "de": "Die weichen Laute: ś ist ein weiches „sch“, fast wie „ch“ in „ich“. ć ist ein weiches „tsch“, ź ein weiches, stimmhaftes „sch“. Vor i schreibt man si, ci, zi.", "words": [["siedem", "sieben"], ["ciocia", "Tante"], ["cześć", "Hallo"], ["źle", "schlecht"]]},
- {"id": "l", "title": "ł", "de": "ł spricht man wie das englische „w“ in „water“.", "words": [["łazienka", "Badezimmer"], ["mały", "klein"], ["stół", "Tisch"], ["ładny", "hübsch"]]},
- {"id": "nasal", "title": "ą · ę", "de": "Nasale: ą klingt wie „on“, ę wie „en“. Am Wortende klingt ę fast wie ein einfaches e.", "words": [["są", "sie sind"], ["mąka", "Mehl"], ["ręka", "Hand"], ["proszę", "bitte"]]},
- {"id": "szcz", "title": "szcz · trz", "de": "Die berühmten Konsonantenketten: einfach langsam Laut für Laut zusammensetzen. szcz = sch + tsch.", "words": [["jeszcze", "noch"], ["szczęście", "Glück"], ["deszcz", "Regen"], ["trzy", "drei"]]}
-],
-"lessons": [
- {"id": "l1", "chapter": "pierwsze", "title": "Cześć!", "de": "Begrüßen und vorstellen",
-  "lines": [
-   {"who": "Ola", "t": [["Cześć!", "Hallo!"], ["Jak", "wie"], ["się", "sich"], ["masz?", "hast-du?"]], "sense": "Hallo! Wie geht es dir?", "tip": "cześć ≈ tscheschtsch, ganz weich am Ende"},
-   {"who": "Semyon", "t": [["Dobrze,", "gut,"], ["dziękuję!", "ich-danke!"], ["A", "und"], ["ty?", "du?"]], "sense": "Gut, danke! Und dir?", "tip": "dziękuję ≈ dschen-KU-je"},
-   {"who": "Ola", "t": [["Też", "auch"], ["dobrze.", "gut."], ["Jestem", "ich-bin"], ["Ola.", "Ola."]], "sense": "Auch gut. Ich bin Ola."},
-   {"who": "Semyon", "t": [["Miło", "angenehm"], ["mi!", "mir!"], ["Mam", "ich-habe"], ["na", "auf"], ["imię", "Vornamen"], ["Semyon.", "Semyon."]], "sense": "Freut mich! Ich heiße Semyon.", "tip": "imię ≈ IM-je"},
-   {"who": "Ola", "t": [["Do", "bis"], ["zobaczenia!", "zum-Sehen!"]], "sense": "Bis bald!"},
-   {"who": "Semyon", "t": [["Na", "auf"], ["razie!", "Mal!"]], "sense": "Bis dann!"}
-  ],
-  "chunks": [["Cześć!", "Hallo! / Tschüss!"], ["Jak się masz?", "Wie geht es dir?"], ["Dobrze, dziękuję.", "Gut, danke."], ["A ty?", "Und du?"], ["Miło mi!", "Freut mich!"], ["Mam na imię Semyon.", "Ich heiße Semyon."], ["Do zobaczenia!", "Auf Wiedersehen!"], ["Na razie!", "Bis dann!"]],
-  "words": [["dzień dobry", "guten Tag"], ["dobry wieczór", "guten Abend"], ["dziękuję", "danke"], ["proszę", "bitte"], ["tak", "ja"], ["nie", "nein"], ["przepraszam", "Entschuldigung"]],
-  "qa": [
-   {"who": "Ola", "q": "Jak się masz?", "qde": "Wie geht es dir?", "a": "Dobrze, dziękuję! A ty?", "ade": "Gut, danke! Und dir?"},
-   {"who": "Ola", "q": "Jak masz na imię?", "qde": "Wie heißt du?", "a": "Mam na imię Semyon.", "ade": "Ich heiße Semyon."}
-  ],
-  "grammar": {"title": "„się“ und du oder Sie", "text": "„się“ ist das Reflexivpronomen „sich“. Wörtlich heißt „Jak się masz?“: Wie hast du dich? Unter Freunden sagt man „Cześć“ und „ty“ (du). Höflich sagt man „Dzień dobry“ und spricht Fremde mit „Pan“ (Herr) oder „Pani“ (Frau) an, zum Beispiel: Jak się Pan ma?"},
-  "tips": ["cz ist ein hartes „tsch“, ść ein weiches „schtsch“.", "Die Betonung liegt im Polnischen fast immer auf der vorletzten Silbe: dzię-KU-ję, zo-ba-CZE-nia."]
+ "voices": {
+  "default": "pl-PL-ZofiaNeural",
+  "speakers": {
+   "Semyon": "pl-PL-MarekNeural",
+   "Ola": "pl-PL-ZofiaNeural",
+   "Babcia": "pl-PL-AgnieszkaNeural",
+   "Ekspedientka": "pl-PL-AgnieszkaNeural"
+  }
  },
- {"id": "l2", "chapter": "pierwsze", "title": "Skąd jesteś?", "de": "Herkunft und Sprachen",
-  "lines": [
-   {"who": "Ola", "t": [["Skąd", "woher"], ["jesteś,", "bist-du,"], ["Semyon?", "Semyon?"]], "sense": "Woher kommst du, Semyon?", "tip": "skąd ≈ skont: ą vor d klingt wie „on“"},
-   {"who": "Semyon", "t": [["Jestem", "ich-bin"], ["z", "aus"], ["Niemiec.", "Deutschland."], ["Mieszkam", "ich-wohne"], ["w", "in"], ["Niemczech.", "Deutschland."]], "sense": "Ich komme aus Deutschland. Ich wohne in Deutschland.", "tip": "Niemiec ≈ NJE-mjets"},
-   {"who": "Ola", "t": [["Mówisz", "sprichst-du"], ["po", "auf"], ["polsku?", "polnisch?"]], "sense": "Sprichst du Polnisch?", "tip": "ó klingt wie u: mówisz ≈ MU-wisch"},
-   {"who": "Semyon", "t": [["Trochę.", "Ein-bisschen."], ["Uczę", "ich-lehre"], ["się", "mich"], ["polskiego.", "des-Polnischen."]], "sense": "Ein bisschen. Ich lerne Polnisch."},
-   {"who": "Ola", "t": [["Super!", "Super!"], ["Mówisz", "du-sprichst"], ["bardzo", "sehr"], ["dobrze.", "gut."]], "sense": "Super! Du sprichst sehr gut."},
-   {"who": "Semyon", "t": [["Dziękuję!", "Ich-danke!"], ["Ale", "aber"], ["mówię", "ich-spreche"], ["jeszcze", "noch"], ["powoli.", "langsam."]], "sense": "Danke! Aber ich spreche noch langsam."}
-  ],
-  "chunks": [["Skąd jesteś?", "Woher kommst du?"], ["Jestem z Niemiec.", "Ich komme aus Deutschland."], ["Mieszkam w Niemczech.", "Ich wohne in Deutschland."], ["Mówisz po polsku?", "Sprichst du Polnisch?"], ["Trochę.", "Ein bisschen."], ["Uczę się polskiego.", "Ich lerne Polnisch."], ["Mówię jeszcze powoli.", "Ich spreche noch langsam."]],
-  "words": [["Polska", "Polen"], ["Niemcy", "Deutschland"], ["po polsku", "auf Polnisch"], ["po niemiecku", "auf Deutsch"], ["rozumiem", "ich verstehe"], ["nie rozumiem", "ich verstehe nicht"], ["powoli", "langsam"]],
-  "qa": [
-   {"who": "Ola", "q": "Skąd jesteś?", "qde": "Woher kommst du?", "a": "Jestem z Niemiec.", "ade": "Ich komme aus Deutschland."},
-   {"who": "Ola", "q": "Mówisz po polsku?", "qde": "Sprichst du Polnisch?", "a": "Trochę. Uczę się polskiego.", "ade": "Ein bisschen. Ich lerne Polnisch."}
-  ],
-  "grammar": {"title": "Das Verb zeigt, wer spricht", "text": "Im Polnischen lässt man „ich“ und „du“ meist weg, denn die Endung des Verbs verrät die Person: mówię (ich spreche), mówisz (du sprichst), mówi (er/sie spricht). Und du hast schon zwei Fälle gesehen: „z Niemiec“ (aus Deutschland, Genitiv) und „w Niemczech“ (in Deutschland, Lokativ). Merk sie dir vorerst einfach als feste Wendungen."},
-  "tips": ["ó und u klingen beide wie ein deutsches u.", "w spricht man wie ein deutsches w, ł dagegen wie ein englisches w."]
+ "chapters": [
+  {
+   "id": "pierwsze",
+   "title": "Pierwsze kroki",
+   "level": "A1",
+   "de": "Erste Schritte: vorstellen, Familie, Einkaufen, Essen, Wohnen. Passt zu „Polski na dobry start“, Module 1 bis 5.",
+   "img": "img/ch-pierwsze.webp"
+  },
+  {
+   "id": "rodzina",
+   "title": "Rodzina i codzienność",
+   "level": "A2",
+   "de": "Alltag: Zeit, Verkehr, Wetter, Arzt, Arbeit, Schule. Passt zu „Polski na dobry start“, Module 6 bis 10.",
+   "img": "img/ch-rodzina.webp"
+  },
+  {
+   "id": "przyjaciele",
+   "title": "Przyjaciele i praca",
+   "level": "B1",
+   "de": "Freunde und Arbeit: erzählen, Meinungen, Pläne",
+   "img": "img/ch-przyjaciele.webp"
+  },
+  {
+   "id": "spoleczenstwo",
+   "title": "Społeczeństwo",
+   "level": "B2",
+   "de": "Gesellschaft: Nachrichten, Diskussionen, Kultur",
+   "img": "img/ch-spoleczenstwo.webp"
+  }
+ ],
+ "upcoming": {
+  "pierwsze": [],
+  "rodzina": [
+   "Która godzina?",
+   "Mój poranek",
+   "Godziny pracy",
+   "Plany na weekend",
+   "Tramwajem czy autobusem?",
+   "Na dworcu",
+   "Gdzie byłeś wczoraj?",
+   "Mój urlop",
+   "Jaka będzie pogoda?",
+   "Kupuję kurtkę",
+   "Boli mnie głowa",
+   "U specjalisty",
+   "Ogłoszenie o pracę",
+   "Co umiesz?",
+   "Rozmowa kwalifikacyjna",
+   "Pierwszy dzień w pracy",
+   "Szkoła w Polsce",
+   "Pierwszy dzień w szkole",
+   "Praca domowa",
+   "Zebranie z rodzicami"
+  ]
  },
- {"id": "l3", "chapter": "pierwsze", "title": "Moja rodzina", "de": "Familie",
-  "lines": [
-   {"who": "Ola", "t": [["Masz", "hast-du"], ["rodzeństwo?", "Geschwister?"]], "sense": "Hast du Geschwister?", "tip": "rodzeństwo ≈ ro-DSEN-stwo"},
-   {"who": "Semyon", "t": [["Tak,", "ja,"], ["mam", "ich-habe"], ["siostrę", "Schwester"], ["i", "und"], ["brata.", "Bruder."]], "sense": "Ja, ich habe eine Schwester und einen Bruder."},
-   {"who": "Ola", "t": [["A", "und"], ["rodzice?", "Eltern?"], ["Gdzie", "wo"], ["mieszkają?", "wohnen-sie?"]], "sense": "Und deine Eltern? Wo wohnen sie?"},
-   {"who": "Semyon", "t": [["Rodzice", "Eltern"], ["mieszkają", "wohnen"], ["w", "in"], ["Niemczech.", "Deutschland."], ["A", "und"], ["babcia", "Oma"], ["mieszka", "wohnt"], ["w", "in"], ["Krakowie.", "Krakau."]], "sense": "Meine Eltern wohnen in Deutschland. Und Oma wohnt in Krakau."},
-   {"who": "Ola", "t": [["Masz", "hast-du"], ["zdjęcie?", "Foto?"]], "sense": "Hast du ein Foto?", "tip": "zdjęcie ≈ SDJEN-tsche"},
-   {"who": "Semyon", "t": [["Tak,", "ja,"], ["zobacz!", "schau!"], ["To", "das"], ["jest", "ist"], ["moja", "meine"], ["siostra.", "Schwester."]], "sense": "Ja, schau! Das ist meine Schwester."}
-  ],
-  "chunks": [["Masz rodzeństwo?", "Hast du Geschwister?"], ["Mam siostrę i brata.", "Ich habe eine Schwester und einen Bruder."], ["Gdzie mieszkają?", "Wo wohnen sie?"], ["Rodzice mieszkają w Niemczech.", "Meine Eltern wohnen in Deutschland."], ["Babcia mieszka w Krakowie.", "Oma wohnt in Krakau."], ["Masz zdjęcie?", "Hast du ein Foto?"], ["To jest moja siostra.", "Das ist meine Schwester."]],
-  "words": [["mama", "Mama"], ["tata", "Papa"], ["rodzice", "Eltern"], ["siostra", "Schwester"], ["brat", "Bruder"], ["babcia", "Oma"], ["dziadek", "Opa"], ["rodzina", "Familie"]],
-  "qa": [
-   {"who": "Ola", "q": "Masz rodzeństwo?", "qde": "Hast du Geschwister?", "a": "Tak, mam siostrę i brata.", "ade": "Ja, ich habe eine Schwester und einen Bruder."},
-   {"who": "Ola", "q": "Gdzie mieszka twoja babcia?", "qde": "Wo wohnt deine Oma?", "a": "Babcia mieszka w Krakowie.", "ade": "Oma wohnt in Krakau."}
-  ],
-  "grammar": {"title": "Der Akkusativ: wen oder was?", "text": "Nach „mam“ (ich habe) steht der Akkusativ. Weibliche Wörter auf -a bekommen -ę: siostra → mam siostrę. Männliche Personen und Tiere bekommen -a: brat → mam brata. Und „mein“ richtet sich nach dem Wort: mój brat, moja siostra, moje zdjęcie."},
-  "tips": ["ę am Wortende klingt fast wie ein einfaches e: siostrę ≈ SCHOS-tre (mit weichem sch).", "dz klingt wie „ds“, dzi wie ein weiches „dschi“."]
- },
- {"id": "l4", "chapter": "pierwsze", "title": "W domu", "de": "Zu Besuch bei Oma",
-  "lines": [
-   {"who": "Babcia", "t": [["Wejdź,", "komm-herein,"], ["wejdź!", "komm-herein!"], ["Jak", "wie"], ["dobrze", "gut"], ["cię", "dich"], ["widzieć!", "sehen!"]], "sense": "Komm rein, komm rein! Wie schön, dich zu sehen!", "tip": "wejdź ≈ wejtsch, am Wortende stimmlos"},
-   {"who": "Semyon", "t": [["Dzień", "Tag"], ["dobry,", "guter,"], ["babciu!", "Oma!"], ["Jak", "wie"], ["się", "sich"], ["czujesz?", "fühlst-du?"]], "sense": "Hallo, Oma! Wie fühlst du dich?"},
-   {"who": "Babcia", "t": [["Dobrze,", "gut,"], ["dobrze.", "gut."], ["Siadaj,", "setz-dich,"], ["zrobię", "ich-werde-machen"], ["herbatę.", "Tee."]], "sense": "Gut, gut. Setz dich, ich mache Tee."},
-   {"who": "Semyon", "t": [["Dziękuję,", "ich-danke,"], ["babciu.", "Oma."], ["Masz", "du-hast"], ["piękne", "schöne"], ["mieszkanie!", "Wohnung!"]], "sense": "Danke, Oma. Du hast eine schöne Wohnung!", "tip": "piękne ≈ PJEN-kne"},
-   {"who": "Babcia", "t": [["Kuchnia", "Küche"], ["jest", "ist"], ["tutaj,", "hier,"], ["a", "und"], ["łazienka", "Bad"], ["tam.", "dort."]], "sense": "Die Küche ist hier und das Bad dort.", "tip": "łazienka ≈ wa-SCHEN-ka"}
-  ],
-  "chunks": [["Jak dobrze cię widzieć!", "Wie schön, dich zu sehen!"], ["Jak się czujesz?", "Wie fühlst du dich?"], ["Siadaj!", "Setz dich!"], ["Zrobię herbatę.", "Ich mache Tee."], ["Masz piękne mieszkanie!", "Du hast eine schöne Wohnung!"], ["Kuchnia jest tutaj.", "Die Küche ist hier."], ["Łazienka jest tam.", "Das Bad ist dort."]],
-  "words": [["dom", "Haus, Zuhause"], ["mieszkanie", "Wohnung"], ["kuchnia", "Küche"], ["łazienka", "Badezimmer"], ["pokój", "Zimmer"], ["tutaj", "hier"], ["tam", "dort"], ["herbata", "Tee"]],
-  "qa": [
-   {"who": "Babcia", "q": "Jak się czujesz?", "qde": "Wie fühlst du dich?", "a": "Dobrze, dziękuję.", "ade": "Gut, danke."},
-   {"who": "Babcia", "q": "Gdzie jest kuchnia?", "qde": "Wo ist die Küche?", "a": "Kuchnia jest tutaj.", "ade": "Die Küche ist hier."}
-  ],
-  "grammar": {"title": "Der Vokativ: wenn man jemanden anspricht", "text": "Wer jemanden direkt anspricht, ändert oft die Endung: babcia → babciu! mama → mamo! Ola → Olu! Das ist der Vokativ, der siebte Fall. Außerdem: „zrobię“ (ich werde machen) ist ein vollendetes Verb. Dazu später mehr."},
-  "tips": ["ł wie englisches w: łazienka ≈ wa-SCHEN-ka.", "ch klingt wie das „ch“ in „Bach“: kuchnia ≈ KUCH-nja."]
- },
- {"id": "l5", "chapter": "pierwsze", "title": "Przy stole", "de": "Am Tisch bei Oma",
-  "lines": [
-   {"who": "Babcia", "t": [["Smacznego!", "Guten-Appetit!"]], "sense": "Guten Appetit!", "tip": "smacznego ≈ smatsch-NE-go"},
-   {"who": "Semyon", "t": [["Dziękuję!", "Ich-danke!"], ["Te", "diese"], ["pierogi", "Piroggen"], ["są", "sind"], ["pyszne!", "köstlich!"]], "sense": "Danke! Diese Pierogi sind köstlich!", "tip": "y ist ein dumpfes i: pyszne ≈ PISCH-ne"},
-   {"who": "Babcia", "t": [["Chcesz", "willst-du"], ["jeszcze?", "noch?"]], "sense": "Willst du noch mehr?", "tip": "chcesz ≈ chtsesch"},
-   {"who": "Semyon", "t": [["Tak,", "ja,"], ["poproszę", "ich-bitte-um"], ["jeszcze", "noch"], ["trochę.", "bisschen."]], "sense": "Ja, gern noch ein bisschen."},
-   {"who": "Babcia", "t": [["A", "und"], ["do", "zum"], ["picia?", "Trinken?"], ["Kawa", "Kaffee"], ["czy", "oder"], ["herbata?", "Tee?"]], "sense": "Und zum Trinken? Kaffee oder Tee?"},
-   {"who": "Semyon", "t": [["Herbatę", "Tee"], ["z", "mit"], ["cytryną,", "Zitrone,"], ["proszę.", "bitte."]], "sense": "Tee mit Zitrone, bitte.", "tip": "cytryną ≈ tsy-TRY-non"}
-  ],
-  "chunks": [["Smacznego!", "Guten Appetit!"], ["Te pierogi są pyszne!", "Diese Pierogi sind köstlich!"], ["Chcesz jeszcze?", "Willst du noch mehr?"], ["Poproszę jeszcze trochę.", "Gern noch ein bisschen."], ["Kawa czy herbata?", "Kaffee oder Tee?"], ["Herbatę z cytryną, proszę.", "Tee mit Zitrone, bitte."]],
-  "words": [["pierogi", "Piroggen (Teigtaschen)"], ["zupa", "Suppe"], ["chleb", "Brot"], ["woda", "Wasser"], ["kawa", "Kaffee"], ["herbata", "Tee"], ["jeść", "essen"], ["pić", "trinken"], ["pyszny", "köstlich"]],
-  "qa": [
-   {"who": "Babcia", "q": "Kawa czy herbata?", "qde": "Kaffee oder Tee?", "a": "Herbatę, proszę.", "ade": "Tee, bitte."},
-   {"who": "Babcia", "q": "Smakuje ci?", "qde": "Schmeckt es dir?", "a": "Tak, bardzo mi smakuje!", "ade": "Ja, es schmeckt mir sehr!"}
-  ],
-  "grammar": {"title": "„z“ mit dem Instrumental", "text": "Nach „z“ in der Bedeutung „mit“ steht der Instrumental: cytryna → z cytryną, mleko → z mlekiem, cukier → z cukrem. „Poproszę“ ist die höfliche Art, um etwas zu bitten oder etwas anzunehmen, also: Ich hätte gern …"},
-  "tips": ["y ist ein dumpfes i, zwischen i und ü: pyszne, cytryna.", "chcesz: erst ein „ch“ wie in „Bach“, dann „tsesch“."]
- },
- {"id": "l6", "chapter": "pierwsze", "title": "W sklepie", "de": "Zahlen und einkaufen",
-  "lines": [
-   {"who": "Ekspedientka", "t": [["Dzień", "Tag"], ["dobry!", "guter!"], ["Co", "was"], ["podać?", "reichen?"]], "sense": "Guten Tag! Was darf es sein?"},
-   {"who": "Semyon", "t": [["Poproszę", "ich-bitte-um"], ["chleb", "Brot"], ["i", "und"], ["dwa", "zwei"], ["jabłka.", "Äpfel."]], "sense": "Ich hätte gern ein Brot und zwei Äpfel.", "tip": "jabłka ≈ JAP-wka"},
-   {"who": "Ekspedientka", "t": [["Coś", "etwas"], ["jeszcze?", "noch?"]], "sense": "Sonst noch etwas?"},
-   {"who": "Semyon", "t": [["Nie,", "nein,"], ["dziękuję.", "ich-danke."], ["Ile", "wie-viel"], ["płacę?", "zahle-ich?"]], "sense": "Nein, danke. Was macht das?", "tip": "płacę ≈ PWA-tse"},
-   {"who": "Ekspedientka", "t": [["Dwanaście", "zwölf"], ["złotych.", "Złoty."]], "sense": "Zwölf Złoty.", "tip": "złotych ≈ SWO-tych"},
-   {"who": "Semyon", "t": [["Proszę", "bitte"], ["bardzo.", "sehr."]], "sense": "Bitte schön."},
-   {"who": "Ekspedientka", "t": [["Dziękuję,", "ich-danke,"], ["do", "bis"], ["widzenia!", "zum-Sehen!"]], "sense": "Danke, auf Wiedersehen!"}
-  ],
-  "chunks": [["Co podać?", "Was darf es sein?"], ["Poproszę chleb.", "Ich hätte gern ein Brot."], ["dwa jabłka", "zwei Äpfel"], ["Coś jeszcze?", "Sonst noch etwas?"], ["Ile płacę?", "Was macht das?"], ["Dwanaście złotych.", "Zwölf Złoty."], ["Do widzenia!", "Auf Wiedersehen!"], ["jeden, dwa, trzy, cztery, pięć", "eins, zwei, drei, vier, fünf"], ["sześć, siedem, osiem, dziewięć, dziesięć", "sechs, sieben, acht, neun, zehn"]],
-  "words": [["sklep", "Laden"], ["chleb", "Brot"], ["jabłko", "Apfel"], ["ile?", "wie viel?"], ["płacić", "bezahlen"], ["złoty", "Złoty (Währung)"], ["tanio", "billig"], ["drogo", "teuer"]],
-  "qa": [
-   {"who": "Ekspedientka", "q": "Co podać?", "qde": "Was darf es sein?", "a": "Poproszę chleb i dwa jabłka.", "ade": "Ich hätte gern ein Brot und zwei Äpfel."},
-   {"who": "Ekspedientka", "q": "Coś jeszcze?", "qde": "Sonst noch etwas?", "a": "Nie, dziękuję. Ile płacę?", "ade": "Nein, danke. Was macht das?"}
-  ],
-  "grammar": {"title": "Zahlen verändern das Nomen", "text": "Nach 2, 3 und 4 steht der Plural: dwa jabłka (zwei Äpfel). Ab 5 steht der Genitiv Plural: pięć jabłek (fünf Äpfel), dwanaście złotych (zwölf Złoty). Das klingt kompliziert, kommt aber so oft vor, dass es sich mit der Zeit von selbst einprägt."},
-  "tips": ["trzy (drei) ≈ tschy: rz nach t klingt wie „sch“.", "pięć (fünf) ≈ pjentsch, dziewięć (neun) ≈ DSCHE-wjentsch."]
+ "sounds": [
+  {
+   "id": "sz",
+   "title": "sz · cz",
+   "de": "sz ist ein hartes „sch“, die Zunge liegt weit hinten. cz ist ein hartes „tsch“.",
+   "words": [
+    [
+     "szafa",
+     "Schrank"
+    ],
+    [
+     "szkoła",
+     "Schule"
+    ],
+    [
+     "czas",
+     "Zeit"
+    ],
+    [
+     "czarny",
+     "schwarz"
+    ]
+   ]
+  },
+  {
+   "id": "rz",
+   "title": "rz · ż",
+   "de": "rz und ż klingen gleich: wie das „j“ in „Journal“. Darum klingen „może“ (vielleicht) und „morze“ (Meer) identisch.",
+   "words": [
+    [
+     "rzeka",
+     "Fluss"
+    ],
+    [
+     "żaba",
+     "Frosch"
+    ],
+    [
+     "może",
+     "vielleicht"
+    ],
+    [
+     "morze",
+     "Meer"
+    ]
+   ]
+  },
+  {
+   "id": "si",
+   "title": "ś · ć · ź",
+   "de": "Die weichen Laute: ś ist ein weiches „sch“, fast wie „ch“ in „ich“. ć ist ein weiches „tsch“, ź ein weiches, stimmhaftes „sch“. Vor i schreibt man si, ci, zi.",
+   "words": [
+    [
+     "siedem",
+     "sieben"
+    ],
+    [
+     "ciocia",
+     "Tante"
+    ],
+    [
+     "cześć",
+     "Hallo"
+    ],
+    [
+     "źle",
+     "schlecht"
+    ]
+   ]
+  },
+  {
+   "id": "l",
+   "title": "ł",
+   "de": "ł spricht man wie das englische „w“ in „water“.",
+   "words": [
+    [
+     "łazienka",
+     "Badezimmer"
+    ],
+    [
+     "mały",
+     "klein"
+    ],
+    [
+     "stół",
+     "Tisch"
+    ],
+    [
+     "ładny",
+     "hübsch"
+    ]
+   ]
+  },
+  {
+   "id": "nasal",
+   "title": "ą · ę",
+   "de": "Nasale: ą klingt wie „on“, ę wie „en“. Am Wortende klingt ę fast wie ein einfaches e.",
+   "words": [
+    [
+     "są",
+     "sie sind"
+    ],
+    [
+     "mąka",
+     "Mehl"
+    ],
+    [
+     "ręka",
+     "Hand"
+    ],
+    [
+     "proszę",
+     "bitte"
+    ]
+   ]
+  },
+  {
+   "id": "szcz",
+   "title": "szcz · trz",
+   "de": "Die berühmten Konsonantenketten: einfach langsam Laut für Laut zusammensetzen. szcz = sch + tsch.",
+   "words": [
+    [
+     "jeszcze",
+     "noch"
+    ],
+    [
+     "szczęście",
+     "Glück"
+    ],
+    [
+     "deszcz",
+     "Regen"
+    ],
+    [
+     "trzy",
+     "drei"
+    ]
+   ]
+  }
+ ],
+ "lessons": [
+  {
+   "id": "l1",
+   "chapter": "pierwsze",
+   "title": "Cześć!",
+   "de": "Begrüßen und vorstellen",
+   "lines": [
+    {
+     "who": "Ola",
+     "t": [
+      [
+       "Cześć!",
+       "Hallo!"
+      ],
+      [
+       "Jak",
+       "wie"
+      ],
+      [
+       "się",
+       "sich"
+      ],
+      [
+       "masz?",
+       "hast-du?"
+      ]
+     ],
+     "sense": "Hallo! Wie geht es dir?",
+     "tip": "cześć ≈ tscheschtsch, ganz weich am Ende"
+    },
+    {
+     "who": "Semyon",
+     "t": [
+      [
+       "Dobrze,",
+       "gut,"
+      ],
+      [
+       "dziękuję!",
+       "ich-danke!"
+      ],
+      [
+       "A",
+       "und"
+      ],
+      [
+       "ty?",
+       "du?"
+      ]
+     ],
+     "sense": "Gut, danke! Und dir?",
+     "tip": "dziękuję ≈ dschen-KU-je"
+    },
+    {
+     "who": "Ola",
+     "t": [
+      [
+       "Też",
+       "auch"
+      ],
+      [
+       "dobrze.",
+       "gut."
+      ],
+      [
+       "Jestem",
+       "ich-bin"
+      ],
+      [
+       "Ola.",
+       "Ola."
+      ]
+     ],
+     "sense": "Auch gut. Ich bin Ola."
+    },
+    {
+     "who": "Semyon",
+     "t": [
+      [
+       "Miło",
+       "angenehm"
+      ],
+      [
+       "mi!",
+       "mir!"
+      ],
+      [
+       "Mam",
+       "ich-habe"
+      ],
+      [
+       "na",
+       "auf"
+      ],
+      [
+       "imię",
+       "Vornamen"
+      ],
+      [
+       "Semyon.",
+       "Semyon."
+      ]
+     ],
+     "sense": "Freut mich! Ich heiße Semyon.",
+     "tip": "imię ≈ IM-je"
+    },
+    {
+     "who": "Ola",
+     "t": [
+      [
+       "Do",
+       "bis"
+      ],
+      [
+       "zobaczenia!",
+       "zum-Sehen!"
+      ]
+     ],
+     "sense": "Bis bald!"
+    },
+    {
+     "who": "Semyon",
+     "t": [
+      [
+       "Na",
+       "auf"
+      ],
+      [
+       "razie!",
+       "Mal!"
+      ]
+     ],
+     "sense": "Bis dann!"
+    }
+   ],
+   "chunks": [
+    [
+     "Cześć!",
+     "Hallo! / Tschüss!"
+    ],
+    [
+     "Jak się masz?",
+     "Wie geht es dir?"
+    ],
+    [
+     "Dobrze, dziękuję.",
+     "Gut, danke."
+    ],
+    [
+     "A ty?",
+     "Und du?"
+    ],
+    [
+     "Miło mi!",
+     "Freut mich!"
+    ],
+    [
+     "Mam na imię Semyon.",
+     "Ich heiße Semyon."
+    ],
+    [
+     "Do zobaczenia!",
+     "Auf Wiedersehen!"
+    ],
+    [
+     "Na razie!",
+     "Bis dann!"
+    ]
+   ],
+   "words": [
+    [
+     "dzień dobry",
+     "guten Tag"
+    ],
+    [
+     "dobry wieczór",
+     "guten Abend"
+    ],
+    [
+     "dziękuję",
+     "danke"
+    ],
+    [
+     "proszę",
+     "bitte"
+    ],
+    [
+     "tak",
+     "ja"
+    ],
+    [
+     "nie",
+     "nein"
+    ],
+    [
+     "przepraszam",
+     "Entschuldigung"
+    ]
+   ],
+   "qa": [
+    {
+     "who": "Ola",
+     "q": "Jak się masz?",
+     "qde": "Wie geht es dir?",
+     "a": "Dobrze, dziękuję! A ty?",
+     "ade": "Gut, danke! Und dir?"
+    },
+    {
+     "who": "Ola",
+     "q": "Jak masz na imię?",
+     "qde": "Wie heißt du?",
+     "a": "Mam na imię Semyon.",
+     "ade": "Ich heiße Semyon."
+    }
+   ],
+   "grammar": {
+    "title": "„się“ und du oder Sie",
+    "text": "„się“ ist das Reflexivpronomen „sich“. Wörtlich heißt „Jak się masz?“: Wie hast du dich? Unter Freunden sagt man „Cześć“ und „ty“ (du). Höflich sagt man „Dzień dobry“ und spricht Fremde mit „Pan“ (Herr) oder „Pani“ (Frau) an, zum Beispiel: Jak się Pan ma?"
+   },
+   "tips": [
+    "cz ist ein hartes „tsch“, ść ein weiches „schtsch“.",
+    "Die Betonung liegt im Polnischen fast immer auf der vorletzten Silbe: dzię-KU-ję, zo-ba-CZE-nia."
+   ],
+   "book": "1A"
+  },
+  {
+   "id": "l2",
+   "chapter": "pierwsze",
+   "title": "Skąd jesteś?",
+   "de": "Herkunft und Sprachen",
+   "lines": [
+    {
+     "who": "Ola",
+     "t": [
+      [
+       "Skąd",
+       "woher"
+      ],
+      [
+       "jesteś,",
+       "bist-du,"
+      ],
+      [
+       "Semyon?",
+       "Semyon?"
+      ]
+     ],
+     "sense": "Woher kommst du, Semyon?",
+     "tip": "skąd ≈ skont: ą vor d klingt wie „on“"
+    },
+    {
+     "who": "Semyon",
+     "t": [
+      [
+       "Jestem",
+       "ich-bin"
+      ],
+      [
+       "z",
+       "aus"
+      ],
+      [
+       "Niemiec.",
+       "Deutschland."
+      ],
+      [
+       "Mieszkam",
+       "ich-wohne"
+      ],
+      [
+       "w",
+       "in"
+      ],
+      [
+       "Niemczech.",
+       "Deutschland."
+      ]
+     ],
+     "sense": "Ich komme aus Deutschland. Ich wohne in Deutschland.",
+     "tip": "Niemiec ≈ NJE-mjets"
+    },
+    {
+     "who": "Ola",
+     "t": [
+      [
+       "Mówisz",
+       "sprichst-du"
+      ],
+      [
+       "po",
+       "auf"
+      ],
+      [
+       "polsku?",
+       "polnisch?"
+      ]
+     ],
+     "sense": "Sprichst du Polnisch?",
+     "tip": "ó klingt wie u: mówisz ≈ MU-wisch"
+    },
+    {
+     "who": "Semyon",
+     "t": [
+      [
+       "Trochę.",
+       "Ein-bisschen."
+      ],
+      [
+       "Uczę",
+       "ich-lehre"
+      ],
+      [
+       "się",
+       "mich"
+      ],
+      [
+       "polskiego.",
+       "des-Polnischen."
+      ]
+     ],
+     "sense": "Ein bisschen. Ich lerne Polnisch."
+    },
+    {
+     "who": "Ola",
+     "t": [
+      [
+       "Super!",
+       "Super!"
+      ],
+      [
+       "Mówisz",
+       "du-sprichst"
+      ],
+      [
+       "bardzo",
+       "sehr"
+      ],
+      [
+       "dobrze.",
+       "gut."
+      ]
+     ],
+     "sense": "Super! Du sprichst sehr gut."
+    },
+    {
+     "who": "Semyon",
+     "t": [
+      [
+       "Dziękuję!",
+       "Ich-danke!"
+      ],
+      [
+       "Ale",
+       "aber"
+      ],
+      [
+       "mówię",
+       "ich-spreche"
+      ],
+      [
+       "jeszcze",
+       "noch"
+      ],
+      [
+       "powoli.",
+       "langsam."
+      ]
+     ],
+     "sense": "Danke! Aber ich spreche noch langsam."
+    }
+   ],
+   "chunks": [
+    [
+     "Skąd jesteś?",
+     "Woher kommst du?"
+    ],
+    [
+     "Jestem z Niemiec.",
+     "Ich komme aus Deutschland."
+    ],
+    [
+     "Mieszkam w Niemczech.",
+     "Ich wohne in Deutschland."
+    ],
+    [
+     "Mówisz po polsku?",
+     "Sprichst du Polnisch?"
+    ],
+    [
+     "Trochę.",
+     "Ein bisschen."
+    ],
+    [
+     "Uczę się polskiego.",
+     "Ich lerne Polnisch."
+    ],
+    [
+     "Mówię jeszcze powoli.",
+     "Ich spreche noch langsam."
+    ]
+   ],
+   "words": [
+    [
+     "Polska",
+     "Polen"
+    ],
+    [
+     "Niemcy",
+     "Deutschland"
+    ],
+    [
+     "po polsku",
+     "auf Polnisch"
+    ],
+    [
+     "po niemiecku",
+     "auf Deutsch"
+    ],
+    [
+     "rozumiem",
+     "ich verstehe"
+    ],
+    [
+     "nie rozumiem",
+     "ich verstehe nicht"
+    ],
+    [
+     "powoli",
+     "langsam"
+    ]
+   ],
+   "qa": [
+    {
+     "who": "Ola",
+     "q": "Skąd jesteś?",
+     "qde": "Woher kommst du?",
+     "a": "Jestem z Niemiec.",
+     "ade": "Ich komme aus Deutschland."
+    },
+    {
+     "who": "Ola",
+     "q": "Mówisz po polsku?",
+     "qde": "Sprichst du Polnisch?",
+     "a": "Trochę. Uczę się polskiego.",
+     "ade": "Ein bisschen. Ich lerne Polnisch."
+    }
+   ],
+   "grammar": {
+    "title": "Das Verb zeigt, wer spricht",
+    "text": "Im Polnischen lässt man „ich“ und „du“ meist weg, denn die Endung des Verbs verrät die Person: mówię (ich spreche), mówisz (du sprichst), mówi (er/sie spricht). Und du hast schon zwei Fälle gesehen: „z Niemiec“ (aus Deutschland, Genitiv) und „w Niemczech“ (in Deutschland, Lokativ). Merk sie dir vorerst einfach als feste Wendungen."
+   },
+   "tips": [
+    "ó und u klingen beide wie ein deutsches u.",
+    "w spricht man wie ein deutsches w, ł dagegen wie ein englisches w."
+   ],
+   "book": "1B"
+  },
+  {
+   "id": "b1c",
+   "chapter": "pierwsze",
+   "book": "1C",
+   "title": "Mieszkam w Gdańsku",
+   "de": "Wohnort, Adresse, Telefonnummer",
+   "lines": [
+    {
+     "who": "Urzędniczka",
+     "t": [
+      [
+       "Dzień",
+       "Tag"
+      ],
+      [
+       "dobry.",
+       "guter."
+      ],
+      [
+       "Gdzie",
+       "wo"
+      ],
+      [
+       "pan",
+       "Sie"
+      ],
+      [
+       "mieszka?",
+       "wohnt?"
+      ]
+     ],
+     "sense": "Guten Tag. Wo wohnen Sie?"
+    },
+    {
+     "who": "Semyon",
+     "t": [
+      [
+       "Mieszkam",
+       "wohne-ich"
+      ],
+      [
+       "w",
+       "in"
+      ],
+      [
+       "Gdańsku,",
+       "Danzig,"
+      ],
+      [
+       "na",
+       "auf"
+      ],
+      [
+       "ulicy",
+       "Straße"
+      ],
+      [
+       "Długiej.",
+       "Langen."
+      ]
+     ],
+     "sense": "Ich wohne in Danzig, in der Długa-Straße.",
+     "tip": "w Gdańsku: Ort steht im Lokativ"
+    },
+    {
+     "who": "Urzędniczka",
+     "t": [
+      [
+       "A",
+       "und"
+      ],
+      [
+       "jaki",
+       "welche"
+      ],
+      [
+       "jest",
+       "ist"
+      ],
+      [
+       "pana",
+       "Ihre"
+      ],
+      [
+       "numer",
+       "Nummer"
+      ],
+      [
+       "telefonu?",
+       "Telefons?"
+      ]
+     ],
+     "sense": "Und wie ist Ihre Telefonnummer?"
+    },
+    {
+     "who": "Semyon",
+     "t": [
+      [
+       "Pięćset",
+       "fünfhundert"
+      ],
+      [
+       "dwa,",
+       "zwei,"
+      ],
+      [
+       "trzysta",
+       "dreihundert"
+      ],
+      [
+       "dziesięć,",
+       "zehn,"
+      ],
+      [
+       "czterysta",
+       "vierhundert"
+      ],
+      [
+       "osiem.",
+       "acht."
+      ]
+     ],
+     "sense": "502 310 408.",
+     "tip": "Nummern in Dreiergruppen"
+    },
+    {
+     "who": "Urzędniczka",
+     "t": [
+      [
+       "Dziękuję.",
+       "danke."
+      ],
+      [
+       "A",
+       "und"
+      ],
+      [
+       "pana",
+       "Ihre"
+      ],
+      [
+       "adres",
+       "Adresse"
+      ],
+      [
+       "e-mail?",
+       "E-Mail?"
+      ]
+     ],
+     "sense": "Danke. Und Ihre E-Mail-Adresse?"
+    },
+    {
+     "who": "Semyon",
+     "t": [
+      [
+       "Semyon",
+       "Semyon"
+      ],
+      [
+       "małpa",
+       "Affe"
+      ],
+      [
+       "poczta",
+       "post"
+      ],
+      [
+       "kropka",
+       "Punkt"
+      ],
+      [
+       "pl.",
+       "pl."
+      ]
+     ],
+     "sense": "semyon@poczta.pl",
+     "tip": "@ heißt małpa (Affe)"
+    }
+   ],
+   "chunks": [
+    [
+     "Gdzie mieszkasz?",
+     "Wo wohnst du?"
+    ],
+    [
+     "Mieszkam w Gdańsku.",
+     "Ich wohne in Danzig."
+    ],
+    [
+     "na ulicy Długiej",
+     "in der Długa-Straße"
+    ],
+    [
+     "Jaki jest twój numer telefonu?",
+     "Wie ist deine Telefonnummer?"
+    ],
+    [
+     "Jaki jest twój adres?",
+     "Wie ist deine Adresse?"
+    ]
+   ],
+   "words": [
+    [
+     "urzędniczka",
+     "Beamtin"
+    ],
+    [
+     "ulica",
+     "Straße"
+    ],
+    [
+     "numer",
+     "Nummer"
+    ],
+    [
+     "adres",
+     "Adresse"
+    ],
+    [
+     "małpa",
+     "Affe; @"
+    ],
+    [
+     "kropka",
+     "Punkt"
+    ]
+   ],
+   "qa": [
+    {
+     "who": "Urzędniczka",
+     "q": "Gdzie pan mieszka?",
+     "qde": "Wo wohnen Sie?",
+     "a": "Mieszkam w Gdańsku.",
+     "ade": "Ich wohne in Danzig."
+    },
+    {
+     "who": "Ola",
+     "q": "Jaki jest twój numer telefonu?",
+     "qde": "Wie ist deine Telefonnummer?",
+     "a": "Mój numer to pięćset dwa, trzysta dziesięć, czterysta osiem.",
+     "ade": "Meine Nummer ist 502 310 408."
+    }
+   ],
+   "grammar": {
+    "title": "w + Lokativ: wo?",
+    "text": "Nach w (in) für einen Ort steht der Lokativ. Städte enden dann meist auf -ie oder -u: Berlin → w Berlinie, Kraków → w Krakowie, Gdańsk → w Gdańsku, Warszawa → w Warszawie. Bei Straßen sagt man na: na ulicy Długiej. Das Verb mieszkać: mieszkam, mieszkasz, mieszka, mieszkamy, mieszkacie, mieszkają."
+   },
+   "tips": [
+    "Telefonnummern liest man in Dreiergruppen: 502 310 408 = pięćset dwa, trzysta dziesięć, czterysta osiem.",
+    "Höflich fragt man mit pan (zu einem Mann) oder pani (zu einer Frau) und der 3. Person: Gdzie pan mieszka?"
+   ]
+  },
+  {
+   "id": "b1d",
+   "chapter": "pierwsze",
+   "book": "1D",
+   "title": "Co to jest?",
+   "de": "Dinge benennen: ten, ta, to",
+   "lines": [
+    {
+     "who": "Ola",
+     "t": [
+      [
+       "Co",
+       "was"
+      ],
+      [
+       "to",
+       "das"
+      ],
+      [
+       "jest?",
+       "ist?"
+      ]
+     ],
+     "sense": "Was ist das?",
+     "tip": "co ≈ tso"
+    },
+    {
+     "who": "Semyon",
+     "t": [
+      [
+       "To",
+       "das"
+      ],
+      [
+       "jest",
+       "ist"
+      ],
+      [
+       "klucz.",
+       "Schlüssel."
+      ],
+      [
+       "A",
+       "und"
+      ],
+      [
+       "to?",
+       "das?"
+      ]
+     ],
+     "sense": "Das ist ein Schlüssel. Und das?"
+    },
+    {
+     "who": "Ola",
+     "t": [
+      [
+       "To",
+       "das"
+      ],
+      [
+       "jest",
+       "ist"
+      ],
+      [
+       "mój",
+       "mein"
+      ],
+      [
+       "telefon,",
+       "Telefon,"
+      ],
+      [
+       "a",
+       "und"
+      ],
+      [
+       "to",
+       "das"
+      ],
+      [
+       "moja",
+       "meine"
+      ],
+      [
+       "książka.",
+       "Buch."
+      ]
+     ],
+     "sense": "Das ist mein Telefon, und das ist mein Buch."
+    },
+    {
+     "who": "Semyon",
+     "t": [
+      [
+       "A",
+       "und"
+      ],
+      [
+       "kto",
+       "wer"
+      ],
+      [
+       "to",
+       "das"
+      ],
+      [
+       "jest",
+       "ist"
+      ],
+      [
+       "na",
+       "auf"
+      ],
+      [
+       "zdjęciu?",
+       "Foto?"
+      ]
+     ],
+     "sense": "Und wer ist das auf dem Foto?",
+     "tip": "kto für Menschen, co für Dinge"
+    },
+    {
+     "who": "Ola",
+     "t": [
+      [
+       "To",
+       "das"
+      ],
+      [
+       "moja",
+       "meine"
+      ],
+      [
+       "siostra,",
+       "Schwester,"
+      ],
+      [
+       "Kasia.",
+       "Kasia."
+      ]
+     ],
+     "sense": "Das ist meine Schwester Kasia."
+    },
+    {
+     "who": "Semyon",
+     "t": [
+      [
+       "Ta",
+       "diese"
+      ],
+      [
+       "torba",
+       "Tasche"
+      ],
+      [
+       "jest",
+       "ist"
+      ],
+      [
+       "bardzo",
+       "sehr"
+      ],
+      [
+       "ładna!",
+       "hübsch!"
+      ]
+     ],
+     "sense": "Die Tasche ist sehr hübsch!"
+    },
+    {
+     "who": "Ola",
+     "t": [
+      [
+       "Dziękuję,",
+       "danke,"
+      ],
+      [
+       "to",
+       "das"
+      ],
+      [
+       "prezent",
+       "Geschenk"
+      ],
+      [
+       "od",
+       "von"
+      ],
+      [
+       "mamy.",
+       "Mama."
+      ]
+     ],
+     "sense": "Danke, das ist ein Geschenk von Mama."
+    }
+   ],
+   "chunks": [
+    [
+     "Co to jest?",
+     "Was ist das?"
+    ],
+    [
+     "Kto to jest?",
+     "Wer ist das?"
+    ],
+    [
+     "To jest mój telefon.",
+     "Das ist mein Telefon."
+    ],
+    [
+     "na zdjęciu",
+     "auf dem Foto"
+    ],
+    [
+     "prezent od mamy",
+     "ein Geschenk von Mama"
+    ]
+   ],
+   "words": [
+    [
+     "klucz",
+     "Schlüssel"
+    ],
+    [
+     "książka",
+     "Buch"
+    ],
+    [
+     "torba",
+     "Tasche"
+    ],
+    [
+     "zdjęcie",
+     "Foto"
+    ],
+    [
+     "prezent",
+     "Geschenk"
+    ],
+    [
+     "od",
+     "von"
+    ]
+   ],
+   "qa": [
+    {
+     "who": "Ola",
+     "q": "Co to jest?",
+     "qde": "Was ist das?",
+     "a": "To jest mój telefon.",
+     "ade": "Das ist mein Telefon."
+    },
+    {
+     "who": "Ola",
+     "q": "Kto to jest?",
+     "qde": "Wer ist das?",
+     "a": "To jest moja siostra.",
+     "ade": "Das ist meine Schwester."
+    }
+   ],
+   "grammar": {
+    "title": "Drei Geschlechter: ten, ta, to",
+    "text": "Männlich enden Nomen meist auf einen Konsonanten: ten telefon, ten klucz. Weiblich meist auf -a: ta torba, ta książka. Sächlich auf -o, -e oder -ę: to okno, to zdjęcie. Danach richten sich mein und dieser: mój telefon, moja torba, moje zdjęcie. „To jest …“ (das ist …) bleibt immer gleich."
+   },
+   "tips": [
+    "In „To moja siostra“ darf jest wegfallen, das ist umgangssprachlich ganz normal.",
+    "zdjęcie ≈ SDJEN-tsche, ę vor ć klingt wie „en“."
+   ]
+  },
+  {
+   "id": "l3",
+   "chapter": "pierwsze",
+   "title": "Moja rodzina",
+   "de": "Familie",
+   "lines": [
+    {
+     "who": "Ola",
+     "t": [
+      [
+       "Masz",
+       "hast-du"
+      ],
+      [
+       "rodzeństwo?",
+       "Geschwister?"
+      ]
+     ],
+     "sense": "Hast du Geschwister?",
+     "tip": "rodzeństwo ≈ ro-DSEN-stwo"
+    },
+    {
+     "who": "Semyon",
+     "t": [
+      [
+       "Tak,",
+       "ja,"
+      ],
+      [
+       "mam",
+       "ich-habe"
+      ],
+      [
+       "siostrę",
+       "Schwester"
+      ],
+      [
+       "i",
+       "und"
+      ],
+      [
+       "brata.",
+       "Bruder."
+      ]
+     ],
+     "sense": "Ja, ich habe eine Schwester und einen Bruder."
+    },
+    {
+     "who": "Ola",
+     "t": [
+      [
+       "A",
+       "und"
+      ],
+      [
+       "rodzice?",
+       "Eltern?"
+      ],
+      [
+       "Gdzie",
+       "wo"
+      ],
+      [
+       "mieszkają?",
+       "wohnen-sie?"
+      ]
+     ],
+     "sense": "Und deine Eltern? Wo wohnen sie?"
+    },
+    {
+     "who": "Semyon",
+     "t": [
+      [
+       "Rodzice",
+       "Eltern"
+      ],
+      [
+       "mieszkają",
+       "wohnen"
+      ],
+      [
+       "w",
+       "in"
+      ],
+      [
+       "Niemczech.",
+       "Deutschland."
+      ],
+      [
+       "A",
+       "und"
+      ],
+      [
+       "babcia",
+       "Oma"
+      ],
+      [
+       "mieszka",
+       "wohnt"
+      ],
+      [
+       "w",
+       "in"
+      ],
+      [
+       "Krakowie.",
+       "Krakau."
+      ]
+     ],
+     "sense": "Meine Eltern wohnen in Deutschland. Und Oma wohnt in Krakau."
+    },
+    {
+     "who": "Ola",
+     "t": [
+      [
+       "Masz",
+       "hast-du"
+      ],
+      [
+       "zdjęcie?",
+       "Foto?"
+      ]
+     ],
+     "sense": "Hast du ein Foto?",
+     "tip": "zdjęcie ≈ SDJEN-tsche"
+    },
+    {
+     "who": "Semyon",
+     "t": [
+      [
+       "Tak,",
+       "ja,"
+      ],
+      [
+       "zobacz!",
+       "schau!"
+      ],
+      [
+       "To",
+       "das"
+      ],
+      [
+       "jest",
+       "ist"
+      ],
+      [
+       "moja",
+       "meine"
+      ],
+      [
+       "siostra.",
+       "Schwester."
+      ]
+     ],
+     "sense": "Ja, schau! Das ist meine Schwester."
+    }
+   ],
+   "chunks": [
+    [
+     "Masz rodzeństwo?",
+     "Hast du Geschwister?"
+    ],
+    [
+     "Mam siostrę i brata.",
+     "Ich habe eine Schwester und einen Bruder."
+    ],
+    [
+     "Gdzie mieszkają?",
+     "Wo wohnen sie?"
+    ],
+    [
+     "Rodzice mieszkają w Niemczech.",
+     "Meine Eltern wohnen in Deutschland."
+    ],
+    [
+     "Babcia mieszka w Krakowie.",
+     "Oma wohnt in Krakau."
+    ],
+    [
+     "Masz zdjęcie?",
+     "Hast du ein Foto?"
+    ],
+    [
+     "To jest moja siostra.",
+     "Das ist meine Schwester."
+    ]
+   ],
+   "words": [
+    [
+     "mama",
+     "Mama"
+    ],
+    [
+     "tata",
+     "Papa"
+    ],
+    [
+     "rodzice",
+     "Eltern"
+    ],
+    [
+     "siostra",
+     "Schwester"
+    ],
+    [
+     "brat",
+     "Bruder"
+    ],
+    [
+     "babcia",
+     "Oma"
+    ],
+    [
+     "dziadek",
+     "Opa"
+    ],
+    [
+     "rodzina",
+     "Familie"
+    ]
+   ],
+   "qa": [
+    {
+     "who": "Ola",
+     "q": "Masz rodzeństwo?",
+     "qde": "Hast du Geschwister?",
+     "a": "Tak, mam siostrę i brata.",
+     "ade": "Ja, ich habe eine Schwester und einen Bruder."
+    },
+    {
+     "who": "Ola",
+     "q": "Gdzie mieszka twoja babcia?",
+     "qde": "Wo wohnt deine Oma?",
+     "a": "Babcia mieszka w Krakowie.",
+     "ade": "Oma wohnt in Krakau."
+    }
+   ],
+   "grammar": {
+    "title": "Der Akkusativ: wen oder was?",
+    "text": "Nach „mam“ (ich habe) steht der Akkusativ. Weibliche Wörter auf -a bekommen -ę: siostra → mam siostrę. Männliche Personen und Tiere bekommen -a: brat → mam brata. Und „mein“ richtet sich nach dem Wort: mój brat, moja siostra, moje zdjęcie."
+   },
+   "tips": [
+    "ę am Wortende klingt fast wie ein einfaches e: siostrę ≈ SCHOS-tre (mit weichem sch).",
+    "dz klingt wie „ds“, dzi wie ein weiches „dschi“."
+   ],
+   "book": "2A"
+  },
+  {
+   "id": "b2b",
+   "chapter": "pierwsze",
+   "book": "2B",
+   "title": "Jaki on jest?",
+   "de": "Menschen beschreiben, Befinden",
+   "lines": [
+    {
+     "who": "Ola",
+     "t": [
+      [
+       "Jak",
+       "wie"
+      ],
+      [
+       "się",
+       "sich"
+      ],
+      [
+       "czujesz?",
+       "fühlst-du?"
+      ],
+      [
+       "Jesteś",
+       "bist-du"
+      ],
+      [
+       "zmęczony?",
+       "müde?"
+      ]
+     ],
+     "sense": "Wie fühlst du dich? Bist du müde?"
+    },
+    {
+     "who": "Semyon",
+     "t": [
+      [
+       "Trochę.",
+       "bisschen."
+      ],
+      [
+       "Ale",
+       "aber"
+      ],
+      [
+       "jestem",
+       "bin-ich"
+      ],
+      [
+       "zadowolony,",
+       "zufrieden,"
+      ],
+      [
+       "bo",
+       "weil"
+      ],
+      [
+       "mam",
+       "habe-ich"
+      ],
+      [
+       "nowego",
+       "neuen"
+      ],
+      [
+       "kolegę",
+       "Kollegen"
+      ],
+      [
+       "w",
+       "in"
+      ],
+      [
+       "pracy.",
+       "Arbeit."
+      ]
+     ],
+     "sense": "Ein bisschen. Aber ich bin zufrieden, weil ich einen neuen Kollegen auf der Arbeit habe.",
+     "tip": "nowego kolegę: Akkusativ, belebt"
+    },
+    {
+     "who": "Ola",
+     "t": [
+      [
+       "Jaki",
+       "was-für-einer"
+      ],
+      [
+       "on",
+       "er"
+      ],
+      [
+       "jest?",
+       "ist?"
+      ]
+     ],
+     "sense": "Wie ist er so?"
+    },
+    {
+     "who": "Semyon",
+     "t": [
+      [
+       "Jest",
+       "ist-er"
+      ],
+      [
+       "wysoki,",
+       "groß,"
+      ],
+      [
+       "ma",
+       "hat-er"
+      ],
+      [
+       "ciemne",
+       "dunkle"
+      ],
+      [
+       "włosy",
+       "Haare"
+      ],
+      [
+       "i",
+       "und"
+      ],
+      [
+       "jest",
+       "ist-er"
+      ],
+      [
+       "bardzo",
+       "sehr"
+      ],
+      [
+       "miły.",
+       "nett."
+      ]
+     ],
+     "sense": "Er ist groß, hat dunkle Haare und ist sehr nett."
+    },
+    {
+     "who": "Ola",
+     "t": [
+      [
+       "A",
+       "und"
+      ],
+      [
+       "ile",
+       "wie-viel"
+      ],
+      [
+       "ma",
+       "hat-er"
+      ],
+      [
+       "lat?",
+       "Jahre?"
+      ]
+     ],
+     "sense": "Und wie alt ist er?",
+     "tip": "Alter mit mieć"
+    },
+    {
+     "who": "Semyon",
+     "t": [
+      [
+       "Ma",
+       "hat-er"
+      ],
+      [
+       "trzydzieści",
+       "dreißig"
+      ],
+      [
+       "lat.",
+       "Jahre."
+      ],
+      [
+       "Jest",
+       "ist-er"
+      ],
+      [
+       "spokojny",
+       "ruhig"
+      ],
+      [
+       "i",
+       "und"
+      ],
+      [
+       "zabawny.",
+       "lustig."
+      ]
+     ],
+     "sense": "Er ist dreißig. Er ist ruhig und lustig."
+    }
+   ],
+   "chunks": [
+    [
+     "Jak się czujesz?",
+     "Wie fühlst du dich?"
+    ],
+    [
+     "Jestem zmęczony.",
+     "Ich bin müde."
+    ],
+    [
+     "Jaki on jest?",
+     "Wie ist er (so)?"
+    ],
+    [
+     "Ile masz lat?",
+     "Wie alt bist du?"
+    ],
+    [
+     "ma ciemne włosy",
+     "er hat dunkle Haare"
+    ]
+   ],
+   "words": [
+    [
+     "zmęczony",
+     "müde"
+    ],
+    [
+     "zadowolony",
+     "zufrieden"
+    ],
+    [
+     "wysoki",
+     "groß"
+    ],
+    [
+     "ciemny",
+     "dunkel"
+    ],
+    [
+     "włosy",
+     "Haare"
+    ],
+    [
+     "spokojny",
+     "ruhig"
+    ],
+    [
+     "zabawny",
+     "lustig"
+    ]
+   ],
+   "qa": [
+    {
+     "who": "Ola",
+     "q": "Jak się czujesz?",
+     "qde": "Wie fühlst du dich?",
+     "a": "Jestem trochę zmęczony, ale zadowolony.",
+     "ade": "Ich bin etwas müde, aber zufrieden."
+    },
+    {
+     "who": "Ola",
+     "q": "Jaki jest twój brat?",
+     "qde": "Wie ist dein Bruder?",
+     "a": "Mój brat jest wysoki i bardzo miły.",
+     "ade": "Mein Bruder ist groß und sehr nett."
+    }
+   ],
+   "grammar": {
+    "title": "Adjektive passen sich an",
+    "text": "Das Adjektiv richtet sich nach dem Nomen: on jest miły (er), ona jest miła (sie), dziecko jest miłe (es). Im Plural bei Dingen und Frauen -e: ciemne włosy. Fragen: Jaki? (welcher, wie), jaka?, jakie? Das Alter sagt man mit haben: Mam trzydzieści lat (wörtlich: ich habe 30 Jahre)."
+   },
+   "tips": [
+    "Als Frau sagt man: jestem zmęczona, jestem zadowolona.",
+    "Nach 5 und mehr kommt lat: dwa lata, pięć lat, trzydzieści lat."
+   ]
+  },
+  {
+   "id": "b2c",
+   "chapter": "pierwsze",
+   "book": "2C",
+   "title": "Kim jesteś z zawodu?",
+   "de": "Berufe und der Instrumental",
+   "lines": [
+    {
+     "who": "Ola",
+     "t": [
+      [
+       "Kim",
+       "wer"
+      ],
+      [
+       "jesteś",
+       "bist-du"
+      ],
+      [
+       "z",
+       "von"
+      ],
+      [
+       "zawodu?",
+       "Beruf?"
+      ]
+     ],
+     "sense": "Was bist du von Beruf?",
+     "tip": "kim: Instrumental von kto"
+    },
+    {
+     "who": "Semyon",
+     "t": [
+      [
+       "Jestem",
+       "bin-ich"
+      ],
+      [
+       "inżynierem.",
+       "Ingenieur."
+      ],
+      [
+       "A",
+       "und"
+      ],
+      [
+       "ty?",
+       "du?"
+      ]
+     ],
+     "sense": "Ich bin Ingenieur. Und du?",
+     "tip": "inżynier → inżynierem"
+    },
+    {
+     "who": "Ola",
+     "t": [
+      [
+       "Jestem",
+       "bin-ich"
+      ],
+      [
+       "nauczycielką.",
+       "Lehrerin."
+      ],
+      [
+       "Uczę",
+       "lehre-ich"
+      ],
+      [
+       "angielskiego",
+       "Englisch"
+      ],
+      [
+       "w",
+       "in"
+      ],
+      [
+       "szkole.",
+       "Schule."
+      ]
+     ],
+     "sense": "Ich bin Lehrerin. Ich unterrichte Englisch in der Schule."
+    },
+    {
+     "who": "Semyon",
+     "t": [
+      [
+       "A",
+       "und"
+      ],
+      [
+       "twój",
+       "dein"
+      ],
+      [
+       "brat?",
+       "Bruder?"
+      ]
+     ],
+     "sense": "Und dein Bruder?"
+    },
+    {
+     "who": "Ola",
+     "t": [
+      [
+       "Mój",
+       "mein"
+      ],
+      [
+       "brat",
+       "Bruder"
+      ],
+      [
+       "jest",
+       "ist"
+      ],
+      [
+       "kucharzem,",
+       "Koch,"
+      ],
+      [
+       "a",
+       "und"
+      ],
+      [
+       "jego",
+       "seine"
+      ],
+      [
+       "żona",
+       "Frau"
+      ],
+      [
+       "jest",
+       "ist"
+      ],
+      [
+       "lekarką.",
+       "Ärztin."
+      ]
+     ],
+     "sense": "Mein Bruder ist Koch, und seine Frau ist Ärztin."
+    },
+    {
+     "who": "Semyon",
+     "t": [
+      [
+       "Kucharz",
+       "Koch"
+      ],
+      [
+       "w",
+       "in"
+      ],
+      [
+       "rodzinie",
+       "Familie"
+      ],
+      [
+       "to",
+       "das"
+      ],
+      [
+       "świetny",
+       "toll"
+      ],
+      [
+       "pomysł!",
+       "Idee!"
+      ]
+     ],
+     "sense": "Ein Koch in der Familie ist eine tolle Idee!"
+    }
+   ],
+   "chunks": [
+    [
+     "Kim jesteś z zawodu?",
+     "Was bist du von Beruf?"
+    ],
+    [
+     "Jestem inżynierem.",
+     "Ich bin Ingenieur."
+    ],
+    [
+     "Jestem nauczycielką.",
+     "Ich bin Lehrerin."
+    ],
+    [
+     "Uczę angielskiego.",
+     "Ich unterrichte Englisch."
+    ],
+    [
+     "To świetny pomysł!",
+     "Das ist eine tolle Idee!"
+    ]
+   ],
+   "words": [
+    [
+     "zawód",
+     "Beruf"
+    ],
+    [
+     "inżynier",
+     "Ingenieur"
+    ],
+    [
+     "nauczycielka",
+     "Lehrerin"
+    ],
+    [
+     "kucharz",
+     "Koch"
+    ],
+    [
+     "lekarka",
+     "Ärztin"
+    ],
+    [
+     "świetny",
+     "toll"
+    ]
+   ],
+   "qa": [
+    {
+     "who": "Ola",
+     "q": "Kim jesteś z zawodu?",
+     "qde": "Was bist du von Beruf?",
+     "a": "Jestem inżynierem.",
+     "ade": "Ich bin Ingenieur."
+    },
+    {
+     "who": "Ola",
+     "q": "Kim jest twój brat?",
+     "qde": "Was ist dein Bruder von Beruf?",
+     "a": "Mój brat jest kucharzem.",
+     "ade": "Mein Bruder ist Koch."
+    }
+   ],
+   "grammar": {
+    "title": "być + Instrumental",
+    "text": "Nach być (sein) steht der Beruf im Instrumental. Männlich -em, nach k und g -iem: lekarz → lekarzem, informatyk → informatykiem. Weiblich -ą: nauczycielka → nauczycielką. Aber nach to bleibt der Nominativ: To jest lekarz. Viele Berufe bekommen für Frauen -ka: nauczyciel → nauczycielka, lekarz → lekarka."
+   },
+   "tips": [
+    "Wer bist du? heißt Kim jesteś? nur bei Beruf oder Rolle. Nach dem Namen fragt man: Jak się nazywasz?",
+    "uczyć + Genitiv: uczę angielskiego, uczę polskiego."
+   ]
+  },
+  {
+   "id": "b2d",
+   "chapter": "pierwsze",
+   "book": "2D",
+   "title": "Gdzie pracujesz?",
+   "de": "Arbeitsort und Arbeitszeit",
+   "lines": [
+    {
+     "who": "Ola",
+     "t": [
+      [
+       "Gdzie",
+       "wo"
+      ],
+      [
+       "pracujesz?",
+       "arbeitest-du?"
+      ]
+     ],
+     "sense": "Wo arbeitest du?",
+     "tip": "pracować → pracuję"
+    },
+    {
+     "who": "Semyon",
+     "t": [
+      [
+       "Pracuję",
+       "arbeite-ich"
+      ],
+      [
+       "w",
+       "in"
+      ],
+      [
+       "dużej",
+       "großer"
+      ],
+      [
+       "firmie",
+       "Firma"
+      ],
+      [
+       "w",
+       "in"
+      ],
+      [
+       "centrum.",
+       "Zentrum."
+      ]
+     ],
+     "sense": "Ich arbeite in einer großen Firma im Zentrum."
+    },
+    {
+     "who": "Ola",
+     "t": [
+      [
+       "Pracujesz",
+       "arbeitest-du"
+      ],
+      [
+       "od",
+       "von"
+      ],
+      [
+       "poniedziałku",
+       "Montag"
+      ],
+      [
+       "do",
+       "bis"
+      ],
+      [
+       "piątku?",
+       "Freitag?"
+      ]
+     ],
+     "sense": "Arbeitest du von Montag bis Freitag?",
+     "tip": "od, do + Genitiv"
+    },
+    {
+     "who": "Semyon",
+     "t": [
+      [
+       "Tak,",
+       "ja,"
+      ],
+      [
+       "od",
+       "von"
+      ],
+      [
+       "ósmej",
+       "achten"
+      ],
+      [
+       "do",
+       "bis"
+      ],
+      [
+       "szesnastej.",
+       "sechzehnten."
+      ]
+     ],
+     "sense": "Ja, von acht bis sechzehn Uhr."
+    },
+    {
+     "who": "Ola",
+     "t": [
+      [
+       "A",
+       "und"
+      ],
+      [
+       "w",
+       "in"
+      ],
+      [
+       "weekend?",
+       "Wochenende?"
+      ]
+     ],
+     "sense": "Und am Wochenende?"
+    },
+    {
+     "who": "Semyon",
+     "t": [
+      [
+       "Czasem",
+       "manchmal"
+      ],
+      [
+       "muszę",
+       "muss-ich"
+      ],
+      [
+       "pracować",
+       "arbeiten"
+      ],
+      [
+       "w",
+       "in"
+      ],
+      [
+       "sobotę.",
+       "Samstag."
+      ]
+     ],
+     "sense": "Manchmal muss ich samstags arbeiten.",
+     "tip": "muszę + Infinitiv"
+    },
+    {
+     "who": "Ola",
+     "t": [
+      [
+       "Biedny!",
+       "Armer!"
+      ],
+      [
+       "Ja",
+       "ich"
+      ],
+      [
+       "w",
+       "in"
+      ],
+      [
+       "sobotę",
+       "Samstag"
+      ],
+      [
+       "odpoczywam.",
+       "ruhe-mich-aus."
+      ]
+     ],
+     "sense": "Du Armer! Ich ruhe mich samstags aus."
+    }
+   ],
+   "chunks": [
+    [
+     "Gdzie pracujesz?",
+     "Wo arbeitest du?"
+    ],
+    [
+     "od poniedziałku do piątku",
+     "von Montag bis Freitag"
+    ],
+    [
+     "od ósmej do szesnastej",
+     "von acht bis sechzehn Uhr"
+    ],
+    [
+     "Muszę pracować.",
+     "Ich muss arbeiten."
+    ],
+    [
+     "w sobotę",
+     "am Samstag"
+    ]
+   ],
+   "words": [
+    [
+     "firma",
+     "Firma"
+    ],
+    [
+     "centrum",
+     "Zentrum"
+    ],
+    [
+     "czasem",
+     "manchmal"
+    ],
+    [
+     "musieć",
+     "müssen"
+    ],
+    [
+     "odpoczywać",
+     "sich ausruhen"
+    ],
+    [
+     "biedny",
+     "arm"
+    ]
+   ],
+   "qa": [
+    {
+     "who": "Ola",
+     "q": "Gdzie pracujesz?",
+     "qde": "Wo arbeitest du?",
+     "a": "Pracuję w dużej firmie.",
+     "ade": "Ich arbeite in einer großen Firma."
+    },
+    {
+     "who": "Ola",
+     "q": "Od której do której pracujesz?",
+     "qde": "Von wann bis wann arbeitest du?",
+     "a": "Pracuję od ósmej do szesnastej.",
+     "ade": "Ich arbeite von acht bis sechzehn Uhr."
+    }
+   ],
+   "grammar": {
+    "title": "Verben auf -ować und od … do",
+    "text": "Bei Verben auf -ować wird -owa- zu -uj-: pracować → pracuję, pracujesz, pracuje, pracujemy, pracujecie, pracują. Genauso kupować → kupuję. Eine Zeitspanne: od … do … mit Genitiv: od poniedziałku do piątku, od ósmej do szesnastej. Am Wochentag: w + Akkusativ: w sobotę, w poniedziałek. musieć + Infinitiv: muszę pracować."
+   },
+   "tips": [
+    "Uhrzeiten sind im Polnischen Ordnungszahlen: o ósmej = um acht (wörtlich: um der achten).",
+    "czasem und czasami bedeuten beide manchmal."
+   ]
+  },
+  {
+   "id": "b3a",
+   "chapter": "pierwsze",
+   "book": "3A",
+   "title": "Gdzie jest piekarnia?",
+   "de": "Nach dem Weg fragen",
+   "lines": [
+    {
+     "who": "Semyon",
+     "t": [
+      [
+       "Przepraszam,",
+       "Entschuldigung,"
+      ],
+      [
+       "gdzie",
+       "wo"
+      ],
+      [
+       "jest",
+       "ist"
+      ],
+      [
+       "najbliższa",
+       "nächste"
+      ],
+      [
+       "piekarnia?",
+       "Bäckerei?"
+      ]
+     ],
+     "sense": "Entschuldigung, wo ist die nächste Bäckerei?"
+    },
+    {
+     "who": "Pani",
+     "t": [
+      [
+       "Proszę",
+       "bitte"
+      ],
+      [
+       "iść",
+       "gehen"
+      ],
+      [
+       "prosto,",
+       "geradeaus,"
+      ],
+      [
+       "a",
+       "und"
+      ],
+      [
+       "potem",
+       "dann"
+      ],
+      [
+       "w",
+       "nach"
+      ],
+      [
+       "lewo.",
+       "links."
+      ]
+     ],
+     "sense": "Gehen Sie geradeaus und dann links.",
+     "tip": "Proszę + Infinitiv = höflich"
+    },
+    {
+     "who": "Semyon",
+     "t": [
+      [
+       "Czy",
+       "ob"
+      ],
+      [
+       "to",
+       "das"
+      ],
+      [
+       "daleko?",
+       "weit?"
+      ]
+     ],
+     "sense": "Ist das weit?"
+    },
+    {
+     "who": "Pani",
+     "t": [
+      [
+       "Nie,",
+       "nein,"
+      ],
+      [
+       "blisko.",
+       "nah."
+      ],
+      [
+       "Pięć",
+       "fünf"
+      ],
+      [
+       "minut",
+       "Minuten"
+      ],
+      [
+       "pieszo.",
+       "zu-Fuß."
+      ]
+     ],
+     "sense": "Nein, nah. Fünf Minuten zu Fuß."
+    },
+    {
+     "who": "Semyon",
+     "t": [
+      [
+       "A",
+       "und"
+      ],
+      [
+       "apteka?",
+       "Apotheke?"
+      ]
+     ],
+     "sense": "Und eine Apotheke?"
+    },
+    {
+     "who": "Pani",
+     "t": [
+      [
+       "Apteka",
+       "Apotheke"
+      ],
+      [
+       "jest",
+       "ist"
+      ],
+      [
+       "obok",
+       "neben"
+      ],
+      [
+       "piekarni,",
+       "Bäckerei,"
+      ],
+      [
+       "naprzeciwko",
+       "gegenüber"
+      ],
+      [
+       "poczty.",
+       "Post."
+      ]
+     ],
+     "sense": "Die Apotheke ist neben der Bäckerei, gegenüber der Post.",
+     "tip": "obok, naprzeciwko + Genitiv"
+    },
+    {
+     "who": "Semyon",
+     "t": [
+      [
+       "Dziękuję",
+       "danke"
+      ],
+      [
+       "bardzo!",
+       "sehr!"
+      ]
+     ],
+     "sense": "Vielen Dank!"
+    }
+   ],
+   "chunks": [
+    [
+     "Gdzie jest apteka?",
+     "Wo ist eine Apotheke?"
+    ],
+    [
+     "Proszę iść prosto.",
+     "Gehen Sie geradeaus."
+    ],
+    [
+     "potem w lewo",
+     "dann links"
+    ],
+    [
+     "Czy to daleko?",
+     "Ist das weit?"
+    ],
+    [
+     "obok piekarni",
+     "neben der Bäckerei"
+    ]
+   ],
+   "words": [
+    [
+     "piekarnia",
+     "Bäckerei"
+    ],
+    [
+     "najbliższy",
+     "nächster"
+    ],
+    [
+     "pieszo",
+     "zu Fuß"
+    ],
+    [
+     "obok",
+     "neben"
+    ],
+    [
+     "naprzeciwko",
+     "gegenüber"
+    ],
+    [
+     "poczta",
+     "Post"
+    ]
+   ],
+   "qa": [
+    {
+     "who": "Pani",
+     "q": "Czego pan szuka?",
+     "qde": "Was suchen Sie?",
+     "a": "Szukam apteki.",
+     "ade": "Ich suche eine Apotheke."
+    },
+    {
+     "who": "Ola",
+     "q": "Gdzie jest piekarnia?",
+     "qde": "Wo ist die Bäckerei?",
+     "a": "Proszę iść prosto, a potem w lewo.",
+     "ade": "Geh geradeaus und dann links."
+    }
+   ],
+   "grammar": {
+    "title": "Ortsangaben mit Genitiv",
+    "text": "Nach obok (neben), naprzeciwko (gegenüber), blisko (nahe bei) und koło (bei) steht der Genitiv: obok piekarni, naprzeciwko poczty, blisko domu. Auch szukać (suchen) braucht den Genitiv: szukam apteki. Proszę + Infinitiv ist eine höfliche Aufforderung: Proszę iść prosto, proszę skręcić w prawo."
+   },
+   "tips": [
+    "w lewo = nach links, w prawo = nach rechts, prosto = geradeaus.",
+    "najbliższy ≈ naj-BLISCH-schy, ż klingt wie das j in „Journal“."
+   ]
+  },
+  {
+   "id": "l6",
+   "chapter": "pierwsze",
+   "title": "W sklepie",
+   "de": "Zahlen und einkaufen",
+   "lines": [
+    {
+     "who": "Ekspedientka",
+     "t": [
+      [
+       "Dzień",
+       "Tag"
+      ],
+      [
+       "dobry!",
+       "guter!"
+      ],
+      [
+       "Co",
+       "was"
+      ],
+      [
+       "podać?",
+       "reichen?"
+      ]
+     ],
+     "sense": "Guten Tag! Was darf es sein?"
+    },
+    {
+     "who": "Semyon",
+     "t": [
+      [
+       "Poproszę",
+       "ich-bitte-um"
+      ],
+      [
+       "chleb",
+       "Brot"
+      ],
+      [
+       "i",
+       "und"
+      ],
+      [
+       "dwa",
+       "zwei"
+      ],
+      [
+       "jabłka.",
+       "Äpfel."
+      ]
+     ],
+     "sense": "Ich hätte gern ein Brot und zwei Äpfel.",
+     "tip": "jabłka ≈ JAP-wka"
+    },
+    {
+     "who": "Ekspedientka",
+     "t": [
+      [
+       "Coś",
+       "etwas"
+      ],
+      [
+       "jeszcze?",
+       "noch?"
+      ]
+     ],
+     "sense": "Sonst noch etwas?"
+    },
+    {
+     "who": "Semyon",
+     "t": [
+      [
+       "Nie,",
+       "nein,"
+      ],
+      [
+       "dziękuję.",
+       "ich-danke."
+      ],
+      [
+       "Ile",
+       "wie-viel"
+      ],
+      [
+       "płacę?",
+       "zahle-ich?"
+      ]
+     ],
+     "sense": "Nein, danke. Was macht das?",
+     "tip": "płacę ≈ PWA-tse"
+    },
+    {
+     "who": "Ekspedientka",
+     "t": [
+      [
+       "Dwanaście",
+       "zwölf"
+      ],
+      [
+       "złotych.",
+       "Złoty."
+      ]
+     ],
+     "sense": "Zwölf Złoty.",
+     "tip": "złotych ≈ SWO-tych"
+    },
+    {
+     "who": "Semyon",
+     "t": [
+      [
+       "Proszę",
+       "bitte"
+      ],
+      [
+       "bardzo.",
+       "sehr."
+      ]
+     ],
+     "sense": "Bitte schön."
+    },
+    {
+     "who": "Ekspedientka",
+     "t": [
+      [
+       "Dziękuję,",
+       "ich-danke,"
+      ],
+      [
+       "do",
+       "bis"
+      ],
+      [
+       "widzenia!",
+       "zum-Sehen!"
+      ]
+     ],
+     "sense": "Danke, auf Wiedersehen!"
+    }
+   ],
+   "chunks": [
+    [
+     "Co podać?",
+     "Was darf es sein?"
+    ],
+    [
+     "Poproszę chleb.",
+     "Ich hätte gern ein Brot."
+    ],
+    [
+     "dwa jabłka",
+     "zwei Äpfel"
+    ],
+    [
+     "Coś jeszcze?",
+     "Sonst noch etwas?"
+    ],
+    [
+     "Ile płacę?",
+     "Was macht das?"
+    ],
+    [
+     "Dwanaście złotych.",
+     "Zwölf Złoty."
+    ],
+    [
+     "Do widzenia!",
+     "Auf Wiedersehen!"
+    ],
+    [
+     "jeden, dwa, trzy, cztery, pięć",
+     "eins, zwei, drei, vier, fünf"
+    ],
+    [
+     "sześć, siedem, osiem, dziewięć, dziesięć",
+     "sechs, sieben, acht, neun, zehn"
+    ]
+   ],
+   "words": [
+    [
+     "sklep",
+     "Laden"
+    ],
+    [
+     "chleb",
+     "Brot"
+    ],
+    [
+     "jabłko",
+     "Apfel"
+    ],
+    [
+     "ile?",
+     "wie viel?"
+    ],
+    [
+     "płacić",
+     "bezahlen"
+    ],
+    [
+     "złoty",
+     "Złoty (Währung)"
+    ],
+    [
+     "tanio",
+     "billig"
+    ],
+    [
+     "drogo",
+     "teuer"
+    ]
+   ],
+   "qa": [
+    {
+     "who": "Ekspedientka",
+     "q": "Co podać?",
+     "qde": "Was darf es sein?",
+     "a": "Poproszę chleb i dwa jabłka.",
+     "ade": "Ich hätte gern ein Brot und zwei Äpfel."
+    },
+    {
+     "who": "Ekspedientka",
+     "q": "Coś jeszcze?",
+     "qde": "Sonst noch etwas?",
+     "a": "Nie, dziękuję. Ile płacę?",
+     "ade": "Nein, danke. Was macht das?"
+    }
+   ],
+   "grammar": {
+    "title": "Zahlen verändern das Nomen",
+    "text": "Nach 2, 3 und 4 steht der Plural: dwa jabłka (zwei Äpfel). Ab 5 steht der Genitiv Plural: pięć jabłek (fünf Äpfel), dwanaście złotych (zwölf Złoty). Das klingt kompliziert, kommt aber so oft vor, dass es sich mit der Zeit von selbst einprägt."
+   },
+   "tips": [
+    "trzy (drei) ≈ tschy: rz nach t klingt wie „sch“.",
+    "pięć (fünf) ≈ pjentsch, dziewięć (neun) ≈ DSCHE-wjentsch."
+   ],
+   "book": "3B"
+  },
+  {
+   "id": "b3c",
+   "chapter": "pierwsze",
+   "book": "3C",
+   "title": "Ile kosztuje?",
+   "de": "Preise und Mengen",
+   "lines": [
+    {
+     "who": "Semyon",
+     "t": [
+      [
+       "Ile",
+       "wie-viel"
+      ],
+      [
+       "kosztują",
+       "kosten"
+      ],
+      [
+       "te",
+       "diese"
+      ],
+      [
+       "pomidory?",
+       "Tomaten?"
+      ]
+     ],
+     "sense": "Wie viel kosten diese Tomaten?"
+    },
+    {
+     "who": "Sprzedawczyni",
+     "t": [
+      [
+       "Osiem",
+       "acht"
+      ],
+      [
+       "złotych",
+       "Złoty"
+      ],
+      [
+       "za",
+       "für"
+      ],
+      [
+       "kilogram.",
+       "Kilogramm."
+      ]
+     ],
+     "sense": "Acht Złoty pro Kilo.",
+     "tip": "5+ złotych"
+    },
+    {
+     "who": "Semyon",
+     "t": [
+      [
+       "Poproszę",
+       "bitte"
+      ],
+      [
+       "pół",
+       "halbes"
+      ],
+      [
+       "kilo.",
+       "Kilo."
+      ],
+      [
+       "I",
+       "und"
+      ],
+      [
+       "jeszcze",
+       "noch"
+      ],
+      [
+       "dziesięć",
+       "zehn"
+      ],
+      [
+       "jajek.",
+       "Eier."
+      ]
+     ],
+     "sense": "Ein halbes Kilo, bitte. Und noch zehn Eier.",
+     "tip": "dziesięć jajek: Genitiv Plural"
+    },
+    {
+     "who": "Sprzedawczyni",
+     "t": [
+      [
+       "Coś",
+       "etwas"
+      ],
+      [
+       "jeszcze?",
+       "noch?"
+      ]
+     ],
+     "sense": "Sonst noch etwas?"
+    },
+    {
+     "who": "Semyon",
+     "t": [
+      [
+       "Tak,",
+       "ja,"
+      ],
+      [
+       "butelkę",
+       "Flasche"
+      ],
+      [
+       "wody",
+       "Wassers"
+      ],
+      [
+       "i",
+       "und"
+      ],
+      [
+       "paczkę",
+       "Packung"
+      ],
+      [
+       "herbaty.",
+       "Tees."
+      ]
+     ],
+     "sense": "Ja, eine Flasche Wasser und eine Packung Tee."
+    },
+    {
+     "who": "Sprzedawczyni",
+     "t": [
+      [
+       "Razem",
+       "zusammen"
+      ],
+      [
+       "dwadzieścia",
+       "zwanzig"
+      ],
+      [
+       "trzy",
+       "drei"
+      ],
+      [
+       "złote",
+       "Złoty"
+      ],
+      [
+       "pięćdziesiąt",
+       "fünfzig"
+      ],
+      [
+       "groszy.",
+       "Groschen."
+      ]
+     ],
+     "sense": "Zusammen 23,50 Złoty.",
+     "tip": "2–4 złote"
+    }
+   ],
+   "chunks": [
+    [
+     "Ile kosztuje?",
+     "Was kostet das?"
+    ],
+    [
+     "za kilogram",
+     "pro Kilo"
+    ],
+    [
+     "pół kilo",
+     "ein halbes Kilo"
+    ],
+    [
+     "butelka wody",
+     "eine Flasche Wasser"
+    ],
+    [
+     "Coś jeszcze?",
+     "Sonst noch etwas?"
+    ]
+   ],
+   "words": [
+    [
+     "pomidor",
+     "Tomate"
+    ],
+    [
+     "kilogram",
+     "Kilogramm"
+    ],
+    [
+     "pół",
+     "halb"
+    ],
+    [
+     "butelka",
+     "Flasche"
+    ],
+    [
+     "paczka",
+     "Packung"
+    ],
+    [
+     "razem",
+     "zusammen"
+    ]
+   ],
+   "qa": [
+    {
+     "who": "Sprzedawczyni",
+     "q": "Co podać?",
+     "qde": "Was darf es sein?",
+     "a": "Poproszę pół kilo pomidorów.",
+     "ade": "Ein halbes Kilo Tomaten, bitte."
+    },
+    {
+     "who": "Sprzedawczyni",
+     "q": "Coś jeszcze?",
+     "qde": "Sonst noch etwas?",
+     "a": "Tak, butelkę wody, proszę.",
+     "ade": "Ja, eine Flasche Wasser, bitte."
+    }
+   ],
+   "grammar": {
+    "title": "Zahlen und Złoty",
+    "text": "Nach 1 steht złoty, nach 2, 3, 4 złote, ab 5 złotych. Genauso grosz, grosze, groszy. Nach Mengen steht der Genitiv: butelka wody, paczka herbaty, kilo pomidorów, dziesięć jajek. Mit poproszę steht das, was man möchte, im Akkusativ: poproszę butelkę wody."
+   },
+   "tips": [
+    "Bei Preisen sagt man oft nur die Zahlen: dwadzieścia trzy pięćdziesiąt.",
+    "jajek ≈ JA-jek, der Plural von jajko ist jajka, nach Zahlen ab 5 jajek."
+   ]
+  },
+  {
+   "id": "b3d",
+   "chapter": "pierwsze",
+   "book": "3D",
+   "title": "Na targu",
+   "de": "Auf dem Markt: billiger, teurer, lieber",
+   "lines": [
+    {
+     "who": "Ola",
+     "t": [
+      [
+       "Lubisz",
+       "magst-du"
+      ],
+      [
+       "robić",
+       "machen"
+      ],
+      [
+       "zakupy",
+       "Einkäufe"
+      ],
+      [
+       "na",
+       "auf"
+      ],
+      [
+       "targu?",
+       "Markt?"
+      ]
+     ],
+     "sense": "Kaufst du gern auf dem Markt ein?"
+    },
+    {
+     "who": "Semyon",
+     "t": [
+      [
+       "Bardzo!",
+       "sehr!"
+      ],
+      [
+       "Na",
+       "auf"
+      ],
+      [
+       "targu",
+       "Markt"
+      ],
+      [
+       "warzywa",
+       "Gemüse"
+      ],
+      [
+       "są",
+       "sind"
+      ],
+      [
+       "tańsze",
+       "billiger"
+      ],
+      [
+       "niż",
+       "als"
+      ],
+      [
+       "w",
+       "in"
+      ],
+      [
+       "supermarkecie.",
+       "Supermarkt."
+      ]
+     ],
+     "sense": "Sehr! Auf dem Markt ist Gemüse billiger als im Supermarkt.",
+     "tip": "tańszy = billiger"
+    },
+    {
+     "who": "Ola",
+     "t": [
+      [
+       "I",
+       "und"
+      ],
+      [
+       "smaczniejsze.",
+       "leckerer."
+      ],
+      [
+       "Spójrz,",
+       "schau,"
+      ],
+      [
+       "jakie",
+       "was-für"
+      ],
+      [
+       "piękne",
+       "schöne"
+      ],
+      [
+       "truskawki!",
+       "Erdbeeren!"
+      ]
+     ],
+     "sense": "Und leckerer. Schau, was für schöne Erdbeeren!"
+    },
+    {
+     "who": "Semyon",
+     "t": [
+      [
+       "Ale",
+       "aber"
+      ],
+      [
+       "są",
+       "sind-sie"
+      ],
+      [
+       "droższe",
+       "teurer"
+      ],
+      [
+       "niż",
+       "als"
+      ],
+      [
+       "jabłka.",
+       "Äpfel."
+      ]
+     ],
+     "sense": "Aber sie sind teurer als Äpfel.",
+     "tip": "droższy = teurer"
+    },
+    {
+     "who": "Ola",
+     "t": [
+      [
+       "Trudno.",
+       "schwer."
+      ],
+      [
+       "Wolę",
+       "bevorzuge-ich"
+      ],
+      [
+       "truskawki",
+       "Erdbeeren"
+      ],
+      [
+       "od",
+       "vor"
+      ],
+      [
+       "jabłek.",
+       "Äpfeln."
+      ]
+     ],
+     "sense": "Egal. Ich mag Erdbeeren lieber als Äpfel.",
+     "tip": "trudno = da kann man nichts machen"
+    },
+    {
+     "who": "Semyon",
+     "t": [
+      [
+       "Dobrze,",
+       "gut,"
+      ],
+      [
+       "kupmy",
+       "kaufen-wir"
+      ],
+      [
+       "jedno",
+       "eins"
+      ],
+      [
+       "i",
+       "und"
+      ],
+      [
+       "drugie.",
+       "anderes."
+      ]
+     ],
+     "sense": "Gut, kaufen wir beides."
+    }
+   ],
+   "chunks": [
+    [
+     "robić zakupy",
+     "einkaufen"
+    ],
+    [
+     "tańsze niż w supermarkecie",
+     "billiger als im Supermarkt"
+    ],
+    [
+     "Wolę truskawki.",
+     "Ich mag lieber Erdbeeren."
+    ],
+    [
+     "Trudno.",
+     "Da kann man nichts machen."
+    ],
+    [
+     "jedno i drugie",
+     "beides"
+    ]
+   ],
+   "words": [
+    [
+     "targ",
+     "Markt"
+    ],
+    [
+     "tańszy",
+     "billiger"
+    ],
+    [
+     "droższy",
+     "teurer"
+    ],
+    [
+     "truskawka",
+     "Erdbeere"
+    ],
+    [
+     "niż",
+     "als"
+    ],
+    [
+     "woleć",
+     "lieber mögen"
+    ]
+   ],
+   "qa": [
+    {
+     "who": "Ola",
+     "q": "Co wolisz: truskawki czy jabłka?",
+     "qde": "Was magst du lieber: Erdbeeren oder Äpfel?",
+     "a": "Wolę truskawki.",
+     "ade": "Ich mag lieber Erdbeeren."
+    },
+    {
+     "who": "Ola",
+     "q": "Gdzie jest taniej: na targu czy w supermarkecie?",
+     "qde": "Wo ist es billiger: auf dem Markt oder im Supermarkt?",
+     "a": "Na targu jest taniej.",
+     "ade": "Auf dem Markt ist es billiger."
+    }
+   ],
+   "grammar": {
+    "title": "Steigern: tańszy, droższy",
+    "text": "Die Steigerung endet meist auf -szy oder -ejszy: tani → tańszy, drogi → droższy, smaczny → smaczniejszy. Unregelmäßig: dobry → lepszy, zły → gorszy. „Als“ heißt niż: tańsze niż jabłka. woleć heißt lieber mögen: wolę, wolisz, woli. Wolę X od Y: Y steht im Genitiv."
+   },
+   "tips": [
+    "Beim Adverb: taniej (billiger), drożej (teurer), lepiej (besser).",
+    "truskawki ≈ tru-SKAF-ki, w vor k klingt wie f."
+   ]
+  },
+  {
+   "id": "b4a",
+   "chapter": "pierwsze",
+   "book": "4A",
+   "title": "Śniadanie w barze",
+   "de": "Frühstück bestellen: jeść, pić, wie oft",
+   "lines": [
+    {
+     "who": "Kelnerka",
+     "t": [
+      [
+       "Dzień",
+       "Tag"
+      ],
+      [
+       "dobry,",
+       "guter,"
+      ],
+      [
+       "co",
+       "was"
+      ],
+      [
+       "dla",
+       "für"
+      ],
+      [
+       "pana?",
+       "Sie?"
+      ]
+     ],
+     "sense": "Guten Tag, was darf es für Sie sein?"
+    },
+    {
+     "who": "Semyon",
+     "t": [
+      [
+       "Poproszę",
+       "bitte"
+      ],
+      [
+       "jajecznicę",
+       "Rührei"
+      ],
+      [
+       "i",
+       "und"
+      ],
+      [
+       "bułkę",
+       "Brötchen"
+      ],
+      [
+       "z",
+       "mit"
+      ],
+      [
+       "masłem.",
+       "Butter."
+      ]
+     ],
+     "sense": "Ein Rührei und ein Brötchen mit Butter, bitte."
+    },
+    {
+     "who": "Kelnerka",
+     "t": [
+      [
+       "Do",
+       "zum"
+      ],
+      [
+       "picia",
+       "Trinken"
+      ],
+      [
+       "kawa",
+       "Kaffee"
+      ],
+      [
+       "czy",
+       "oder"
+      ],
+      [
+       "herbata?",
+       "Tee?"
+      ]
+     ],
+     "sense": "Zum Trinken Kaffee oder Tee?"
+    },
+    {
+     "who": "Semyon",
+     "t": [
+      [
+       "Kawę",
+       "Kaffee"
+      ],
+      [
+       "z",
+       "mit"
+      ],
+      [
+       "mlekiem,",
+       "Milch,"
+      ],
+      [
+       "proszę.",
+       "bitte."
+      ],
+      [
+       "Rano",
+       "morgens"
+      ],
+      [
+       "zawsze",
+       "immer"
+      ],
+      [
+       "piję",
+       "trinke-ich"
+      ],
+      [
+       "kawę.",
+       "Kaffee."
+      ]
+     ],
+     "sense": "Kaffee mit Milch, bitte. Morgens trinke ich immer Kaffee."
+    },
+    {
+     "who": "Kelnerka",
+     "t": [
+      [
+       "Coś",
+       "etwas"
+      ],
+      [
+       "słodkiego?",
+       "Süßes?"
+      ],
+      [
+       "Mamy",
+       "haben-wir"
+      ],
+      [
+       "świeże",
+       "frische"
+      ],
+      [
+       "pączki.",
+       "Krapfen."
+      ]
+     ],
+     "sense": "Etwas Süßes? Wir haben frische Krapfen.",
+     "tip": "pączek = Berliner"
+    },
+    {
+     "who": "Semyon",
+     "t": [
+      [
+       "Czasem",
+       "manchmal"
+      ],
+      [
+       "jem",
+       "esse-ich"
+      ],
+      [
+       "pączki,",
+       "Krapfen,"
+      ],
+      [
+       "ale",
+       "aber"
+      ],
+      [
+       "dziś",
+       "heute"
+      ],
+      [
+       "nie,",
+       "nicht,"
+      ],
+      [
+       "dziękuję.",
+       "danke."
+      ]
+     ],
+     "sense": "Manchmal esse ich Krapfen, aber heute nicht, danke."
+    }
+   ],
+   "chunks": [
+    [
+     "Co dla pana?",
+     "Was darf es sein?"
+    ],
+    [
+     "bułka z masłem",
+     "Brötchen mit Butter"
+    ],
+    [
+     "do picia",
+     "zum Trinken"
+    ],
+    [
+     "Rano zawsze piję kawę.",
+     "Morgens trinke ich immer Kaffee."
+    ],
+    [
+     "coś słodkiego",
+     "etwas Süßes"
+    ]
+   ],
+   "words": [
+    [
+     "jajecznica",
+     "Rührei"
+    ],
+    [
+     "bułka",
+     "Brötchen"
+    ],
+    [
+     "masło",
+     "Butter"
+    ],
+    [
+     "pączek",
+     "Krapfen"
+    ],
+    [
+     "świeży",
+     "frisch"
+    ],
+    [
+     "rzadko",
+     "selten"
+    ]
+   ],
+   "qa": [
+    {
+     "who": "Kelnerka",
+     "q": "Co pan pije rano?",
+     "qde": "Was trinken Sie morgens?",
+     "a": "Rano zawsze piję kawę.",
+     "ade": "Morgens trinke ich immer Kaffee."
+    },
+    {
+     "who": "Ola",
+     "q": "Często jesz pączki?",
+     "qde": "Isst du oft Krapfen?",
+     "a": "Nie, rzadko jem pączki.",
+     "ade": "Nein, ich esse selten Krapfen."
+    }
+   ],
+   "grammar": {
+    "title": "jeść, pić und wie oft",
+    "text": "jeść (essen): jem, jesz, je, jemy, jecie, jedzą. pić (trinken): piję, pijesz, pije, pijemy, pijecie, piją. Wie oft: zawsze (immer), często (oft), czasem (manchmal), rzadko (selten), nigdy nie (nie): Nigdy nie piję kawy. Achtung: Nach Verneinung steht der Genitiv (kawy statt kawę)."
+   },
+   "tips": [
+    "Ein Bar mleczny oder Bar ist in Polen oft eine einfache Kantine, keine Kneipe.",
+    "pączki ≈ PONTSCH-ki, ą vor cz klingt wie „on“."
+   ]
+  },
+  {
+   "id": "b4b",
+   "chapter": "pierwsze",
+   "book": "4B",
+   "title": "W restauracji",
+   "de": "Mittagessen bestellen, nie ma + Genitiv",
+   "lines": [
+    {
+     "who": "Kelnerka",
+     "t": [
+      [
+       "Czy",
+       "ob"
+      ],
+      [
+       "mogę",
+       "kann-ich"
+      ],
+      [
+       "przyjąć",
+       "annehmen"
+      ],
+      [
+       "zamówienie?",
+       "Bestellung?"
+      ]
+     ],
+     "sense": "Darf ich Ihre Bestellung aufnehmen?"
+    },
+    {
+     "who": "Semyon",
+     "t": [
+      [
+       "Tak.",
+       "ja."
+      ],
+      [
+       "Na",
+       "auf"
+      ],
+      [
+       "pierwsze",
+       "erstes"
+      ],
+      [
+       "danie",
+       "Gericht"
+      ],
+      [
+       "poproszę",
+       "bitte"
+      ],
+      [
+       "żurek.",
+       "Żurek."
+      ]
+     ],
+     "sense": "Ja. Als Vorspeise bitte einen Żurek.",
+     "tip": "żurek = saure Mehlsuppe"
+    },
+    {
+     "who": "Kelnerka",
+     "t": [
+      [
+       "Przykro",
+       "leid"
+      ],
+      [
+       "mi,",
+       "mir,"
+      ],
+      [
+       "dziś",
+       "heute"
+      ],
+      [
+       "nie",
+       "nicht"
+      ],
+      [
+       "ma",
+       "gibt"
+      ],
+      [
+       "żurku.",
+       "Żurek."
+      ],
+      [
+       "Polecam",
+       "empfehle-ich"
+      ],
+      [
+       "barszcz.",
+       "Barszcz."
+      ]
+     ],
+     "sense": "Tut mir leid, heute gibt es keinen Żurek. Ich empfehle Barszcz.",
+     "tip": "nie ma + Genitiv"
+    },
+    {
+     "who": "Semyon",
+     "t": [
+      [
+       "Dobrze,",
+       "gut,"
+      ],
+      [
+       "to",
+       "dann"
+      ],
+      [
+       "barszcz.",
+       "Barszcz."
+      ],
+      [
+       "A",
+       "und"
+      ],
+      [
+       "na",
+       "auf"
+      ],
+      [
+       "drugie",
+       "zweites"
+      ],
+      [
+       "danie",
+       "Gericht"
+      ],
+      [
+       "schabowy",
+       "Schnitzel"
+      ],
+      [
+       "z",
+       "mit"
+      ],
+      [
+       "ziemniakami.",
+       "Kartoffeln."
+      ]
+     ],
+     "sense": "Gut, dann Barszcz. Und als Hauptgericht ein Schnitzel mit Kartoffeln."
+    },
+    {
+     "who": "Kelnerka",
+     "t": [
+      [
+       "A",
+       "und"
+      ],
+      [
+       "do",
+       "zum"
+      ],
+      [
+       "picia?",
+       "Trinken?"
+      ]
+     ],
+     "sense": "Und zum Trinken?"
+    },
+    {
+     "who": "Semyon",
+     "t": [
+      [
+       "Sok",
+       "Saft"
+      ],
+      [
+       "jabłkowy,",
+       "Apfel-,"
+      ],
+      [
+       "ale",
+       "aber"
+      ],
+      [
+       "bez",
+       "ohne"
+      ],
+      [
+       "lodu.",
+       "Eis."
+      ]
+     ],
+     "sense": "Apfelsaft, aber ohne Eis.",
+     "tip": "bez + Genitiv"
+    }
+   ],
+   "chunks": [
+    [
+     "na pierwsze danie",
+     "als Vorspeise (Suppe)"
+    ],
+    [
+     "na drugie danie",
+     "als Hauptgericht"
+    ],
+    [
+     "Przykro mi.",
+     "Tut mir leid."
+    ],
+    [
+     "Nie ma żurku.",
+     "Es gibt keinen Żurek."
+    ],
+    [
+     "bez lodu",
+     "ohne Eis"
+    ]
+   ],
+   "words": [
+    [
+     "zamówienie",
+     "Bestellung"
+    ],
+    [
+     "żurek",
+     "saure Mehlsuppe"
+    ],
+    [
+     "barszcz",
+     "Rote-Bete-Suppe"
+    ],
+    [
+     "schabowy",
+     "Schweineschnitzel"
+    ],
+    [
+     "polecać",
+     "empfehlen"
+    ],
+    [
+     "lód",
+     "Eis"
+    ]
+   ],
+   "qa": [
+    {
+     "who": "Kelnerka",
+     "q": "Co pan zamawia?",
+     "qde": "Was bestellen Sie?",
+     "a": "Poproszę barszcz i schabowy.",
+     "ade": "Barszcz und ein Schnitzel, bitte."
+    },
+    {
+     "who": "Kelnerka",
+     "q": "Z lodem czy bez lodu?",
+     "qde": "Mit oder ohne Eis?",
+     "a": "Bez lodu, proszę.",
+     "ade": "Ohne Eis, bitte."
+    }
+   ],
+   "grammar": {
+    "title": "nie ma + Genitiv",
+    "text": "„Es gibt nicht“ heißt nie ma, danach steht der Genitiv: nie ma żurku, nie ma kawy, nie ma mleka. Auch nach bez (ohne) kommt der Genitiv: bez lodu, bez cukru. Bei manchen Wörtern fällt das e weg: żurek → żurku, lód → lodu."
+   },
+   "tips": [
+    "Ein polnisches Mittagessen hat oft zwei Gänge: erst Suppe (pierwsze danie), dann Hauptgericht (drugie danie).",
+    "barszcz ≈ BAR-schtsch."
+   ]
+  },
+  {
+   "id": "l5",
+   "chapter": "pierwsze",
+   "title": "Przy stole",
+   "de": "Am Tisch bei Oma",
+   "lines": [
+    {
+     "who": "Babcia",
+     "t": [
+      [
+       "Smacznego!",
+       "Guten-Appetit!"
+      ]
+     ],
+     "sense": "Guten Appetit!",
+     "tip": "smacznego ≈ smatsch-NE-go"
+    },
+    {
+     "who": "Semyon",
+     "t": [
+      [
+       "Dziękuję!",
+       "Ich-danke!"
+      ],
+      [
+       "Te",
+       "diese"
+      ],
+      [
+       "pierogi",
+       "Piroggen"
+      ],
+      [
+       "są",
+       "sind"
+      ],
+      [
+       "pyszne!",
+       "köstlich!"
+      ]
+     ],
+     "sense": "Danke! Diese Pierogi sind köstlich!",
+     "tip": "y ist ein dumpfes i: pyszne ≈ PISCH-ne"
+    },
+    {
+     "who": "Babcia",
+     "t": [
+      [
+       "Chcesz",
+       "willst-du"
+      ],
+      [
+       "jeszcze?",
+       "noch?"
+      ]
+     ],
+     "sense": "Willst du noch mehr?",
+     "tip": "chcesz ≈ chtsesch"
+    },
+    {
+     "who": "Semyon",
+     "t": [
+      [
+       "Tak,",
+       "ja,"
+      ],
+      [
+       "poproszę",
+       "ich-bitte-um"
+      ],
+      [
+       "jeszcze",
+       "noch"
+      ],
+      [
+       "trochę.",
+       "bisschen."
+      ]
+     ],
+     "sense": "Ja, gern noch ein bisschen."
+    },
+    {
+     "who": "Babcia",
+     "t": [
+      [
+       "A",
+       "und"
+      ],
+      [
+       "do",
+       "zum"
+      ],
+      [
+       "picia?",
+       "Trinken?"
+      ],
+      [
+       "Kawa",
+       "Kaffee"
+      ],
+      [
+       "czy",
+       "oder"
+      ],
+      [
+       "herbata?",
+       "Tee?"
+      ]
+     ],
+     "sense": "Und zum Trinken? Kaffee oder Tee?"
+    },
+    {
+     "who": "Semyon",
+     "t": [
+      [
+       "Herbatę",
+       "Tee"
+      ],
+      [
+       "z",
+       "mit"
+      ],
+      [
+       "cytryną,",
+       "Zitrone,"
+      ],
+      [
+       "proszę.",
+       "bitte."
+      ]
+     ],
+     "sense": "Tee mit Zitrone, bitte.",
+     "tip": "cytryną ≈ tsy-TRY-non"
+    }
+   ],
+   "chunks": [
+    [
+     "Smacznego!",
+     "Guten Appetit!"
+    ],
+    [
+     "Te pierogi są pyszne!",
+     "Diese Pierogi sind köstlich!"
+    ],
+    [
+     "Chcesz jeszcze?",
+     "Willst du noch mehr?"
+    ],
+    [
+     "Poproszę jeszcze trochę.",
+     "Gern noch ein bisschen."
+    ],
+    [
+     "Kawa czy herbata?",
+     "Kaffee oder Tee?"
+    ],
+    [
+     "Herbatę z cytryną, proszę.",
+     "Tee mit Zitrone, bitte."
+    ]
+   ],
+   "words": [
+    [
+     "pierogi",
+     "Piroggen (Teigtaschen)"
+    ],
+    [
+     "zupa",
+     "Suppe"
+    ],
+    [
+     "chleb",
+     "Brot"
+    ],
+    [
+     "woda",
+     "Wasser"
+    ],
+    [
+     "kawa",
+     "Kaffee"
+    ],
+    [
+     "herbata",
+     "Tee"
+    ],
+    [
+     "jeść",
+     "essen"
+    ],
+    [
+     "pić",
+     "trinken"
+    ],
+    [
+     "pyszny",
+     "köstlich"
+    ]
+   ],
+   "qa": [
+    {
+     "who": "Babcia",
+     "q": "Kawa czy herbata?",
+     "qde": "Kaffee oder Tee?",
+     "a": "Herbatę, proszę.",
+     "ade": "Tee, bitte."
+    },
+    {
+     "who": "Babcia",
+     "q": "Smakuje ci?",
+     "qde": "Schmeckt es dir?",
+     "a": "Tak, bardzo mi smakuje!",
+     "ade": "Ja, es schmeckt mir sehr!"
+    }
+   ],
+   "grammar": {
+    "title": "„z“ mit dem Instrumental",
+    "text": "Nach „z“ in der Bedeutung „mit“ steht der Instrumental: cytryna → z cytryną, mleko → z mlekiem, cukier → z cukrem. „Poproszę“ ist die höfliche Art, um etwas zu bitten oder etwas anzunehmen, also: Ich hätte gern …"
+   },
+   "tips": [
+    "y ist ein dumpfes i, zwischen i und ü: pyszne, cytryna.",
+    "chcesz: erst ein „ch“ wie in „Bach“, dann „tsesch“."
+   ],
+   "book": "4C"
+  },
+  {
+   "id": "b4d",
+   "chapter": "pierwsze",
+   "book": "4D",
+   "title": "Na wynos",
+   "de": "Essen zum Mitnehmen, bezahlen",
+   "lines": [
+    {
+     "who": "Kasjerka",
+     "t": [
+      [
+       "Na",
+       "auf"
+      ],
+      [
+       "miejscu",
+       "Ort"
+      ],
+      [
+       "czy",
+       "oder"
+      ],
+      [
+       "na",
+       "zum"
+      ],
+      [
+       "wynos?",
+       "Mitnehmen?"
+      ]
+     ],
+     "sense": "Hier essen oder zum Mitnehmen?"
+    },
+    {
+     "who": "Semyon",
+     "t": [
+      [
+       "Na",
+       "zum"
+      ],
+      [
+       "wynos.",
+       "Mitnehmen."
+      ],
+      [
+       "Poproszę",
+       "bitte"
+      ],
+      [
+       "zapiekankę",
+       "Zapiekanka"
+      ],
+      [
+       "i",
+       "und"
+      ],
+      [
+       "dwie",
+       "zwei"
+      ],
+      [
+       "kawy.",
+       "Kaffees."
+      ]
+     ],
+     "sense": "Zum Mitnehmen. Eine Zapiekanka und zwei Kaffee, bitte.",
+     "tip": "zapiekanka = überbackenes Baguette"
+    },
+    {
+     "who": "Kasjerka",
+     "t": [
+      [
+       "Duże",
+       "große"
+      ],
+      [
+       "czy",
+       "oder"
+      ],
+      [
+       "małe?",
+       "kleine?"
+      ]
+     ],
+     "sense": "Groß oder klein?"
+    },
+    {
+     "who": "Semyon",
+     "t": [
+      [
+       "Jedną",
+       "eine"
+      ],
+      [
+       "dużą",
+       "große"
+      ],
+      [
+       "i",
+       "und"
+      ],
+      [
+       "jedną",
+       "eine"
+      ],
+      [
+       "małą.",
+       "kleine."
+      ]
+     ],
+     "sense": "Einen großen und einen kleinen.",
+     "tip": "Akkusativ weiblich: -ą"
+    },
+    {
+     "who": "Kasjerka",
+     "t": [
+      [
+       "Płaci",
+       "zahlt"
+      ],
+      [
+       "pan",
+       "Sie"
+      ],
+      [
+       "kartą",
+       "mit-Karte"
+      ],
+      [
+       "czy",
+       "oder"
+      ],
+      [
+       "gotówką?",
+       "bar?"
+      ]
+     ],
+     "sense": "Zahlen Sie mit Karte oder bar?",
+     "tip": "Instrumental: womit?"
+    },
+    {
+     "who": "Semyon",
+     "t": [
+      [
+       "Telefonem,",
+       "mit-Telefon,"
+      ],
+      [
+       "jeśli",
+       "wenn"
+      ],
+      [
+       "można.",
+       "man-kann."
+      ]
+     ],
+     "sense": "Mit dem Handy, wenn das geht."
+    },
+    {
+     "who": "Kasjerka",
+     "t": [
+      [
+       "Oczywiście.",
+       "natürlich."
+      ],
+      [
+       "Proszę",
+       "bitte"
+      ],
+      [
+       "przyłożyć",
+       "anhalten"
+      ],
+      [
+       "telefon",
+       "Telefon"
+      ],
+      [
+       "tutaj.",
+       "hier."
+      ]
+     ],
+     "sense": "Natürlich. Halten Sie das Handy bitte hier dran."
+    }
+   ],
+   "chunks": [
+    [
+     "Na miejscu czy na wynos?",
+     "Hier essen oder zum Mitnehmen?"
+    ],
+    [
+     "dwie kawy",
+     "zwei Kaffee"
+    ],
+    [
+     "kartą czy gotówką",
+     "mit Karte oder bar"
+    ],
+    [
+     "jeśli można",
+     "wenn das geht"
+    ],
+    [
+     "Proszę przyłożyć telefon.",
+     "Halten Sie das Handy dran."
+    ]
+   ],
+   "words": [
+    [
+     "na wynos",
+     "zum Mitnehmen"
+    ],
+    [
+     "na miejscu",
+     "hier (essen)"
+    ],
+    [
+     "zapiekanka",
+     "überbackenes Baguette"
+    ],
+    [
+     "gotówka",
+     "Bargeld"
+    ],
+    [
+     "można",
+     "man kann; es geht"
+    ],
+    [
+     "przyłożyć",
+     "anhalten, auflegen"
+    ]
+   ],
+   "qa": [
+    {
+     "who": "Kasjerka",
+     "q": "Na miejscu czy na wynos?",
+     "qde": "Hier essen oder zum Mitnehmen?",
+     "a": "Na wynos, proszę.",
+     "ade": "Zum Mitnehmen, bitte."
+    },
+    {
+     "who": "Kasjerka",
+     "q": "Jak pan płaci?",
+     "qde": "Wie zahlen Sie?",
+     "a": "Kartą, proszę.",
+     "ade": "Mit Karte, bitte."
+    }
+   ],
+   "grammar": {
+    "title": "Womit? Instrumental",
+    "text": "Womit man etwas tut, steht im Instrumental: płacę kartą, gotówką, telefonem; jadę tramwajem. Weiblich -ą, männlich und sächlich -em. Bei Zahlen: jedna kawa, dwie kawy (2–4 weiblich: dwie), pięć kaw. Weibliche Adjektive im Akkusativ enden auf -ą: jedną dużą kawę."
+   },
+   "tips": [
+    "Kontaktlos mit Handy oder Karte zu zahlen ist in Polen fast überall üblich.",
+    "gotówką ≈ go-TUF-kom, ó klingt wie u."
+   ]
+  },
+  {
+   "id": "l4",
+   "chapter": "pierwsze",
+   "title": "W domu",
+   "de": "Zu Besuch bei Oma",
+   "lines": [
+    {
+     "who": "Babcia",
+     "t": [
+      [
+       "Wejdź,",
+       "komm-herein,"
+      ],
+      [
+       "wejdź!",
+       "komm-herein!"
+      ],
+      [
+       "Jak",
+       "wie"
+      ],
+      [
+       "dobrze",
+       "gut"
+      ],
+      [
+       "cię",
+       "dich"
+      ],
+      [
+       "widzieć!",
+       "sehen!"
+      ]
+     ],
+     "sense": "Komm rein, komm rein! Wie schön, dich zu sehen!",
+     "tip": "wejdź ≈ wejtsch, am Wortende stimmlos"
+    },
+    {
+     "who": "Semyon",
+     "t": [
+      [
+       "Dzień",
+       "Tag"
+      ],
+      [
+       "dobry,",
+       "guter,"
+      ],
+      [
+       "babciu!",
+       "Oma!"
+      ],
+      [
+       "Jak",
+       "wie"
+      ],
+      [
+       "się",
+       "sich"
+      ],
+      [
+       "czujesz?",
+       "fühlst-du?"
+      ]
+     ],
+     "sense": "Hallo, Oma! Wie fühlst du dich?"
+    },
+    {
+     "who": "Babcia",
+     "t": [
+      [
+       "Dobrze,",
+       "gut,"
+      ],
+      [
+       "dobrze.",
+       "gut."
+      ],
+      [
+       "Siadaj,",
+       "setz-dich,"
+      ],
+      [
+       "zrobię",
+       "ich-werde-machen"
+      ],
+      [
+       "herbatę.",
+       "Tee."
+      ]
+     ],
+     "sense": "Gut, gut. Setz dich, ich mache Tee."
+    },
+    {
+     "who": "Semyon",
+     "t": [
+      [
+       "Dziękuję,",
+       "ich-danke,"
+      ],
+      [
+       "babciu.",
+       "Oma."
+      ],
+      [
+       "Masz",
+       "du-hast"
+      ],
+      [
+       "piękne",
+       "schöne"
+      ],
+      [
+       "mieszkanie!",
+       "Wohnung!"
+      ]
+     ],
+     "sense": "Danke, Oma. Du hast eine schöne Wohnung!",
+     "tip": "piękne ≈ PJEN-kne"
+    },
+    {
+     "who": "Babcia",
+     "t": [
+      [
+       "Kuchnia",
+       "Küche"
+      ],
+      [
+       "jest",
+       "ist"
+      ],
+      [
+       "tutaj,",
+       "hier,"
+      ],
+      [
+       "a",
+       "und"
+      ],
+      [
+       "łazienka",
+       "Bad"
+      ],
+      [
+       "tam.",
+       "dort."
+      ]
+     ],
+     "sense": "Die Küche ist hier und das Bad dort.",
+     "tip": "łazienka ≈ wa-SCHEN-ka"
+    }
+   ],
+   "chunks": [
+    [
+     "Jak dobrze cię widzieć!",
+     "Wie schön, dich zu sehen!"
+    ],
+    [
+     "Jak się czujesz?",
+     "Wie fühlst du dich?"
+    ],
+    [
+     "Siadaj!",
+     "Setz dich!"
+    ],
+    [
+     "Zrobię herbatę.",
+     "Ich mache Tee."
+    ],
+    [
+     "Masz piękne mieszkanie!",
+     "Du hast eine schöne Wohnung!"
+    ],
+    [
+     "Kuchnia jest tutaj.",
+     "Die Küche ist hier."
+    ],
+    [
+     "Łazienka jest tam.",
+     "Das Bad ist dort."
+    ]
+   ],
+   "words": [
+    [
+     "dom",
+     "Haus, Zuhause"
+    ],
+    [
+     "mieszkanie",
+     "Wohnung"
+    ],
+    [
+     "kuchnia",
+     "Küche"
+    ],
+    [
+     "łazienka",
+     "Badezimmer"
+    ],
+    [
+     "pokój",
+     "Zimmer"
+    ],
+    [
+     "tutaj",
+     "hier"
+    ],
+    [
+     "tam",
+     "dort"
+    ],
+    [
+     "herbata",
+     "Tee"
+    ]
+   ],
+   "qa": [
+    {
+     "who": "Babcia",
+     "q": "Jak się czujesz?",
+     "qde": "Wie fühlst du dich?",
+     "a": "Dobrze, dziękuję.",
+     "ade": "Gut, danke."
+    },
+    {
+     "who": "Babcia",
+     "q": "Gdzie jest kuchnia?",
+     "qde": "Wo ist die Küche?",
+     "a": "Kuchnia jest tutaj.",
+     "ade": "Die Küche ist hier."
+    }
+   ],
+   "grammar": {
+    "title": "Der Vokativ: wenn man jemanden anspricht",
+    "text": "Wer jemanden direkt anspricht, ändert oft die Endung: babcia → babciu! mama → mamo! Ola → Olu! Das ist der Vokativ, der siebte Fall. Außerdem: „zrobię“ (ich werde machen) ist ein vollendetes Verb. Dazu später mehr."
+   },
+   "tips": [
+    "ł wie englisches w: łazienka ≈ wa-SCHEN-ka.",
+    "ch klingt wie das „ch“ in „Bach“: kuchnia ≈ KUCH-nja."
+   ],
+   "book": "5A"
+  },
+  {
+   "id": "b5b",
+   "chapter": "pierwsze",
+   "book": "5B",
+   "title": "Mój pokój",
+   "de": "Möbel: steht, liegt, hängt",
+   "lines": [
+    {
+     "who": "Ola",
+     "t": [
+      [
+       "Twój",
+       "dein"
+      ],
+      [
+       "pokój",
+       "Zimmer"
+      ],
+      [
+       "jest",
+       "ist"
+      ],
+      [
+       "ładny!",
+       "hübsch!"
+      ],
+      [
+       "Gdzie",
+       "wo"
+      ],
+      [
+       "śpisz?",
+       "schläfst-du?"
+      ]
+     ],
+     "sense": "Dein Zimmer ist hübsch! Wo schläfst du?"
+    },
+    {
+     "who": "Semyon",
+     "t": [
+      [
+       "Łóżko",
+       "Bett"
+      ],
+      [
+       "stoi",
+       "steht"
+      ],
+      [
+       "pod",
+       "unter"
+      ],
+      [
+       "oknem,",
+       "Fenster,"
+      ],
+      [
+       "a",
+       "und"
+      ],
+      [
+       "obok",
+       "daneben"
+      ],
+      [
+       "jest",
+       "ist"
+      ],
+      [
+       "szafa.",
+       "Schrank."
+      ]
+     ],
+     "sense": "Das Bett steht unter dem Fenster, und daneben ist der Schrank.",
+     "tip": "pod + Instrumental"
+    },
+    {
+     "who": "Ola",
+     "t": [
+      [
+       "A",
+       "und"
+      ],
+      [
+       "gdzie",
+       "wo"
+      ],
+      [
+       "pracujesz?",
+       "arbeitest-du?"
+      ]
+     ],
+     "sense": "Und wo arbeitest du?"
+    },
+    {
+     "who": "Semyon",
+     "t": [
+      [
+       "Przy",
+       "an"
+      ],
+      [
+       "biurku.",
+       "Schreibtisch."
+      ],
+      [
+       "Biurko",
+       "Schreibtisch"
+      ],
+      [
+       "stoi",
+       "steht"
+      ],
+      [
+       "między",
+       "zwischen"
+      ],
+      [
+       "szafą",
+       "Schrank"
+      ],
+      [
+       "a",
+       "und"
+      ],
+      [
+       "regałem.",
+       "Regal."
+      ]
+     ],
+     "sense": "Am Schreibtisch. Er steht zwischen Schrank und Regal.",
+     "tip": "między … a …"
+    },
+    {
+     "who": "Ola",
+     "t": [
+      [
+       "Ładny",
+       "schönes"
+      ],
+      [
+       "obraz!",
+       "Bild!"
+      ],
+      [
+       "Wisi",
+       "hängt-es"
+      ],
+      [
+       "nad",
+       "über"
+      ],
+      [
+       "kanapą.",
+       "Sofa."
+      ]
+     ],
+     "sense": "Schönes Bild! Es hängt über dem Sofa."
+    },
+    {
+     "who": "Semyon",
+     "t": [
+      [
+       "A",
+       "und"
+      ],
+      [
+       "na",
+       "auf"
+      ],
+      [
+       "podłodze",
+       "Boden"
+      ],
+      [
+       "leży",
+       "liegt"
+      ],
+      [
+       "dywan",
+       "Teppich"
+      ],
+      [
+       "od",
+       "von"
+      ],
+      [
+       "babci.",
+       "Oma."
+      ]
+     ],
+     "sense": "Und auf dem Boden liegt ein Teppich von Oma.",
+     "tip": "na + Lokativ"
+    }
+   ],
+   "chunks": [
+    [
+     "Łóżko stoi pod oknem.",
+     "Das Bett steht unter dem Fenster."
+    ],
+    [
+     "przy biurku",
+     "am Schreibtisch"
+    ],
+    [
+     "między szafą a regałem",
+     "zwischen Schrank und Regal"
+    ],
+    [
+     "Obraz wisi nad kanapą.",
+     "Das Bild hängt über dem Sofa."
+    ],
+    [
+     "na podłodze",
+     "auf dem Boden"
+    ]
+   ],
+   "words": [
+    [
+     "biurko",
+     "Schreibtisch"
+    ],
+    [
+     "regał",
+     "Regal"
+    ],
+    [
+     "obraz",
+     "Bild"
+    ],
+    [
+     "wisieć",
+     "hängen"
+    ],
+    [
+     "leżeć",
+     "liegen"
+    ],
+    [
+     "dywan",
+     "Teppich"
+    ]
+   ],
+   "qa": [
+    {
+     "who": "Ola",
+     "q": "Gdzie stoi łóżko?",
+     "qde": "Wo steht das Bett?",
+     "a": "Łóżko stoi pod oknem.",
+     "ade": "Das Bett steht unter dem Fenster."
+    },
+    {
+     "who": "Ola",
+     "q": "Co wisi nad kanapą?",
+     "qde": "Was hängt über dem Sofa?",
+     "a": "Nad kanapą wisi obraz.",
+     "ade": "Über dem Sofa hängt ein Bild."
+    }
+   ],
+   "grammar": {
+    "title": "stoi, leży, wisi und Präpositionen",
+    "text": "Wie im Deutschen: stać (stehen), leżeć (liegen), wisieć (hängen): stoi, leży, wisi. Nach w, na, przy (wo?) steht der Lokativ: na podłodze, w szafie, przy biurku. Nach pod, nad, przed, za, między steht der Instrumental: pod oknem, nad kanapą, między szafą a regałem."
+   },
+   "tips": [
+    "Zwischen A und B: między A a B, beide im Instrumental.",
+    "łóżko ≈ WUSCH-ko, ł klingt wie englisches w."
+   ]
+  },
+  {
+   "id": "b5c",
+   "chapter": "pierwsze",
+   "book": "5C",
+   "title": "Szukam mieszkania",
+   "de": "Eine Wohnung mieten: chcieć + Infinitiv",
+   "lines": [
+    {
+     "who": "Semyon",
+     "t": [
+      [
+       "Dzień",
+       "Tag"
+      ],
+      [
+       "dobry,",
+       "guter,"
+      ],
+      [
+       "dzwonię",
+       "rufe-ich-an"
+      ],
+      [
+       "w",
+       "in"
+      ],
+      [
+       "sprawie",
+       "Sache"
+      ],
+      [
+       "ogłoszenia.",
+       "Anzeige."
+      ],
+      [
+       "Mieszkanie",
+       "Wohnung"
+      ],
+      [
+       "jest",
+       "ist"
+      ],
+      [
+       "jeszcze",
+       "noch"
+      ],
+      [
+       "wolne?",
+       "frei?"
+      ]
+     ],
+     "sense": "Guten Tag, ich rufe wegen der Anzeige an. Ist die Wohnung noch frei?",
+     "tip": "w sprawie + Genitiv = wegen"
+    },
+    {
+     "who": "Pani Anna",
+     "t": [
+      [
+       "Tak.",
+       "ja."
+      ],
+      [
+       "Ma",
+       "hat-sie"
+      ],
+      [
+       "dwa",
+       "zwei"
+      ],
+      [
+       "pokoje,",
+       "Zimmer,"
+      ],
+      [
+       "kuchnię",
+       "Küche"
+      ],
+      [
+       "i",
+       "und"
+      ],
+      [
+       "balkon.",
+       "Balkon."
+      ]
+     ],
+     "sense": "Ja. Sie hat zwei Zimmer, eine Küche und einen Balkon."
+    },
+    {
+     "who": "Semyon",
+     "t": [
+      [
+       "Ile",
+       "wie-viel"
+      ],
+      [
+       "wynosi",
+       "beträgt"
+      ],
+      [
+       "czynsz?",
+       "Miete?"
+      ]
+     ],
+     "sense": "Wie hoch ist die Miete?"
+    },
+    {
+     "who": "Pani Anna",
+     "t": [
+      [
+       "Dwa",
+       "zwei"
+      ],
+      [
+       "tysiące",
+       "tausend"
+      ],
+      [
+       "złotych",
+       "Złoty"
+      ],
+      [
+       "miesięcznie",
+       "monatlich"
+      ],
+      [
+       "plus",
+       "plus"
+      ],
+      [
+       "media.",
+       "Nebenkosten."
+      ]
+     ],
+     "sense": "Zweitausend Złoty im Monat plus Nebenkosten.",
+     "tip": "media = Strom, Wasser, Gas"
+    },
+    {
+     "who": "Semyon",
+     "t": [
+      [
+       "Chcę",
+       "will-ich"
+      ],
+      [
+       "je",
+       "sie"
+      ],
+      [
+       "zobaczyć.",
+       "sehen."
+      ],
+      [
+       "Kiedy",
+       "wann"
+      ],
+      [
+       "mogę",
+       "kann-ich"
+      ],
+      [
+       "przyjść?",
+       "kommen?"
+      ]
+     ],
+     "sense": "Ich möchte sie ansehen. Wann kann ich kommen?",
+     "tip": "chcę + Infinitiv"
+    },
+    {
+     "who": "Pani Anna",
+     "t": [
+      [
+       "Jutro",
+       "morgen"
+      ],
+      [
+       "o",
+       "um"
+      ],
+      [
+       "osiemnastej,",
+       "achtzehnten,"
+      ],
+      [
+       "dobrze?",
+       "gut?"
+      ]
+     ],
+     "sense": "Morgen um achtzehn Uhr, passt das?"
+    }
+   ],
+   "chunks": [
+    [
+     "w sprawie ogłoszenia",
+     "wegen der Anzeige"
+    ],
+    [
+     "Mieszkanie jest wolne.",
+     "Die Wohnung ist frei."
+    ],
+    [
+     "Ile wynosi czynsz?",
+     "Wie hoch ist die Miete?"
+    ],
+    [
+     "Chcę je zobaczyć.",
+     "Ich möchte sie ansehen."
+    ],
+    [
+     "Kiedy mogę przyjść?",
+     "Wann kann ich kommen?"
+    ]
+   ],
+   "words": [
+    [
+     "ogłoszenie",
+     "Anzeige"
+    ],
+    [
+     "wolny",
+     "frei"
+    ],
+    [
+     "czynsz",
+     "Miete"
+    ],
+    [
+     "miesięcznie",
+     "monatlich"
+    ],
+    [
+     "media",
+     "Nebenkosten"
+    ],
+    [
+     "wynająć",
+     "mieten"
+    ]
+   ],
+   "qa": [
+    {
+     "who": "Pani Anna",
+     "q": "Czego pan szuka?",
+     "qde": "Was suchen Sie?",
+     "a": "Szukam mieszkania.",
+     "ade": "Ich suche eine Wohnung."
+    },
+    {
+     "who": "Pani Anna",
+     "q": "Kiedy chce pan zobaczyć mieszkanie?",
+     "qde": "Wann möchten Sie die Wohnung ansehen?",
+     "a": "Chcę je zobaczyć jutro.",
+     "ade": "Ich möchte sie morgen ansehen."
+    }
+   ],
+   "grammar": {
+    "title": "chcieć und móc + Infinitiv",
+    "text": "chcieć (wollen): chcę, chcesz, chce, chcemy, chcecie, chcą. móc (können): mogę, możesz, może, możemy, możecie, mogą. Danach folgt der Infinitiv: chcę wynająć mieszkanie, mogę przyjść. „je“ ist das Akkusativ-Pronomen für ein sächliches Wort (mieszkanie): Chcę je zobaczyć. szukać braucht den Genitiv: szukam mieszkania."
+   },
+   "tips": [
+    "Bei Wohnungen fragt man oft: Ile metrów? (Wie viele Quadratmeter?)",
+    "czynsz ≈ tschynsch, wie das deutsche „Zins“."
+   ]
+  },
+  {
+   "id": "b5d",
+   "chapter": "pierwsze",
+   "book": "5D",
+   "title": "Moja okolica",
+   "de": "Die Nachbarschaft: iść und jechać",
+   "lines": [
+    {
+     "who": "Ola",
+     "t": [
+      [
+       "Jak",
+       "wie"
+      ],
+      [
+       "jest",
+       "ist"
+      ],
+      [
+       "w",
+       "in"
+      ],
+      [
+       "twojej",
+       "deiner"
+      ],
+      [
+       "okolicy?",
+       "Gegend?"
+      ]
+     ],
+     "sense": "Wie ist es in deiner Gegend?"
+    },
+    {
+     "who": "Semyon",
+     "t": [
+      [
+       "Bardzo",
+       "sehr"
+      ],
+      [
+       "spokojnie.",
+       "ruhig."
+      ],
+      [
+       "Blisko",
+       "nah"
+      ],
+      [
+       "jest",
+       "ist"
+      ],
+      [
+       "park",
+       "Park"
+      ],
+      [
+       "i",
+       "und"
+      ],
+      [
+       "duży",
+       "großer"
+      ],
+      [
+       "sklep.",
+       "Laden."
+      ]
+     ],
+     "sense": "Sehr ruhig. In der Nähe gibt es einen Park und einen großen Laden."
+    },
+    {
+     "who": "Ola",
+     "t": [
+      [
+       "A",
+       "und"
+      ],
+      [
+       "przystanek?",
+       "Haltestelle?"
+      ]
+     ],
+     "sense": "Und eine Haltestelle?"
+    },
+    {
+     "who": "Semyon",
+     "t": [
+      [
+       "Przystanek",
+       "Haltestelle"
+      ],
+      [
+       "jest",
+       "ist"
+      ],
+      [
+       "za",
+       "hinter"
+      ],
+      [
+       "rogiem.",
+       "Ecke."
+      ],
+      [
+       "Do",
+       "zu"
+      ],
+      [
+       "centrum",
+       "Zentrum"
+      ],
+      [
+       "jadę",
+       "fahre-ich"
+      ],
+      [
+       "tramwajem",
+       "mit-Straßenbahn"
+      ],
+      [
+       "dziesięć",
+       "zehn"
+      ],
+      [
+       "minut.",
+       "Minuten."
+      ]
+     ],
+     "sense": "Die Haltestelle ist um die Ecke. Ins Zentrum fahre ich zehn Minuten mit der Straßenbahn.",
+     "tip": "jadę = ich fahre"
+    },
+    {
+     "who": "Ola",
+     "t": [
+      [
+       "Super.",
+       "super."
+      ],
+      [
+       "Idziemy",
+       "gehen-wir"
+      ],
+      [
+       "na",
+       "auf"
+      ],
+      [
+       "spacer",
+       "Spaziergang"
+      ],
+      [
+       "po",
+       "durch"
+      ],
+      [
+       "twojej",
+       "deine"
+      ],
+      [
+       "okolicy?",
+       "Gegend?"
+      ]
+     ],
+     "sense": "Super. Machen wir einen Spaziergang durch deine Gegend?",
+     "tip": "idziemy = wir gehen"
+    },
+    {
+     "who": "Semyon",
+     "t": [
+      [
+       "Chętnie!",
+       "gern!"
+      ],
+      [
+       "Idę",
+       "gehe-ich"
+      ],
+      [
+       "po",
+       "nach"
+      ],
+      [
+       "kurtkę.",
+       "Jacke."
+      ]
+     ],
+     "sense": "Gern! Ich hole schnell meine Jacke.",
+     "tip": "iść po = holen gehen"
+    }
+   ],
+   "chunks": [
+    [
+     "w twojej okolicy",
+     "in deiner Gegend"
+    ],
+    [
+     "za rogiem",
+     "um die Ecke"
+    ],
+    [
+     "Jadę tramwajem.",
+     "Ich fahre mit der Straßenbahn."
+    ],
+    [
+     "Idziemy na spacer?",
+     "Gehen wir spazieren?"
+    ],
+    [
+     "Idę po kurtkę.",
+     "Ich hole meine Jacke."
+    ]
+   ],
+   "words": [
+    [
+     "okolica",
+     "Gegend"
+    ],
+    [
+     "spokojnie",
+     "ruhig"
+    ],
+    [
+     "przystanek",
+     "Haltestelle"
+    ],
+    [
+     "róg",
+     "Ecke"
+    ],
+    [
+     "spacer",
+     "Spaziergang"
+    ],
+    [
+     "chętnie",
+     "gern"
+    ]
+   ],
+   "qa": [
+    {
+     "who": "Ola",
+     "q": "Jak jest w twojej okolicy?",
+     "qde": "Wie ist es in deiner Gegend?",
+     "a": "Bardzo spokojnie. Blisko jest park.",
+     "ade": "Sehr ruhig. In der Nähe ist ein Park."
+    },
+    {
+     "who": "Ola",
+     "q": "Jak jedziesz do centrum?",
+     "qde": "Wie fährst du ins Zentrum?",
+     "a": "Jadę tramwajem.",
+     "ade": "Ich fahre mit der Straßenbahn."
+    }
+   ],
+   "grammar": {
+    "title": "iść und jechać",
+    "text": "iść heißt zu Fuß gehen: idę, idziesz, idzie, idziemy, idziecie, idą. jechać heißt fahren: jadę, jedziesz, jedzie, jedziemy, jedziecie, jadą. Das Fahrzeug steht im Instrumental: jadę tramwajem, autobusem. iść po + Akkusativ heißt etwas holen: idę po chleb, idę po kurtkę."
+   },
+   "tips": [
+    "Im Deutschen „gehen“ wir auch mit dem Bus. Im Polnischen nicht: Mit Fahrzeug immer jechać.",
+    "idę ≈ I-de, das ę am Wortende klingt fast wie e."
+   ]
+  }
+ ],
+ "book": {
+  "title": "Polski na dobry start",
+  "level": "A1",
+  "by": "Fundacja Linguae Mundi, 2017",
+  "links": [
+   [
+    "Lehrbuch (PDF)",
+    "https://www.gov.pl/attachment/1bd0a4d2-94ed-421a-aa87-13b86ba834e6"
+   ],
+   [
+    "Übungsheft (PDF)",
+    "https://www.gov.pl/attachment/7cf9eba5-22f4-487a-a3c8-4e2bcc4293e8"
+   ],
+   [
+    "Sprachführer Polnisch–Englisch (PDF)",
+    "https://www.gov.pl/attachment/7f391f9c-b55d-4c6e-86b9-e1e3895ccf83"
+   ],
+   [
+    "Audios und weitere Materialien (EPALE)",
+    "https://epale.ec.europa.eu/pl/resource-centre/content/materialy-dydaktyczne-do-nauki-jezyka-polskiego-dla-doroslych"
+   ]
+  ]
  }
-]
 }

@@ -208,6 +208,7 @@ details.rule summary::after{content:" ▾";color:var(--muted)}
 .stline{padding:10px 8px;border-radius:12px;border-bottom:1px solid var(--line);cursor:pointer}
 .stline:last-child{border-bottom:0}.stline.cur{background:rgba(242,183,5,.18)}
 .now .bigspk{background:rgba(255,255,255,.22)}
+.booklink{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-top:1px solid var(--line);color:var(--accent);font-weight:800;text-decoration:none}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
@@ -477,14 +478,17 @@ function viewPath() {
     const bg = it.st === "done" ? "var(--green)" : it.st === "cur" ? "var(--red)" : "var(--lock)";
     const sh = it.st === "done" ? "#0E5A60" : it.st === "cur" ? "#7A0A1C" : "var(--lockSh)";
     const inner = it.st === "done" ? '<span style="color:#FFFFFF">' + ic("check", 26, 3) + "</span>" : it.st === "cur" ? '<span style="color:#FFFFFF">' + ic("play", 30) + "</span>" : '<span style="color:var(--muted)">' + ic("lock", 22) + "</span>";
-    const sub = it.st === "done" ? "Lektion " + (it.i + 1) + " · geschafft" : it.st === "cur" ? "Lektion " + (it.i + 1) + " · jetzt dran" : it.st === "lock" ? "Lektion " + (it.i + 1) + " · " + esc(it.l.de) : "Lektion " + (it.i + 1) + " · bald";
+    const bk = it.l.book ? " · Buch " + it.l.book : "";
+    const sub = it.st === "done" ? "Lektion " + (it.i + 1) + bk + " · geschafft" : it.st === "cur" ? "Lektion " + (it.i + 1) + bk + " · jetzt dran" : it.st === "lock" ? "Lektion " + (it.i + 1) + bk + " · " + esc(it.l.de) : "Lektion " + (it.i + 1) + " · bald";
     h += '<div style="display:flex;align-items:center;margin-left:' + x + 'px"><button class="node ' + it.st + '" data-act="node" data-st="' + it.st + '" data-id="' + (it.l.id || "") + '">';
     h += '<span class="dot" style="width:' + size + "px;height:" + size + "px;background:" + bg + ";box-shadow:0 5px 0 " + sh + (it.st === "cur" ? ",0 0 0 6px rgba(217,164,59,.4)" : "") + '">' + inner + "</span>";
     h += '<span><span class="t" style="display:block">' + esc(it.l.title) + '</span><span class="s">' + sub + "</span></span></button>";
     if (it.st === "cur") h += '<img src="img/happy.webp" alt="" class="mascotcur">';
     h += "</div>";
   });
-  return h + "</div>";
+  h += "</div>";
+  if (D.book) h += '<div class="card" style="margin-top:18px"><div class="kick" style="color:var(--muted)">Begleitbuch, kostenlos</div><b class="serif" style="font-weight:400;font-size:21px">' + esc(D.book.title) + '</b><p class="sub" style="margin:4px 0 10px">Die Lektionen folgen den Themen und der Grammatik dieses Buchs. Bei jeder Lektion steht die passende Einheit, zum Beispiel „Buch 2C“.</p>' + D.book.links.map(([t, u]) => '<a class="booklink" href="' + esc(u) + '" target="_blank" rel="noopener">' + esc(t) + " " + ic("arrow", 16, 2.5) + "</a>").join("") + "</div>";
+  return h;
 }
 
 /* ---------- Vokabeltrainer ---------- */
@@ -797,7 +801,7 @@ function viewLesson() {
   let foot = "";
   const mode = S.set.decode;
   if (L.phase === "grammar") {
-    h += '<img src="img/reading.webp" alt="" class="mascot" style="max-height:170px"><div class="grammar"><div class="kick" style="color:var(--accent)">Grammatik entdeckt</div><h3>' + esc(l.grammar.title) + "</h3><p style=\"margin:0\">" + esc(l.grammar.text) + "</p></div>";
+    h += '<img src="img/reading.webp" alt="" class="mascot" style="max-height:170px"><div class="grammar"><div class="kick" style="color:var(--accent)">Grammatik entdeckt</div><h3>' + esc(l.grammar.title) + "</h3><p style=\"margin:0\">" + esc(l.grammar.text) + "</p>" + (l.book && D.book ? '<p class="sub" style="margin:10px 0 0">Im Buch „' + esc(D.book.title) + "“: Einheit " + l.book + ".</p>" : "") + "</div>";
     if (l.words && l.words.length) h += '<div class="card"><b>Neue Wörter</b>' + l.words.map((w, i) => '<div class="wordrow"><button class="say" data-act="sayWord" data-i="' + i + '" aria-label="' + esc(w[0]) + ' anhören">' + ic("spk", 16) + '</button><div style="flex:1"><span class="serif" style="font-size:19px">' + esc(w[0]) + '</span><div class="sub">' + esc(w[1]) + "</div></div></div>").join("") + "</div>";
     if (l.tips && l.tips.length) h += '<div class="card"><b>Aussprache und Tipps</b><ul class="tips">' + l.tips.map(t => "<li>" + esc(t) + "</li>").join("") + "</ul></div>";
     foot = '<button class="btn red block" data-act="finish">Lektion abschließen</button>';
